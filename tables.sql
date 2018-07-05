@@ -1,9 +1,10 @@
-CREATE TABLE IF NOT EXISTS user (
+CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   name varchar(255),
   email varchar(255),
   password_hash varchar(255),
-  bio varchar(255)
+  bio varchar(255),
+  is_deleted varchar(255)
 );
 
 CREATE TABLE IF NOT EXISTS instrument (

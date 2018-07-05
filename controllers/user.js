@@ -17,6 +17,7 @@ let createControllers = db => {
                 email: request.body.email,
                 passwordHash: sha256(request.body.password),
                 bio: request.body.bio,
+                is_deleted: "false"
             };
             let errorCallback = (error) => {
                 console.log("Error creating user:", error);

@@ -23,7 +23,7 @@ class Login extends React.Component {
                     </div>
                   </div>
 
-                  <a class="waves-effect waves-light btn s12">LOGIN</a>
+                  <input class="waves-effect waves-light btn s12" type="submit" value="Login" />
                   <p>New to Jamaway? Create an account <a href="">here</a>.</p>
                 </form>
               </div>

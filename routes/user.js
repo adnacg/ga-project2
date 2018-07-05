@@ -8,8 +8,6 @@ const createUserRouter = db => {
 
     router.get('/login', uc.showLoginForm);
 
-
-
     return router;
 }
 

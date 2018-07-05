@@ -1,33 +1,77 @@
 /* Custom Stylesheet */
 /**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
+#456355
+#EDCB64
  */
+
+body {
+  background-color: #456355;
+}
+
+#my-yellow-text {
+  color: #EDCB64;
+}
+
+#my-yellow-background {
+  color: #EDCB64;
+}
+
+#my-green-text {
+  color: #456355;
+}
+
+#my-green-background {
+  color: #456355;
+}
+
+.mynavbar {
+  background-color: #456355;
+}
 
 nav ul a,
 nav .brand-logo {
-  color: #444;
+  color: #EDCB64;
 }
 
 p {
   line-height: 2rem;
 }
 
+#my-action-btn {
+  color: #456355;
+  background-color: #EDCB64;
+}
+
 .sidenav-trigger {
-  color: #26a69a;
+  color: #EDCB64;
+}
+
+#nav-mobile {
+  background-color: #456355;
+}
+
+.header {
+  color: #EDCB64;
+}
+
+.my-home-info {
+  color: #456355;
+}
+
+.my-home-instruction {
+  color: #EDCB64;
 }
 
 .parallax-container {
   min-height: 380px;
   line-height: 0;
   height: auto;
-  color: rgba(255,255,255,.9);
+  color: #EDCB64;
 }
-  .parallax-container .section {
-    width: 100%;
-  }
+
+.parallax-container .section {
+  width: 100%;
+}
 
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
@@ -50,8 +94,18 @@ p {
 }
 .icon-block .material-icons {
   font-size: inherit;
+  color: #EDCB64;
 }
 
 footer.page-footer {
   margin: 0;
+  background-color: #456355;
+}
+
+.footer_text {
+  color: #EDCB64;
+}
+
+#td-to-left {
+  text-align: left;
 }

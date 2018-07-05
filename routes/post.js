@@ -1,10 +1,15 @@
 const createPostRouter = db => {
     const express = require('express');
     const router = express.Router();
+    const pc = require("../controllers/post.js")(db);
 
-    router.get('/', (request, response) => {
-        response.render('list');
-    });
+    router.get('/', pc.postRead);
+
+    router.get('/new', pc.formRead);
+    router.post('/new', pc.postCreate);
+
+    router.get('/1', pc.postReadMore);
+    router.post('/1', pc.postRequest);
 
     return router;
 }

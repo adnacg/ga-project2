@@ -1,4 +1,4 @@
-var React = require('react');
+  var React = require('react');
 
 class LayoutContainer extends React.Component {
     render() {
@@ -12,20 +12,20 @@ class LayoutContainer extends React.Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 </head>
                 <body>
-                    <nav class="teal" role="navigation">
+                    <nav class="mynavbar" role="navigation">
                         <div class="nav-wrapper container">
                           <a id="logo-container" href="http://localhost:3000/" class="brand-logo">JAM AWAY</a>
                           <ul class="right hide-on-med-and-down">
-                            <li><a href="#">Browse Jams</a></li>
-                            <li><a href="#">Post Jams</a></li>
+                            <li><a href="http://localhost:3000/post">Browse Jams</a></li>
+                            <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
                             <li><a href="http://localhost:3000/user/register">Register</a></li>
                             <li><a href="http://localhost:3000/user/login">Login</a></li>
                             <li><a href="#"><i class="material-icons">search</i></a></li>
                           </ul>
 
                           <ul id="nav-mobile" class="sidenav">
-                            <li><a href="#">Browse Jams</a></li>
-                            <li><a href="#">Post Jams</a></li>
+                            <li><a href="http://localhost:3000/post">Browse Jams</a></li>
+                            <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
                             <li><a href="http://localhost:3000/user/register">Register</a></li>
                             <li><a href="http://localhost:3000/user/login">Login</a></li>
                             <li><a href="#">Search</a></li>
@@ -38,34 +38,35 @@ class LayoutContainer extends React.Component {
                       <div class="section no-pad-bot">
                         <div class="container">
                           <br/><br/>
-                          <h3 class="header center teal-text text-lighten-2">SEARCH, JOIN, JAM</h3>
+                          <h3 class="header center text-lighten-2">SEARCH, JOIN, JAM</h3>
                           <div class="row center">
                             <h6 class="header col s12 light">Singapore’s number one platform to connect with fellow musicians</h6>
                           </div>
                           <div class="row center">
-                            <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">JOIN A JAM</a> &nbsp;
-                            <a href="#" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">POST A JAM</a>
+                            <a href="http://localhost:3000/post" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">JOIN A JAM</a> &nbsp;
+                            <a href="http://localhost:3000/post/new" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">POST A JAM</a>
                           </div>
                           <br/><br/>
                         </div>
                       </div>
-                      <div class="parallax"><img src="/assets/images/background1.jpg" alt="img1" /></div>
+                      <div class="parallax"><img src="/assets/images/home1.jpg" alt="img1" /></div>
                     </div>
 
                     {this.props.children}
 
-                        <footer class="page-footer teal">
+                        <footer class="page-footer">
                           <div class="container">
                           <div>
-                            <a class="white-text" href="#!">Terms & Conditions</a> &nbsp;
-                            <a class="white-text" href="#!">Privacy Policy</a> &nbsp;
-                            <a class="white-text" href="#!">FAQ</a> &nbsp;
-                            <a class="white-text" href="#!">Contact</a>
+                            <a class="footer_text" href="#">Terms & Conditions</a> &nbsp;
+                            <a class="footer_text" href="#">Privacy Policy</a> &nbsp;
+                            <a class="footer_text" href="#">FAQ</a> &nbsp;
+                            <a class="footer_text" href="#">Contact</a>
                           </div>
-                          Copyright © 2018 by <a class="white-text" href="#">Adna</a>
-                          <a class="grey-text text-lighten-4 right" href="#!" src="">IG</a>
-                          <a class="grey-text text-lighten-4 right" href="#!" src="">FB</a>
-                          <a class="grey-text text-lighten-4 right" href="#!" src="">TWT</a>
+                          <div class="footer_text">Copyright © 2018 by Jam Away
+                            <a class="footer_text text-lighten-4 right" href="#" src="">IG</a>
+                            <a class="footer_text text-lighten-4 right" href="#" src="">FB</a>
+                            <a class="footer_text text-lighten-4 right" href="#" src="">TWT</a>
+                          </div>
                           </div>
                           <br/>
                         </footer>
