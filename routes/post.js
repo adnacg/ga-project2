@@ -8,8 +8,8 @@ const createPostRouter = db => {
     router.get('/new', pc.formRead);
     router.post('/new', pc.postCreate);
 
-    router.get('/1', pc.postReadMore);
-    router.post('/1', pc.postRequest);
+    router.get('/:id', pc.postReadMore);
+    router.post('/:id', pc.postRequest);
 
     return router;
 }

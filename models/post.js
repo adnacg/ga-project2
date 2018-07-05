@@ -66,6 +66,24 @@ let createPostModel = db => {
             });
         }
 
+        static request(postReqInfo, errorCallback, successCallback) {
+            let queryText = 'INSERT INTO request (post_id, requester_id, status) VALUES ($1, $2, $3) RETURNING *';
+            let values = [postReqInfo.post_id, postReqInfo.requester_id, postReqInfo.status];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback();
+                }
+            });
+
+        }
+
+
+
+
+
+
 
 
 

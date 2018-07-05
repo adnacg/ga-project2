@@ -37,13 +37,26 @@ let createControllers = db => {
 
         postReadMore: (request, response) => {
             let context = {
-                id: 1
+                id: request.params.id
             };
             response.render('readmore', context);
         },
 
         postRequest: (request, response) => {
-            response.send("ok");
+            let postReqInfo = {
+                post_id: request.params.id,
+                requester_id: request.cookie.user_id,
+                status: "pending"
+            };
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = () => {
+                request.flash('success', 'Successfully requested to join.');
+                response.redirect('/post');
+            }
+            Post.request(postReqInfo, errorCallback, successCallback);
         },
 
     }

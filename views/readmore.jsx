@@ -49,7 +49,6 @@ class Readmore extends React.Component {
                 </div>
 
 
-
             </LayoutContainer>
 
         );
