@@ -24,6 +24,31 @@ body {
   color: #456355;
 }
 
+#my-action-btn {
+  color: #456355;
+  background-color: #EDCB64;
+}
+
+#my-music-card {
+  border: 1px solid #EDCB64;
+  color: #EDCB64;
+  background-color: #456355;
+  width: 100px;
+  height: 33px;
+}
+
+#my-card {
+  border: 1px solid #EDCB64;
+  background-color: #456355;
+  color: #EDCB64;
+}
+
+#my-card-borderless {
+  box-shadow: none;
+  background-color: #456355;
+  color: #EDCB64;
+}
+
 .mynavbar {
   background-color: #456355;
 }
@@ -35,11 +60,6 @@ nav .brand-logo {
 
 p {
   line-height: 2rem;
-}
-
-#my-action-btn {
-  color: #456355;
-  background-color: #EDCB64;
 }
 
 .sidenav-trigger {

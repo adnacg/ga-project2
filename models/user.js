@@ -21,6 +21,35 @@ let createUserModel = db => {
                 }
             })
         }
+
+        static update(userInfo, errorCallback, successCallback) {
+            let queryText = '';
+            let values = [];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback();
+                }
+            })
+        }
+
+        static delete(userInfo, errorCallback, successCallback) {
+            let queryText = '';
+            let values = [];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback();
+                }
+            })
+        }
+
+
+
+
+
     }
 
     return User;

@@ -33,15 +33,17 @@ let createControllers = db => {
         },
 
         profileRead: (request, response) => {
-            response.send('ok');
+            response.render('profile');
         },
 
         profileUpdate: (request, response) => {
             response.send('ok');
+            // User.update(userInfo, errorCallback, successCallback);
         },
 
         profileDelete: (request, response) => {
             response.send('ok');
+            // User.delete(userInfo, errorCallback, successCallback);
         },
 
 
