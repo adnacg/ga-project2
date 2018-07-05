@@ -6,3 +6,36 @@ INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Gustave'
 INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Kovacs', 'kovacs@gmail.com', 'aa2ec24feb395119a80d9d2fecce33e50def720319a706ad0c7c184aebc62b72', 'I love reggaeton, gotta move it together people...','false') RETURNING *;
 INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Adna', 'adna@gmail.com', 'd676ce9a2d99429bade52ce891b8f974fdd8915a3c0271c54bf46a423c7b21d9', 'I just love to meet people with different instrument types, so that we can find a way to jam together. Life''s too short to fixate on a single type!','false') RETURNING *;
 INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Cyrill', 'cyrill@gmail.com', 'bb15d2a17cb90733c9017779341ad2acc0cbcdde11419821eb54b29eda30789c', 'Saxophonist and a guitarist. Would like to form a band and jam preferably on weekday nights. Prefer jazz music.','false') RETURNING *;
+
+INSERT INTO instrument (name) VALUES('Guitar') RETURNING *;
+INSERT INTO instrument (name) VALUES('Bass') RETURNING *;
+INSERT INTO instrument (name) VALUES('Ukulele') RETURNING *;
+INSERT INTO instrument (name) VALUES('Piano') RETURNING *;
+INSERT INTO instrument (name) VALUES('Drum') RETURNING *;
+INSERT INTO instrument (name) VALUES('Percussion') RETURNING *;
+INSERT INTO instrument (name) VALUES('Banjo') RETURNING *;
+INSERT INTO instrument (name) VALUES('Violin') RETURNING *;
+INSERT INTO instrument (name) VALUES('Cello') RETURNING *;
+INSERT INTO instrument (name) VALUES('Didgeridoo') RETURNING *;
+INSERT INTO instrument (name) VALUES('Saxophone') RETURNING *;
+INSERT INTO instrument (name) VALUES('Keyboard') RETURNING *;
+INSERT INTO instrument (name) VALUES('Xylophone') RETURNING *;
+INSERT INTO instrument (name) VALUES('Trumpet') RETURNING *;
+INSERT INTO instrument (name) VALUES('Other') RETURNING *;
+
+
+INSERT INTO genre (name) VALUES('Jazz') RETURNING *;
+INSERT INTO genre (name) VALUES('Blues') RETURNING *;
+INSERT INTO genre (name) VALUES('Soul') RETURNING *;
+INSERT INTO genre (name) VALUES('Reggae') RETURNING *;
+INSERT INTO genre (name) VALUES('Indie') RETURNING *;
+INSERT INTO genre (name) VALUES('Classical') RETURNING *;
+INSERT INTO genre (name) VALUES('Country') RETURNING *;
+INSERT INTO genre (name) VALUES('Hip Hip') RETURNING *;
+INSERT INTO genre (name) VALUES('R&B') RETURNING *;
+INSERT INTO genre (name) VALUES('Latin') RETURNING *;
+INSERT INTO genre (name) VALUES('Rock') RETURNING *;
+INSERT INTO genre (name) VALUES('Metal') RETURNING *;
+INSERT INTO genre (name) VALUES('Alt Rock') RETURNING *;
+INSERT INTO genre (name) VALUES('Intrumental') RETURNING *;
+INSERT INTO genre (name) VALUES('Other') RETURNING *;

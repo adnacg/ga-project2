@@ -30,7 +30,25 @@ let createControllers = db => {
                 response.redirect('/post');
             }
             User.create(userInfo, errorCallback, successCallback);
-        }
+        },
+
+        profileRead: (request, response) => {
+            response.send('ok');
+        },
+
+        profileUpdate: (request, response) => {
+            response.send('ok');
+        },
+
+        profileDelete: (request, response) => {
+            response.send('ok');
+        },
+
+
+
+
+
+
     }
 }
 

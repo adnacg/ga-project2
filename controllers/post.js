@@ -42,7 +42,7 @@ let createControllers = db => {
             response.render('readmore', context);
         },
 
-        postRequest: (request, response) => {
+        postCreateRequest: (request, response) => {
             let postReqInfo = {
                 post_id: request.params.id,
                 requester_id: request.cookie.user_id,
@@ -58,6 +58,33 @@ let createControllers = db => {
             }
             Post.request(postReqInfo, errorCallback, successCallback);
         },
+
+        postUpdate: (request, response) => {
+            let post_id = request.params.id;
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = () => {
+                request.flash('success', 'Successfully reposted.');
+                response.redirect('/post');
+            }
+            Post.update(post_id, errorCallback, successCallback);
+        },
+
+        postDelete: (request, response) => {
+            let post_id = request.params.id;
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = () => {
+                request.flash('success', 'Successfully deleted post.');
+                response.redirect('/post');
+            }
+            Post.delete(post_id, errorCallback, successCallback);
+        },
+
 
     }
 }

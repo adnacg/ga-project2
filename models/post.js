@@ -76,12 +76,31 @@ let createPostModel = db => {
                     successCallback();
                 }
             });
-
         }
 
+        static update(post_id, errorCallback, successCallback) {
+            let queryText = 'UPDATE post SET status = $1 WHERE id = $2';
+            let values = ['active', post_id];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback();
+                }
+            });
+        }
 
-
-
+        static delete(post_id, errorCallback, successCallback) {
+            let queryText = 'UPDATE post SET is_deleted = $1 WHERE id = $2';
+            let values = ['true', post_id];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback();
+                }
+            });
+        }
 
 
 

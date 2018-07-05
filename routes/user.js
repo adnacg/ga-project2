@@ -8,6 +8,10 @@ const createUserRouter = db => {
 
     router.get('/login', uc.showLoginForm);
 
+    router.get('/:id', uc.profileRead);
+    router.put('/:id', uc.profileUpdate);
+    router.delete('/:id', uc.profileDelete);
+
     return router;
 }
 
