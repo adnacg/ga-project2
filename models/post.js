@@ -4,7 +4,7 @@ let createPostModel = db => {
         constructor(id, location, post_date, pax, availability, skill, instrument, genre, message, status, is_deleted) {
             this.id = id;
             this.location = location;
-            this.post_date = post_date;
+            this.timestamp = timestamp;
             this.pax = pax;
             this.availability = availability;
             this.skill = skill;

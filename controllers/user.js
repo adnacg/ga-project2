@@ -42,8 +42,8 @@ let createControllers = db => {
         },
 
         profileDelete: (request, response) => {
-            response.send('ok');
-            // User.delete(userInfo, errorCallback, successCallback);
+            let user_id = response.cookie.user_id;
+            User.delete(user_id, errorCallback, successCallback);
         },
 
 

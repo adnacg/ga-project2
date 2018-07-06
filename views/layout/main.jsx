@@ -57,15 +57,18 @@ class LayoutContainer extends React.Component {
                         <footer class="page-footer">
                           <div class="container">
                           <div>
-                            <a class="footer_text" href="#">Terms & Conditions</a> &nbsp;
-                            <a class="footer_text" href="#">Privacy Policy</a> &nbsp;
-                            <a class="footer_text" href="#">FAQ</a> &nbsp;
-                            <a class="footer_text" href="#">Contact</a>
+                            <a class="my-footer-text" href="#">Terms & Conditions</a> &nbsp;
+                            <a class="my-footer-text" href="#">Privacy Policy</a> &nbsp;
+                            <a class="my-footer-text" href="#">FAQ</a> &nbsp;
+                            <a class="my-footer-text" href="#">Contact</a>
+
+                            <a class="my-footer-text text-lighten-4 right" href="#"><img class="my-social-media" src="/assets/images/ig.png" /></a>
+                            <a class="my-footer-text text-lighten-4 right" href="#"><img class="my-social-media" src="/assets/images/tw.png" /></a>
+                            <a class="my-footer-text text-lighten-4 right" href="#"><img class="my-social-media" src="/assets/images/fb.png" /></a>
+
                           </div>
-                          <div class="footer_text">Copyright © 2018 by Jam Away
-                            <a class="footer_text text-lighten-4 right" href="#" src="">IG</a>
-                            <a class="footer_text text-lighten-4 right" href="#" src="">FB</a>
-                            <a class="footer_text text-lighten-4 right" href="#" src="">TWT</a>
+                          <div class="my-footer-text">Copyright © 2018 by Jam Away
+
                           </div>
                           </div>
                           <br/>

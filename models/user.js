@@ -34,16 +34,16 @@ let createUserModel = db => {
             })
         }
 
-        static delete(userInfo, errorCallback, successCallback) {
-            let queryText = '';
-            let values = [];
+        static delete(user_id, errorCallback, successCallback) {
+            let queryText = 'UPDATE user SET is_deleted = $1 WHERE id = $2';
+            let values = ['true', user_id];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
                 } else {
                     successCallback();
                 }
-            })
+            });
         }
 
 

@@ -32,7 +32,7 @@ CREATE TABLE IF NOT EXISTS user_genre (
 CREATE TABLE IF NOT EXISTS post (
   id SERIAL PRIMARY KEY,
   location varchar(255),
-  post_date DATE,
+  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   pax INTEGER,
   availability varchar(255),
   skill varchar(255),
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS post_genre (
 CREATE TABLE IF NOT EXISTS request (
   id SERIAL PRIMARY KEY,
   requester_id INTEGER, -- request FROM which user
-  poster_id INTEGER, -- request TO which user
+  poster_id INTEGER, -- request TO which user -- maybe dont need
   post_id INTEGER, -- for which post
   status varchar(255) -- pending, accepted or declined
 );
