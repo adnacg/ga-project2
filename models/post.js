@@ -68,7 +68,7 @@ let createPostModel = db => {
 
         static request(postReqInfo, errorCallback, successCallback) {
             let queryText = 'INSERT INTO request (post_id, requester_id, status) VALUES ($1, $2, $3) RETURNING *';
-            let values = [postReqInfo.post_id, postReqInfo.requester_id, postReqInfo.status];
+            let values = [postReqInfo.postId, postReqInfo.requester_id, postReqInfo.status];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
@@ -78,9 +78,21 @@ let createPostModel = db => {
             });
         }
 
-        static update(post_id, errorCallback, successCallback) {
-            let queryText = 'UPDATE post SET status = $1 WHERE id = $2';
-            let values = ['active', post_id];
+        static updateform(postId, errorCallback, successCallback) {
+            let queryText = 'SELECT * FROM post WHERE id = $1';
+            let values = [postId];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback(result.rows[0]);
+                }
+            });
+        }
+
+        static update(postId, newDetails, errorCallback, successCallback) {
+            let queryText = 'UPDATE post SET location = $1, pax = $2, availability = $3, skill = $4, message = $5 WHERE id = $6';
+            let values = [newDetails.location, newDetails.pax, newDetails.availability, newDetails.skill, newDetails.message, postId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
@@ -90,9 +102,9 @@ let createPostModel = db => {
             });
         }
 
-        static delete(post_id, errorCallback, successCallback) {
+        static delete(postId, errorCallback, successCallback) {
             let queryText = 'UPDATE post SET is_deleted = $1 WHERE id = $2';
-            let values = ['true', post_id];
+            let values = ['true', postId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);

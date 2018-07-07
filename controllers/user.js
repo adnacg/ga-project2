@@ -82,21 +82,51 @@ let createControllers = db => {
             User.read(currentUserId, errorCallback, successCallback);
         },
 
+        profileUpdateQ: (request, response) => {
+            let userId = request.params.id;
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = (currentUser) => {
+                let context = {user: currentUser};
+                response.render('profileupdate', context);
+            }
+            User.updateform(userId, errorCallback, successCallback);
+        },
+
         profileUpdate: (request, response) => {
-            response.send('ok');
-            // User.update(userInfo, errorCallback, successCallback);
+            let userId = request.params.id;
+            let newDetails = {
+                name: request.body.name,
+                email: request.body.email,
+                bio: request.body.bio,
+            }
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = () => {
+                request.flash('success', 'Successfully updated.');
+                response.redirect('/user/' + request.cookies.user_id);
+            }
+            User.update(userId, newDetails, errorCallback, successCallback);
         },
 
         profileDelete: (request, response) => {
-            let user_id = request.cookies.user_id;
-            User.delete(user_id, errorCallback, successCallback);
+            let userId = request.cookies.user_id;
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = () => {
+                response.clearCookie('logged_in');
+                response.clearCookie('user_id');
+                request.flash('success', 'Account successfully deleted.');
+                response.redirect('/post');
+            }
+            User.delete(userId, errorCallback, successCallback);
         },
-
-
-
-
-
-
     }
 }
 

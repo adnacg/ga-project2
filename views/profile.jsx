@@ -9,6 +9,12 @@ class Profile extends React.Component {
 
             <LayoutContainer user_id={this.props.user_id}>
 
+              <div class="container center">
+                <form id="my-action-btn" class="btn-small"  method="post" action={"/user/" + this.props.user_id}>
+                  <input type="submit" value="Update Profile" />
+                </form>
+              </div>
+
                 <table id="my-yellow-text" class="container">
                     <thead>
                       <tr>
@@ -36,11 +42,9 @@ class Profile extends React.Component {
                         <td>
                           <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.post[0].location}<span id="my-badge" class="new badge" data-badge-caption={this.props.post[0].status}></span><br/><br/>
                             <form id="my-action-btn" class="btn-small" method="post" action={"/request/" + this.props.post[0].id}><input type="submit" value="Requests"/></form>&nbsp;&nbsp;&nbsp;
-                            <form id="my-action-btn" class="btn-small" method="post" action={"/request/" + this.props.post[0].id}><input type="submit" value="Delete" /></form>
+                            <form id="my-action-btn" class="btn-small" method="post" action={"/post/" + this.props.post[0].id + "/update"}><input type="submit" value="Update" /></form>&nbsp;&nbsp;&nbsp;
+                            <form id="my-action-btn" class="btn-small" method="get" action={"/post/" + this.props.post[0].id + "/delete"}><input type="submit" value="Delete" /></form>
                           </div>
-
-                          <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.post[1].location}<span id="my-badge" class="new badge" data-badge-caption={this.props.post[1].status}></span><br/><br/>
-                          <a id="my-action-btn" class="btn-small">Repost</a></div>
                         </td>
                       </tr>
                       <tr>
@@ -50,9 +54,9 @@ class Profile extends React.Component {
                           <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.request[0].location}<br/><br/><a id="my-music-card" class="btn-small">{this.props.request[0].name}</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">{this.props.request[0].status}</a></div>
                         </td>
                       </tr>
-
                     </tbody>
               </table>
+
 
 
             </LayoutContainer>

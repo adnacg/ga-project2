@@ -10,7 +10,7 @@ class PostDelete extends React.Component {
             <LayoutContainer user_id={this.props.user_id}>
 
               <div class="container">
-                <form method="post" action={"/post/" + this.props.post_id + "/delete"}>
+                <form method="post" action={"/post/" + this.props.postId + "/delete"}>
                 <input type="hidden" name="_method" defaultValue="delete" />
                 <div class="col s12 m6 center">
                     <div>
@@ -21,7 +21,7 @@ class PostDelete extends React.Component {
                         <div class="card-action">
                           <input type="submit" value="Yes" class="waves-effect waves-light btn-small"/>
                           &nbsp;&nbsp;&nbsp;
-                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/user/" + this.props.cookies.user_id}>No</a>
+                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/user/" + this.props.user_id}>No</a>
                         </div>
                       </div>
                     </div>

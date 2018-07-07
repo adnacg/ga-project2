@@ -44,8 +44,8 @@ let createControllers = db => {
 
         postCreateRequest: (request, response) => {
             let postReqInfo = {
-                post_id: request.params.id,
-                requester_id: request.cookie.user_id,
+                postId: request.params.id,
+                requester_id: request.cookies.user_id,
                 status: "pending"
             };
             let errorCallback = (error) => {
@@ -59,27 +59,47 @@ let createControllers = db => {
             Post.request(postReqInfo, errorCallback, successCallback);
         },
 
-        postUpdate: (request, response) => {
-            let post_id = request.params.id;
+        postUpdateQ: (request, response) => {
+            let postId = request.params.id;
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
             }
-            let successCallback = () => {
-                request.flash('success', 'Successfully reposted.');
-                response.redirect('/post');
+            let successCallback = (currentPost) => {
+                let context = {post: currentPost};
+                response.render('postupdate', context);
             }
-            Post.update(post_id, errorCallback, successCallback);
+            Post.updateform(postId, errorCallback, successCallback);
+        },
+
+        postUpdate: (request, response) => {
+            let postId = request.params.id;
+            let newDetails = {
+                location: request.body.location,
+                pax: request.body.pax,
+                availability: request.body.availability,
+                skill: request.body.skill,
+                message: request.body.message
+            }
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = (currentPost) => {
+                request.flash('success', 'Successfully updated.');
+                response.redirect('/user/' + request.cookies.user_id);
+            }
+            Post.update(postId, newDetails, errorCallback, successCallback);
         },
 
         postDeleteQ: (request, response) => {
-            let post_id = request.params.id;
-            let context = {post_id: post_id, cookies: request.cookies};
+            let postId = request.params.id;
+            let context = {postId: postId};
             response.render('postdelete', context);
         },
 
         postDelete: (request, response) => {
-            let post_id = request.params.id;
+            let postId = request.params.id;
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
@@ -88,7 +108,7 @@ let createControllers = db => {
                 request.flash('success', 'Successfully deleted post.');
                 response.redirect('/user/' + request.cookies.user_id);
             }
-            Post.delete(post_id, errorCallback, successCallback);
+            Post.delete(postId, errorCallback, successCallback);
         },
 
 

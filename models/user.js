@@ -64,9 +64,26 @@ let createUserModel = db => {
             });
         }
 
-        static update(userInfo, errorCallback, successCallback) {
-            let queryText = '';
-            let values = [];
+        static updateform(userId, errorCallback, successCallback) {
+            let queryText = 'SELECT * FROM users WHERE id = $1';
+            let values = [userId];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    let userInfo = {
+                        name: result.rows[0].name,
+                        email: result.rows[0].email,
+                        bio: result.rows[0].bio
+                    }
+                    successCallback(userInfo);
+                }
+            });
+        }
+
+        static update(userId, newDetails, errorCallback, successCallback) {
+            let queryText = 'UPDATE users SET name = $1, email = $2, bio = $3 WHERE id = $4';
+            let values = [newDetails.name, newDetails.email, newDetails.bio, userId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
@@ -76,9 +93,9 @@ let createUserModel = db => {
             })
         }
 
-        static delete(user_id, errorCallback, successCallback) {
-            let queryText = 'UPDATE user SET is_deleted = $1 WHERE id = $2';
-            let values = ['true', user_id];
+        static delete(userId, errorCallback, successCallback) {
+            let queryText = 'UPDATE users SET is_deleted = $1 WHERE id = $2';
+            let values = ['true', userId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
@@ -87,11 +104,6 @@ let createUserModel = db => {
                 }
             });
         }
-
-
-
-
-
     }
 
     return User;

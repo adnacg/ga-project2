@@ -13,8 +13,9 @@ const createUserRouter = db => {
     router.post('/logout', uc.userLogout);
 
     router.get('/:id', uc.profileRead);
-    router.put('/:id', uc.profileUpdate); // KIV
-    router.delete('/:id', uc.profileDelete); // TO DO add button
+    router.post('/:id', uc.profileUpdateQ);
+    router.put('/:id', uc.profileUpdate);
+    router.delete('/:id', uc.profileDelete);
 
     return router;
 }
