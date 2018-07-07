@@ -4,23 +4,55 @@ let createControllers = db => {
     return {
 
         showRequest: (request, response) => {
-            response.render('request');
+            let post_id = request.params.id ;
+            let errorCallback = (error) => {
+                console.log("Error showing profile:", error);
+                response.status(401);
+            }
+            let successCallback = (result) => {
+                let requestInfo = result.rows; // array of potentially my many requests
+                let context = {request: requestInfo};
+                response.render('request', context);
+            }
+            Request.show(post_id, errorCallback, successCallback);
         },
 
         acceptRequestQ: (request, response) => {
-            response.render('requestaccept');
+            let requestId = request.params.id;
+            let context = {requestId: requestId};
+            response.render('requestaccept', context);
         },
 
         acceptRequest: (request, response) => {
-            response.send('accepted');
+            let requestId = request.params.id;
+            let currentUserId = request.cookies.user_id;
+            let errorCallback = (error) => {
+                console.log("Error showing profile:", error);
+                response.status(401);
+            }
+            let successCallback = () => {
+                response.redirect('/user/' + currentUserId);
+            }
+            Request.accept(requestId, errorCallback, successCallback);
         },
 
         declineRequestQ: (request, response) => {
-            response.render('requestdecline');
+            let requestId = request.params.id;
+            let context = {requestId: requestId};
+            response.render('requestdecline', context);
         },
 
         declineRequest: (request, response) => {
-            response.send('declined');
+            let requestId = request.params.id;
+            let currentUserId = request.cookies.user_id;
+            let errorCallback = (error) => {
+                console.log("Error showing profile:", error);
+                response.status(401);
+            }
+            let successCallback = () => {
+                response.redirect('/user/' + currentUserId);
+            }
+            Request.decline(requestId, errorCallback, successCallback);
         },
 
 

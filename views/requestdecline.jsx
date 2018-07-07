@@ -9,9 +9,9 @@ class RequestDecline extends React.Component {
 
             <LayoutContainer user_id={this.props.user_id}>
 
-                <div class="container">
-                <form method="post" action="/request/1/decline">
-                <div class="col s12 m6 center">
+              <div class="container">
+                <form method="post" action={"/request/" + this.props.requestId + "/decline"}>
+                  <div class="col s12 m6 center">
                     <div>
                       <div id="my-card" class="card">
                         <div class="card-content">
@@ -20,13 +20,13 @@ class RequestDecline extends React.Component {
                         <div class="card-action">
                           <input type="submit" value="Yes" class="waves-effect waves-light btn-small"/>
                           &nbsp;&nbsp;&nbsp;
-                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href="/request/1">No</a>
+                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/user/" + this.props.user_id}>No</a>
                         </div>
                       </div>
                     </div>
                   </div>
-                  </form>
-                </div>
+                </form>
+              </div>
 
 
 

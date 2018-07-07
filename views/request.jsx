@@ -10,31 +10,21 @@ class Request extends React.Component {
             <LayoutContainer user_id={this.props.user_id}>
 
               <div class="container">
-                <div class="row">
-                  <div id="my-card" class="card-panel center">
-                    <i class="material-icons"> location_on </i>Holland<br/><br/>
-                    <a id="my-music-card" class="btn-small">Clotilde</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Accepted</a>
-                  </div><br/>
-                </div>
-              </div>
-
-
-              <div class="container">
 
                 <div class="col s12 m6 center">
                   <div>
                     <div id="my-card" class="card">
                       <div class="card-content">
-                        <span class="card-title">CYRILL</span>
+                        <span class="card-title">{this.props.request[0].name}</span>
                         <p>has requested to join your jam at</p>
-                        <p><i class="material-icons"> location_on </i>Orchard</p>
+                        <p><i class="material-icons"> location_on </i>{this.props.request[0].location}</p>
                       </div>
                       <div class="card-action">
-                          <a id="my-action-btn" class="waves-effect waves-light btn-small">Profile</a>
+                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/user/" + this.props.request[0].requester_id}>Profile</a>
                           &nbsp;&nbsp;&nbsp;
-                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href="/request/1/accept">Accept</a>
+                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/request/" + this.props.request[0].id + "/accept"}>Accept</a>
                           &nbsp;&nbsp;&nbsp;
-                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href="/request/1/decline">Decline</a>
+                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/request/" + this.props.request[0].id + "/decline"}>Decline</a>
                       </div>
                     </div>
                   </div>
@@ -44,40 +34,20 @@ class Request extends React.Component {
                   <div>
                     <div id="my-card" class="card">
                       <div class="card-content">
-                        <span class="card-title">YEN</span>
+                        <span class="card-title">{this.props.request[1].name}</span>
                         <p>has requested to join your jam at</p>
-                        <p><i class="material-icons"> location_on </i>Orchard</p>
+                        <p><i class="material-icons"> location_on </i>{this.props.request[1].location}</p>
                       </div>
                       <div class="card-action">
-                        <a id="my-action-btn" class="waves-effect waves-light btn-small">Profile</a>
+                        <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/user/" + this.props.request[1].id}>Profile</a>
                         &nbsp;&nbsp;&nbsp;
-                        <a id="my-action-btn" class="waves-effect waves-light btn-small" href="/request/1/accept">Accept</a>
+                        <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/request/" + this.props.request[1].post_id + "/accept"}>Accept</a>
                         &nbsp;&nbsp;&nbsp;
-                        <a id="my-action-btn" class="waves-effect waves-light btn-small" href="/request/1/accept">Decline</a>
+                        <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/request/" + this.props.request[1].post_id + "/decline"}>Decline</a>
                       </div>
                     </div>
                   </div>
                 </div>
-
-                <div class="col s12 m6 center">
-                  <div>
-                    <div id="my-card" class="card">
-                      <div class="card-content">
-                        <span class="card-title">NANA</span>
-                        <p>has requested to join your jam at</p>
-                        <p><i class="material-icons"> location_on </i>Orchard</p>
-                      </div>
-                      <div class="card-action">
-                        <a id="my-action-btn" class="waves-effect waves-light btn-small">Profile</a>
-                        &nbsp;&nbsp;&nbsp;
-                        <a id="my-action-btn" class="waves-effect waves-light btn-small" href="/request/1/accept">Accept</a>
-                        &nbsp;&nbsp;&nbsp;
-                        <a id="my-action-btn" class="waves-effect waves-light btn-small" href="/request/1/accept">Decline</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
 
 
               </div>
