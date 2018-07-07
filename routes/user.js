@@ -8,6 +8,9 @@ const createUserRouter = db => {
 
     router.get('/login', uc.showLoginForm);
 
+    router.get('/logout', uc.showLogoutForm);
+    router.post('/logout', uc.userLogout);
+
     router.get('/:id', uc.profileRead);
     router.put('/:id', uc.profileUpdate); // KIV
     router.delete('/:id', uc.profileDelete); // TO DO add button

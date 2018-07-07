@@ -11,6 +11,17 @@ let createControllers = db => {
             response.render('login');
         },
 
+        showLogoutForm: (request, response) => {
+            response.render('logout');
+        },
+
+        userLogout: (request, response) => {
+            response.clearCookie('logged_in');
+            response.clearCookie('user_id');
+            request.flash('success', 'Successfully logged out!');
+            response.redirect('/post');
+        },
+
         userCreate: (request, response) => {
             let userInfo = {
                 name: request.body.name,
@@ -33,7 +44,8 @@ let createControllers = db => {
         },
 
         profileRead: (request, response) => {
-            response.render('profile');
+            let context = {};
+            response.render('profile', context);
         },
 
         profileUpdate: (request, response) => {
