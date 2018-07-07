@@ -7,7 +7,7 @@ class Readmore extends React.Component {
 
         return (
 
-            <LayoutContainer>
+            <LayoutContainer user_id={this.props.user_id}>
                 <div class="container">
                   <form class="col s12" method="POST" action={"/post/" + this.props.id}>
 

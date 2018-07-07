@@ -7,7 +7,7 @@ class List extends React.Component {
 
         return (
 
-            <LayoutContainer>
+            <LayoutContainer user_id={this.props.user_id}>
 
                 <table id="my-yellow-text" class="container s12 highlight centered">
                     <thead>

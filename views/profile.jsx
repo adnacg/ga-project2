@@ -7,7 +7,7 @@ class Profile extends React.Component {
 
         return (
 
-            <LayoutContainer>
+            <LayoutContainer user_id={this.props.user_id}>
 
                 <table id="my-yellow-text" class="container">
                     <thead>
@@ -21,7 +21,7 @@ class Profile extends React.Component {
 
                       <tr>
                         <td>Bio</td>
-                        <td><div id="my-card" class="card-panel center">Amateur jazz vocalist with a quirky personality. Open to jamming together with anyone, preferably a saxophonist!</div></td>
+                        <td><div id="my-card" class="card-panel center">{this.props.user[0].bio}</div></td>
                       </tr>
                       <tr>
                         <td>Instrument</td>
@@ -33,13 +33,17 @@ class Profile extends React.Component {
                       </tr>
                       <tr>
                         <td id="my-top-text">My Posts</td>
-                        <td><div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>Orchard<span id="my-badge" class="new badge" data-badge-caption="active"></span><br/><br/><a id="my-action-btn" class="btn-small">Requests</a>&nbsp;&nbsp;&nbsp;<a id="my-action-btn" class="btn-small">Delete</a></div><br/>
-                        <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>Holland<span id="my-badge" class="new badge" data-badge-caption="expired"></span><br/><br/><a id="my-action-btn" class="btn-small">Repost</a></div></td>
+                        <td>
+                          <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.post[0].location}<span id="my-badge" class="new badge" data-badge-caption={this.props.post[0].status}></span><br/><br/><a id="my-action-btn" class="btn-small" href={"/request/" + this.props.user[0].id}>Requests</a>&nbsp;&nbsp;&nbsp;<a id="my-action-btn" class="btn-small" href={"/post/" + this.props.post[0].post_id + "/delete"}>Delete</a></div>
+                          <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.post[1].location}<span id="my-badge" class="new badge" data-badge-caption={this.props.post[1].status}></span><br/><br/><a id="my-action-btn" class="btn-small">Repost</a></div>
+                        </td>
                       </tr>
                       <tr>
                         <td id="my-top-text">My Requests</td>
-                        <td><div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>Holland<br/><br/><a id="my-music-card" class="btn-small">Clotilde</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Accepted</a></div><br/>
-                        <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>Bugis<br/><br/><a id="my-music-card" class="btn-small">Henckels</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Pending</a></div></td>
+                        <td>
+                          <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.request[0].location}<br/><br/><a id="my-music-card" class="btn-small">{this.props.request[0].name}</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">{this.props.request[0].status}</a></div>
+                          <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.request[0].location}<br/><br/><a id="my-music-card" class="btn-small">{this.props.request[0].name}</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">{this.props.request[0].status}</a></div>
+                        </td>
                       </tr>
 
                     </tbody>

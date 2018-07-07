@@ -7,7 +7,7 @@ class Request extends React.Component {
 
         return (
 
-            <LayoutContainer>
+            <LayoutContainer user_id={this.props.user_id}>
 
               <div class="container">
                 <div class="row">

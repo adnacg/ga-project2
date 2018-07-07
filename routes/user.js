@@ -7,6 +7,7 @@ const createUserRouter = db => {
     router.post('/register', uc.userCreate);
 
     router.get('/login', uc.showLoginForm);
+    router.post('/login', uc.userLogin);
 
     router.get('/logout', uc.showLogoutForm);
     router.post('/logout', uc.userLogout);

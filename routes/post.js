@@ -11,7 +11,9 @@ const createPostRouter = db => {
     router.get('/:id', pc.postReadMore);
     router.post('/:id', pc.postCreateRequest);
     router.put('/:id', pc.postUpdate);
-    router.delete('/:id', pc.postDelete);
+
+    router.get('/:id/delete', pc.postDeleteQ);
+    router.delete('/:id/delete', pc.postDelete);
 
     return router;
 }

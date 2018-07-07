@@ -11,6 +11,22 @@ let createControllers = db => {
             response.render('login');
         },
 
+        userLogin: (request, response) => {
+            let enteredEmail = request.body.email;
+            let enteredPasswordHash = sha256(request.body.password);
+            let errorCallback = (error) => {
+                console.log("Error logging in:", error);
+                response.status(401);
+            }
+            let successCallback = (userId) => {
+                response.cookie('logged_in', 'true');
+                response.cookie('user_id', userId);
+                request.flash('success', 'Successfully created account.');
+                response.redirect('/post');
+            }
+            User.login(enteredEmail, enteredPasswordHash, errorCallback, successCallback);
+        },
+
         showLogoutForm: (request, response) => {
             response.render('logout');
         },
@@ -44,8 +60,26 @@ let createControllers = db => {
         },
 
         profileRead: (request, response) => {
-            let context = {};
-            response.render('profile', context);
+            let currentUserId = request.cookies.user_id;
+            let errorCallback = (error) => {
+                console.log("Error showing profile:", error);
+                response.status(401);
+            }
+            let successCallback = (result, result2, result3) => {
+                let userInfo = result.rows.map( user => {
+                    return {
+                        "id": user.id,
+                        "name": user.name,
+                        "email": user.email,
+                        "bio": user.bio,
+                    }
+                });
+                let postInfo = result2.rows; // array of potentially my many posts
+                let requestInfo = result3.rows; // array of potentially my many requests
+                let context = {user: userInfo, post: postInfo, request: requestInfo};
+                response.render('profile', context);
+            }
+            User.read(currentUserId, errorCallback, successCallback);
         },
 
         profileUpdate: (request, response) => {
@@ -54,7 +88,7 @@ let createControllers = db => {
         },
 
         profileDelete: (request, response) => {
-            let user_id = response.cookie.user_id;
+            let user_id = request.cookies.user_id;
             User.delete(user_id, errorCallback, successCallback);
         },
 

@@ -7,7 +7,7 @@ class RequestDecline extends React.Component {
 
         return (
 
-            <LayoutContainer>
+            <LayoutContainer user_id={this.props.user_id}>
 
                 <div class="container">
                 <form method="post" action="/request/1/decline">

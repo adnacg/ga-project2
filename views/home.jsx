@@ -6,7 +6,7 @@ class Home extends React.Component {
 
         return (
 
-            <LayoutContainer>
+            <LayoutContainer user_id={this.props.user_id}>
 
                   <div class="container my-home-instruction">
                     <div class="section">
@@ -69,7 +69,7 @@ class Home extends React.Component {
                       <div class="row">
                         <div class="col s12 center">
                           <h3><i class="mdi-content-send"></i></h3>
-                          <a id="my-action-btn" class="btn-large waves-effect waves-light lighten-1" href="http://localhost:3000/post">Browse The List Now</a>
+                          <a id="my-action-btn" class="btn-large waves-effect waves-light lighten-1" href="/post">Browse The List Now</a>
                           <p class="my-home-instruction center-align light">Find the right partner and jam your hearts away!</p>
                         </div>
                       </div>

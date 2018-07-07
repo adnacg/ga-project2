@@ -72,6 +72,12 @@ let createControllers = db => {
             Post.update(post_id, errorCallback, successCallback);
         },
 
+        postDeleteQ: (request, response) => {
+            let post_id = request.params.id;
+            let context = {post_id: post_id, cookies: request.cookies};
+            response.render('postdelete', context);
+        },
+
         postDelete: (request, response) => {
             let post_id = request.params.id;
             let errorCallback = (error) => {
@@ -80,7 +86,7 @@ let createControllers = db => {
             }
             let successCallback = () => {
                 request.flash('success', 'Successfully deleted post.');
-                response.redirect('/post');
+                response.redirect('/user/' + request.cookies.user_id);
             }
             Post.delete(post_id, errorCallback, successCallback);
         },

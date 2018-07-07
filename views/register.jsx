@@ -6,7 +6,7 @@ class Register extends React.Component {
 
         return (
 
-            <LayoutContainer>
+            <LayoutContainer user_id={this.props.user_id}>
 
                 <div class="container">
                 <form class="col s12" method="POST" action="/user/register">

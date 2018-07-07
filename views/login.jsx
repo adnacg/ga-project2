@@ -9,16 +9,16 @@ class Login extends React.Component {
             <LayoutContainer>
 
                 <div class="container">
-                <form class="col s12">
+                <form class="col s12" method="post" action="/user/login">
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="email" type="email" class="validate"/>
+                      <input id="email" type="email" name="email" class="validate"/>
                       <label for="email">Email</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="password" type="password" class="validate"/>
+                      <input id="password" type="password" name="password" class="validate"/>
                       <label for="password">Password</label>
                     </div>
                   </div>

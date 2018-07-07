@@ -33,6 +33,13 @@ app.use(session({
   // cookie: { secure: true }
 }));
 app.use(cookieParser());
+app.use(function(req, res, next) {
+  if (req.cookies.user_id) {
+    res.locals.user_id = req.cookies.user_id;
+  }
+  next();
+});
+
 app.use(flash());
 app.use(function (req, res, next) {
   res.locals.messages = req.flash();

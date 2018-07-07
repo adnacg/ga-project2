@@ -2,8 +2,8 @@ var React = require('react');
 
 class NavigationBar extends React.Component {
     render() {
-        // if (this.props.cookies.logged_in == 'true') {
-            let currentUserId = 1;
+        if (this.props.user_id) {
+            let currentUserId = this.props.user_id;
             return (
               <nav class="mynavbar" role="navigation">
                   <div class="nav-wrapper container">
@@ -28,32 +28,32 @@ class NavigationBar extends React.Component {
               </nav>
             )
 
-        // } else {
+        } else {
 
-        //     return (
-        //       <nav class="mynavbar" role="navigation">
-        //           <div class="nav-wrapper container">
-        //             <a id="logo-container" href="http://localhost:3000/" class="brand-logo">JAM AWAY</a>
-        //             <ul class="right hide-on-med-and-down">
-        //               <li><a href="http://localhost:3000/post">Browse Jams</a></li>
-        //               <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
-        //               <li><a href="http://localhost:3000/user/register">Register</a></li>
-        //               <li><a href="http://localhost:3000/user/login">Login</a></li>
-        //               <li><a href="#"><i class="material-icons">search</i></a></li>
-        //             </ul>
+            return (
+              <nav class="mynavbar" role="navigation">
+                  <div class="nav-wrapper container">
+                    <a id="logo-container" href="http://localhost:3000/" class="brand-logo">JAM AWAY</a>
+                    <ul class="right hide-on-med-and-down">
+                      <li><a href="http://localhost:3000/post">Browse Jams</a></li>
+                      <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
+                      <li><a href="http://localhost:3000/user/register">Register</a></li>
+                      <li><a href="http://localhost:3000/user/login">Login</a></li>
+                      <li><a href="#"><i class="material-icons">search</i></a></li>
+                    </ul>
 
-        //             <ul id="nav-mobile" class="sidenav">
-        //               <li><a href="http://localhost:3000/post">Browse Jams</a></li>
-        //               <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
-        //               <li><a href="http://localhost:3000/user/register">Register</a></li>
-        //               <li><a href="http://localhost:3000/user/login">Login</a></li>
-        //               <li><a href="#">Search</a></li>
-        //             </ul>
-        //             <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-        //           </div>
-        //       </nav>
-        //     )
-        // }
+                    <ul id="nav-mobile" class="sidenav">
+                      <li><a href="http://localhost:3000/post">Browse Jams</a></li>
+                      <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
+                      <li><a href="http://localhost:3000/user/register">Register</a></li>
+                      <li><a href="http://localhost:3000/user/login">Login</a></li>
+                      <li><a href="#">Search</a></li>
+                    </ul>
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                  </div>
+              </nav>
+            )
+        }
     }
 }
 
@@ -84,7 +84,7 @@ class LayoutContainer extends React.Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
                 </head>
                 <body>
-                  <NavigationBar />
+                  <NavigationBar user_id={this.props.user_id}/>
 
                   <ParallaxContainer>
                     <h3 class="header center text-lighten-2">SEARCH, JOIN, JAM</h3>
