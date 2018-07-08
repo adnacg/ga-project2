@@ -102,28 +102,30 @@ class LayoutContainer extends React.Component {
                     </div>
                   </ParallaxContainer>
 
+                  <main>
                     {this.props.children}
+                  </main>
 
-                        <footer class="page-footer">
-                          <div class="container">
-                          <div>
-                            <a class="my-footer-text" href="#">Terms & Conditions</a> &nbsp;
-                            <a class="my-footer-text" href="#">Privacy Policy</a> &nbsp;
-                            <a class="my-footer-text" href="#">FAQ</a> &nbsp;
-                            <a class="my-footer-text" href="#">Contact</a>
+                  <footer class="page-footer">
+                    <div class="container">
+                    <div>
+                      <a class="my-footer-text" href="#">Terms & Conditions</a> &nbsp;
+                      <a class="my-footer-text" href="#">Privacy Policy</a> &nbsp;
+                      <a class="my-footer-text" href="#">FAQ</a> &nbsp;
+                      <a class="my-footer-text" href="#">Contact</a>
 
-                            <a class="my-footer-text text-lighten-4 right social-media fa fa-pinterest" href="#"></a>
-                            <a class="my-footer-text text-lighten-4 right social-media fa fa-twitter" href="#"></a>
-                            <a class="my-footer-text text-lighten-4 right social-media fa fa-instagram" href="#"></a>
-                            <a class="my-footer-text text-lighten-4 right social-media fa fa-facebook" href="#"></a>
+                      <a class="my-footer-text text-lighten-4 right social-media fa fa-pinterest" href="#"></a>
+                      <a class="my-footer-text text-lighten-4 right social-media fa fa-twitter" href="#"></a>
+                      <a class="my-footer-text text-lighten-4 right social-media fa fa-instagram" href="#"></a>
+                      <a class="my-footer-text text-lighten-4 right social-media fa fa-facebook" href="#"></a>
 
-                          </div>
-                          <div class="my-footer-text">Copyright © 2018 by Jam Away
+                    </div>
+                    <div class="my-footer-text">Copyright © 2018 by Jam Away
 
-                          </div>
-                          </div>
-                          <br/>
-                        </footer>
+                    </div>
+                    </div>
+                    <br/>
+                  </footer>
 
                     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
                     <script type="text/javascript" src="/js/materialize.min.js"></script>

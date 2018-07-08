@@ -32,13 +32,16 @@ class ProfileUpdate extends React.Component {
                       <span class="helper-text" data-error="wrong" data-success="right">Describe yourself so your fellow musicians get to know you! eg. What other musical talent you posses that are not listed here?</span>
                     </div>
                   </div>
-                  <input class="waves-effect waves-light btn s12" type="submit" value="Update" />
+                  <input class="waves-effect waves-light btn s12 right" type="submit" value="Update" />
                 </form>
 
-                <form class="col s12 center" method="post" action={"/user/" + this.props.user_id}>
-                <input type="hidden" name="_method" defaultValue="delete" />
+                <form class="delete-acc col s12 center" method="post" action={"/user/" + this.props.user_id}>
+                <div class="right">
+                  <input type="hidden" name="_method" value="delete" />
                   <h6 id="my-yellow-text">Delete My Account</h6>
                   <input class="waves-effect waves-light btn s12" type="submit" value="Delete" />
+                </div>
+                  <br/><br/><br/><br/><br/>
                 </form>
 
               </div>

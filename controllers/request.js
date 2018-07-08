@@ -10,8 +10,8 @@ let createControllers = db => {
                 response.status(401);
             }
             let successCallback = (result) => {
-                let requestInfo = result.rows; // array of potentially my many requests
-                let context = {request: requestInfo};
+                let requestInfo = result.rows;
+                let context = {requests: requestInfo};
                 response.render('request', context);
             }
             Request.show(post_id, errorCallback, successCallback);
@@ -54,11 +54,6 @@ let createControllers = db => {
             }
             Request.decline(requestId, errorCallback, successCallback);
         },
-
-
-
-
-
     }
 }
 

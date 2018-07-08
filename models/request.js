@@ -1,13 +1,11 @@
 let createRequestModel = db => {
     class Request {
 
-        constructor(id, name, email, passwordHash, bio, is_deleted) {
+        constructor(id, requester_id, post_id, status) {
             this.id = id;
-            this.name = name;
-            this.email = email;
-            this.passwordHash = passwordHash;
-            this.bio = bio;
-            this.is_deleted = is_deleted;
+            this.requester_id = requester_id;
+            this.post_id = post_id;
+            this.status = status;
         }
 
         static show(post_id, errorCallback, successCallback) {
@@ -45,13 +43,6 @@ let createRequestModel = db => {
                 }
             })
         }
-
-
-
-
-
-
-
     }
 
     return Request;

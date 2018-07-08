@@ -5,15 +5,36 @@ class Profile extends React.Component {
 
     render() {
 
+        const arrayOfMyPost = this.props.posts.map( function(currentPost) {
+            return (
+              <div key={currentPost.id} id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{currentPost.location}&nbsp;
+              <span id="my-badge" class="new badge" data-badge-caption={currentPost.status}></span><br/><br/>
+                <form class="waves-effect waves-light btn-small s12" method="post" action={"/request/" + currentPost.id}>
+                  <input type="submit" value="See Requests"/>
+                </form>&nbsp;&nbsp;&nbsp;
+                <form class="waves-effect waves-light btn-small s12" method="post" action={"/post/" + currentPost.id + "/update"}>
+                  <input type="submit" value="Update" />
+                </form>&nbsp;&nbsp;&nbsp;
+                <form class="waves-effect waves-light btn-small s12" method="get" action={"/post/" + currentPost.id + "/delete"}>
+                  <input type="submit" value="Delete" />
+                </form>
+              </div>
+            );
+        });
+
+        const arrayOfMyRequest = this.props.requests.map( function(currentRequest) {
+            return (
+              <div key={currentRequest.id} id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{currentRequest.location}&nbsp;
+              <span id="my-badge" class="new badge" data-badge-caption={currentRequest.status}></span><br/><br/>
+                <a id="my-music-card" class="btn-small">{currentRequest.name}</a>&nbsp;&nbsp;&nbsp;
+                {currentRequest.status === "Accepted" ? (<a class="waves-effect waves-light btn-small s12">CONTACT</a>) : (<div></div>)}
+              </div>
+            );
+        });
+
         return (
 
             <LayoutContainer user_id={this.props.user_id}>
-
-              <div class="container center">
-                <form id="my-action-btn" class="btn-small"  method="post" action={"/user/" + this.props.user_id}>
-                  <input type="submit" value="Update Profile" />
-                </form>
-              </div>
 
                 <table id="my-yellow-text" class="container">
                     <thead>
@@ -40,22 +61,27 @@ class Profile extends React.Component {
                       <tr>
                         <td id="my-top-text">My Posts</td>
                         <td>
-                          <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.post[0].location}<span id="my-badge" class="new badge" data-badge-caption={this.props.post[0].status}></span><br/><br/>
-                            <form id="my-action-btn" class="btn-small" method="post" action={"/request/" + this.props.post[0].id}><input type="submit" value="Requests"/></form>&nbsp;&nbsp;&nbsp;
-                            <form id="my-action-btn" class="btn-small" method="post" action={"/post/" + this.props.post[0].id + "/update"}><input type="submit" value="Update" /></form>&nbsp;&nbsp;&nbsp;
-                            <form id="my-action-btn" class="btn-small" method="get" action={"/post/" + this.props.post[0].id + "/delete"}><input type="submit" value="Delete" /></form>
-                          </div>
+
+                          {arrayOfMyPost}
+
                         </td>
                       </tr>
                       <tr>
                         <td id="my-top-text">My Requests</td>
                         <td>
-                          <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.request[0].location}<br/><br/><a id="my-music-card" class="btn-small">{this.props.request[0].name}</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">{this.props.request[0].status}</a></div>
-                          <div id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{this.props.request[0].location}<br/><br/><a id="my-music-card" class="btn-small">{this.props.request[0].name}</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">{this.props.request[0].status}</a></div>
+
+                          {arrayOfMyRequest}
+
                         </td>
                       </tr>
                     </tbody>
               </table>
+              <div class="container update-profile-btn">
+                <form method="post" action={"/user/" + this.props.user_id}>
+                  <input class="waves-effect waves-light btn s12 right" type="submit" value="Update Profile" />
+                </form>
+              </div>
+              <br/><br/><br/><br/><br/>
 
 
 

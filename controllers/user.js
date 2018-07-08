@@ -76,7 +76,7 @@ let createControllers = db => {
                 });
                 let postInfo = result2.rows; // array of potentially my many posts
                 let requestInfo = result3.rows; // array of potentially my many requests
-                let context = {user: userInfo, post: postInfo, request: requestInfo};
+                let context = {user: userInfo, posts: postInfo, requests: requestInfo};
                 response.render('profile', context);
             }
             User.read(currentUserId, errorCallback, successCallback);

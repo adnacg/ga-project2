@@ -139,7 +139,8 @@ class Postform extends React.Component {
                     </div>
                   </div>
 
-                  <input class="waves-effect waves-light btn s12" type="submit" value="Post!" />
+                  <input class="waves-effect waves-light btn s12 right" type="submit" value="Post!" />
+                  <br/><br/><br/><br/><br/>
                 </form>
               </div>
 

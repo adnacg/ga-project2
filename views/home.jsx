@@ -23,7 +23,7 @@ class Home extends React.Component {
                         <div class="col s12 m3">
                           <div class="icon-block">
                             <h2 class="center"><i class="material-icons">event_note</i></h2>
-                            <h5 class="center">Post Yourself</h5>
+                            <h5 class="center">Post Jam Yourself</h5>
 
                             <p class="light">If you don’t see your preferred listing, then post a jam yourself! Take the first step to connect with like-minded individuals and grow your community!</p>
                           </div>
