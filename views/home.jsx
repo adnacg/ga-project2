@@ -55,12 +55,14 @@ class Home extends React.Component {
                       <div class="container">
                         <div class="my-home-info row left">
                           <h5 class="my-home-info header s12 light m6"><strong>Why Jam Away?</strong></h5>
-                          <p class="col s12 light m6">Finding someone to jam with, based on the instruments, genres, and skill levels is not an easy task. We want to build this jamming community, one where everyone has the opportunity to connect with fellow aspiring musicians, find suitable jamming partners, and jam away! Plus, its EASY to use and 100% FREE! Just browse through our posting list for a matching jam to join. If you don’t see one, list it yourself and get connected! Let’s build this jamming community together through JAMAWAY!</p>
+                          <p class="s12 light m6">Finding someone to jam with, based on the instruments, genres, and skill levels is not an easy task. We want to build this jamming community, one where everyone has the opportunity to connect with fellow aspiring musicians, find suitable jamming partners, and jam away! Plus, its EASY to use and 100% FREE! Just browse through our posting list for a matching jam to join. If you don’t see one, list it yourself and get connected! Let’s build this jamming community together through JAMAWAY!</p>
                         </div>
                       </div>
                     </div>
-                    <div class="parallax"><img src="/assets/images/home3.jpg" alt="img2" /></div>
+                    <div class="parallax"><img src="/assets/images/home32.jpg" alt="img2" /></div>
                   </div>
+
+
 
 
                   <div class="container">

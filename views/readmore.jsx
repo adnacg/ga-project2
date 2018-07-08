@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+const Timestamp = require('react-timestamp');
 
 class Readmore extends React.Component {
 
@@ -9,25 +10,26 @@ class Readmore extends React.Component {
 
             <LayoutContainer user_id={this.props.user_id}>
                 <div class="container">
-                  <form class="col s12" method="POST" action={"/post/" + this.props.id}>
+                  <form class="col s12" method="POST" action={"/post/" + this.props.post.id}>
 
                     <table id="my-yellow-text" class="highlight centered">
                       <tbody>
+
                         <tr>
                           <td class="right">Bio</td>
-                          <td>A violinist who’s living the rock and roll. Coffee addict, day- dreamer, and nature lover.</td>
+                          <td>{this.props.post.bio}</td>
                         </tr>
                         <tr>
                           <td class="right">Location</td>
-                          <td>Orchard</td>
+                          <td>{this.props.post.location}</td>
                         </tr>
                         <tr>
                           <td class="right">Pax</td>
-                          <td>2</td>
+                          <td>{this.props.post.pax}</td>
                         </tr>
                         <tr>
                           <td class="right">Skill</td>
-                          <td>Advance</td>
+                          <td>{this.props.post.skill}</td>
                         </tr>
                         <tr>
                           <td class="right">Instrument</td>
@@ -39,12 +41,18 @@ class Readmore extends React.Component {
                         </tr>
                         <tr>
                           <td class="right">Message</td>
-                          <td>Hey there, I know I’m being unconventional here (as a violinist), but I would like to look for the like-minded to jam together. Looking for pianist or guitarist, preferably in rock and metal music. Connect with me and we can arrange a session!</td>
+                          <td>{this.props.post.message}</td>
                         </tr>
+                        {this.props.time}
                       </tbody>
+
                     </table>
 
-                    <input class="waves-effect waves-light btn s12 right" type="submit" value="Request To Join" />
+                    <div class="my-timestamp right right-align">Posted on: <Timestamp time={this.props.post.post_time} format='full' /><br/><br/>
+                    <input class="waves-effect waves-light btn s12" type="submit" value="Request To Join" />
+                    </div>
+                    <br/><br/><br/><br/><br/>
+
                   </form>
                 </div>
 

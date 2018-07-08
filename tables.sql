@@ -32,11 +32,12 @@ CREATE TABLE IF NOT EXISTS user_genre (
 CREATE TABLE IF NOT EXISTS post (
   id SERIAL PRIMARY KEY,
   location varchar(255),
-  timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   pax INTEGER,
   availability varchar(255),
   skill varchar(255),
   message varchar(255),
+-- post_date date DEFAULT NOW(),
+  post_time timestamp DEFAULT CURRENT_TIMESTAMP,
   status varchar(255), -- active, full or deleted
   is_deleted varchar(255)
 );
@@ -69,9 +70,17 @@ CREATE TABLE IF NOT EXISTS request (
 );
 
 
---foreign key - enforce unqieuness to a particular request (pair uniqueness)
---dont need this
---is this required? is 1 to 1, and a request is unique, does it make sense to have this?
+
+
+
+
+
+
+
+
+-- foreign key - enforce unqieuness to a particular request (pair uniqueness)
+-- dont need this
+-- is this required? is 1 to 1, and a request is unique, does it make sense to have this?
 -- CREATE TABLE IF NOT EXISTS user_request (
 --   id SERIAL PRIMARY KEY,
 --   user_id INTEGER,

@@ -8,12 +8,31 @@ body {
   background-color: #456355;
 }
 
+nav .brand-logo {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+}
+
+h6 {
+  font-size: 0.8rem;
+}
+
+.my-timestamp {
+  color: #EDCB64;
+  font-size: 0.6rem;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
 #my-yellow-text {
   color: #EDCB64;
 }
 
 #my-yellow-background {
-  color: #EDCB64;
+  background-color: #EDCB64;
 }
 
 #my-green-text {
@@ -21,7 +40,7 @@ body {
 }
 
 #my-green-background {
-  color: #456355;
+  background-color: #456355;
 }
 
 #my-action-btn {
@@ -82,7 +101,7 @@ nav .brand-logo {
 }
 
 p {
-  line-height: 2rem;
+  line-height: 1.6rem;
 }
 
 .sidenav-trigger {
@@ -98,11 +117,9 @@ p {
   font-size: 10px;
 }
 
-.my-social-media {
-  width: 20px;
-  height: 20px;
-  color: #EDCB64;
-  margin-left: 10px;
+.social-media {
+  font-size: 20px;
+  margin-left: 20px;
 }
 
 .header {
@@ -118,7 +135,7 @@ p {
 }
 
 .parallax-container {
-  min-height: 380px;
+  min-height: 300px;
   line-height: 0;
   height: auto;
   color: #EDCB64;
@@ -131,7 +148,7 @@ p {
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;
-    top: 40%;
+    top: 0.5%;
   }
   #index-banner .section {
     top: 10%;
@@ -153,6 +170,6 @@ p {
 }
 
 footer.page-footer {
-  margin-top: 20px;
   background-color: #456355;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2)
 }

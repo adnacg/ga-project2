@@ -52,6 +52,7 @@ app.engine('jsx', reactEngine);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 
+
 // ROUTES
 // use the user router
 app.use('/user', user);

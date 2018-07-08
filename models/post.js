@@ -66,6 +66,29 @@ let createPostModel = db => {
             });
         }
 
+        static read(errorCallback, successCallback) {
+            let queryText = 'SELECT post.id, post.location, users.name FROM post INNER JOIN user_post ON user_post.post_id = post.id INNER JOIN users ON user_post.user_id = users.id ORDER BY post.post_time DESC';
+            db.query(queryText, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback(result);
+                }
+            });
+        }
+
+        static readmore(postId, errorCallback, successCallback) {
+            let queryText = 'SELECT post.id, post.location, post.pax, post.skill, post.message, post.post_time, users.name, users.bio FROM post INNER JOIN user_post ON user_post.post_id = post.id INNER JOIN users ON user_post.user_id = users.id WHERE post.id = $1';
+            let values = [postId];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback(result);
+                }
+            });
+        }
+
         static request(postReqInfo, errorCallback, successCallback) {
             let queryText = 'INSERT INTO request (post_id, requester_id, status) VALUES ($1, $2, $3) RETURNING *';
             let values = [postReqInfo.postId, postReqInfo.requester_id, postReqInfo.status];

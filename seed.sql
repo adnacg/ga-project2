@@ -23,7 +23,6 @@ INSERT INTO instrument (name) VALUES('Xylophone') RETURNING *;
 INSERT INTO instrument (name) VALUES('Trumpet') RETURNING *;
 INSERT INTO instrument (name) VALUES('Other') RETURNING *;
 
-
 INSERT INTO genre (name) VALUES('Jazz') RETURNING *;
 INSERT INTO genre (name) VALUES('Blues') RETURNING *;
 INSERT INTO genre (name) VALUES('Soul') RETURNING *;
@@ -39,3 +38,33 @@ INSERT INTO genre (name) VALUES('Metal') RETURNING *;
 INSERT INTO genre (name) VALUES('Alt Rock') RETURNING *;
 INSERT INTO genre (name) VALUES('Intrumental') RETURNING *;
 INSERT INTO genre (name) VALUES('Other') RETURNING *;
+
+INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Orchard', '2', 'Usually on weekends.', 'Intermediate to Advance', 'Looking to jam with like-minded rock and rollers!', 'active', 'false');
+INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Bugis', '3', 'Usually weekdays after 7pm.', 'Beginner friendly', 'Looking to jam with like a rock star!', 'active', 'false');
+INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Holland', '3', 'Usually weekdays after 8pm.', 'Intermediate level', 'Finding a pal to jam in the same genre.', 'active', 'false');
+INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Hougang', '4', 'Usually weekdays after 9pm.', 'Advance', 'Let''s not be shy and join my jam!', 'active', 'false');
+INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('East Coast', '2', 'Usually weekdays after 10pm.', 'Beginner', 'For the serious jammers only.', 'active', 'false');
+INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Changi', '1', 'Usually weekdays after 12midnight.', 'Advance', 'Would like to have some casual sessions with the listed instruments only.', 'active', 'false');
+
+INSERT INTO user_post (user_id, post_id) VALUES('1', '1');
+INSERT INTO user_post (user_id, post_id) VALUES('2', '2');
+INSERT INTO user_post (user_id, post_id) VALUES('3', '3');
+INSERT INTO user_post (user_id, post_id) VALUES('4', '4');
+INSERT INTO user_post (user_id, post_id) VALUES('5', '5');
+INSERT INTO user_post (user_id, post_id) VALUES('6', '6');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

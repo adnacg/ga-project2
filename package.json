@@ -29,6 +29,7 @@
     "method-override": "^2.3.10",
     "pg": "^7.4.3",
     "react": "^16.4.1",
-    "react-dom": "^16.4.1"
+    "react-dom": "^16.4.1",
+    "react-timestamp": "^4.4.0"
   }
 }

@@ -5,6 +5,17 @@ class List extends React.Component {
 
     render() {
 
+        const arrayOfPosts = this.props.posts.map( function(currentPost) {
+            return (
+              <tr key={currentPost.id}>
+                <td >{currentPost.name}</td>
+                <td id="td-to-left"><i class="material-icons"> location_on </i>{currentPost.location}</td>
+                <td>Instrument<br/>Genre</td>
+                <td><a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/post/" + currentPost.id}>Read More</a></td>
+              </tr>
+            );
+        });
+
         return (
 
             <LayoutContainer user_id={this.props.user_id}>
@@ -13,50 +24,14 @@ class List extends React.Component {
                     <thead>
                       <tr>
                           <th>Post By</th>
-                          <th></th>
+                          <th class="left">Location</th>
                           <th>Requirement</th>
-                          <th>Read More</th>
+                          <th></th>
                       </tr>
                     </thead>
-
                     <tbody>
 
-                      <tr>
-                        <td >Agatha</td>
-                        <td id="td-to-left"><i class="material-icons"> location_on </i>Orchard</td>
-                        <td>Instrument<br/>Genre</td>
-                        <td><a id="my-action-btn" class="waves-effect waves-light btn-small" href="http://localhost:3000/post/1">Read More</a></td>
-                      </tr>
-                      <tr>
-                        <td>Henckels</td>
-                        <td id="td-to-left"><i class="material-icons"> location_on </i>Bugis</td>
-                        <td>Instrument<br/>Genre</td>
-                        <td><a id="my-action-btn" class="waves-effect waves-light btn-small">Read More</a></td>
-                      </tr>
-                      <tr>
-                        <td>Clotilde</td>
-                        <td id="td-to-left"><i class="material-icons"> location_on </i>Holland</td>
-                        <td>Instrument<br/>Genre</td>
-                        <td><a id="my-action-btn" class="waves-effect waves-light btn-small">Read More</a></td>
-                      </tr>
-                      <tr>
-                        <td>Dmitri</td>
-                        <td id="td-to-left"><i class="material-icons"> location_on </i>Hougang</td>
-                        <td>Instrument<br/>Genre</td>
-                        <td><a id="my-action-btn" class="waves-effect waves-light btn-small">Read More</a></td>
-                      </tr>
-                      <tr>
-                        <td>Gustave</td>
-                        <td id="td-to-left"><i class="material-icons"> location_on </i>East Coast</td>
-                        <td>Instrument<br/>Genre</td>
-                        <td><a id="my-action-btn" class="waves-effect waves-light btn-small">Read More</a></td>
-                      </tr>
-                      <tr>
-                        <td>Kovacs</td>
-                        <td id="td-to-left"><i class="material-icons"> location_on </i>Changi</td>
-                        <td>Instrument<br/>Genre</td>
-                        <td><a id="my-action-btn" class="waves-effect waves-light btn-small">Read More</a></td>
-                      </tr>
+                      {arrayOfPosts}
 
                     </tbody>
               </table>

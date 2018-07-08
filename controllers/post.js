@@ -4,7 +4,15 @@ let createControllers = db => {
 
     return {
         postRead: (request, response) => {
-            response.render('post');
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = (result) => {
+                let context = {posts: result.rows};
+                response.render('post', context);
+            }
+            Post.read(errorCallback, successCallback);
         },
 
         formRead: (request, response) => {
@@ -36,10 +44,16 @@ let createControllers = db => {
         },
 
         postReadMore: (request, response) => {
-            let context = {
-                id: request.params.id
-            };
-            response.render('readmore', context);
+            let postId = request.params.id;
+            let errorCallback = (error) => {
+                console.log("Error:", error);
+                response.status(401);
+            }
+            let successCallback = (result) => {
+                let context = {post: result.rows[0]};
+                response.render('readmore', context);
+            }
+            Post.readmore(postId, errorCallback, successCallback);
         },
 
         postCreateRequest: (request, response) => {
@@ -110,7 +124,6 @@ let createControllers = db => {
             }
             Post.delete(postId, errorCallback, successCallback);
         },
-
 
     }
 }
