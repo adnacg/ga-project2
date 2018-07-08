@@ -8,7 +8,7 @@ class NavigationBar extends React.Component {
               <div class="navbar-fixed">
               <nav class="mynavbar" role="navigation">
                   <div class="nav-wrapper container">
-                    <a id="logo-container" href="http://localhost:3000/" class="brand-logo">JAM AWAY</a>
+                    <a id="logo-container" href="http://localhost:3000/" class="brand-logo"><img class="logo-img" src="/assets/images/logo.svg"/></a>
                     <ul class="right hide-on-med-and-down">
                       <li><a href="/post">Browse Jams</a></li>
                       <li><a href="/post/new">Post Jams</a></li>
@@ -36,7 +36,7 @@ class NavigationBar extends React.Component {
               <div class="navbar-fixed">
               <nav class="mynavbar" role="navigation">
                   <div class="nav-wrapper container">
-                    <a id="logo-container" href="http://localhost:3000/" class="brand-logo">JAM AWAY</a>
+                    <a id="logo-container" href="http://localhost:3000/" class="brand-logo"><img class="logo-img" src="/assets/images/logo.svg"/></a>
                     <ul class="right hide-on-med-and-down">
                       <li><a href="http://localhost:3000/post">Browse Jams</a></li>
                       <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
@@ -50,7 +50,7 @@ class NavigationBar extends React.Component {
                       <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
                       <li><a href="http://localhost:3000/user/register">Register</a></li>
                       <li><a href="http://localhost:3000/user/login">Login</a></li>
-                      <li><a href="#"><i class="material-icons">search</i></a></li>
+                      <li><a href="#">Search</a></li>
                     </ul>
                     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
                   </div>
@@ -61,20 +61,6 @@ class NavigationBar extends React.Component {
     }
 }
 
-class ParallaxContainer extends React.Component {
-    render() {
-      return (
-        <div id="index-banner" class="parallax-container">
-          <div class="section no-pad-bot">
-            <div class="container">
-              {this.props.children}
-            </div>
-          </div>
-          <div class="parallax"><img src="/assets/images/home1.jpg" alt="img1" /></div>
-        </div>
-      )
-    }
-}
 
 class LayoutContainer extends React.Component {
     render() {
@@ -91,20 +77,7 @@ class LayoutContainer extends React.Component {
                 <body>
                   <NavigationBar user_id={this.props.user_id}/>
 
-                  <ParallaxContainer>
-                    <h3 class="header center text-lighten-2">SEARCH, JOIN, JAM</h3>
-                    <div class="row center">
-                      <h6 class="header col s12 light">Singapore’s number one platform to connect with fellow musicians</h6>
-                    </div>
-                    <div class="row center">
-                      <a href="http://localhost:3000/post" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">JOIN A JAM</a> &nbsp;
-                      <a href="http://localhost:3000/post/new" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">POST A JAM</a>
-                    </div>
-                  </ParallaxContainer>
-
-                  <main>
-                    {this.props.children}
-                  </main>
+                  <main>{this.props.children}</main>
 
                   <footer class="page-footer">
                     <div class="container">

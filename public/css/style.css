@@ -11,6 +11,10 @@ body {
   flex-direction: column;
 }
 
+.logo-img {
+  vertical-align: middle;
+}
+
 main {
   flex: 1 0 auto;
 }

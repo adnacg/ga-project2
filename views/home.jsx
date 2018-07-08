@@ -1,12 +1,36 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
 
+class ParallaxContainer extends React.Component {
+    render() {
+      return (
+        <div id="index-banner" class="parallax-container">
+          <div class="section no-pad-bot">
+            <div class="container">
+              <h3 class="header center text-lighten-2">SEARCH, JOIN, JAM</h3>
+              <div class="row center">
+                <h6 class="header col s12 light">Singapore’s number one platform to connect with fellow musicians</h6>
+              </div>
+              <div class="row center">
+                <a href="http://localhost:3000/post" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">JOIN A JAM</a> &nbsp;
+                <a href="http://localhost:3000/post/new" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">POST A JAM</a>
+              </div>
+            </div>
+          </div>
+          <div class="parallax"><img src="/assets/images/home1.jpg" alt="img1" /></div>
+        </div>
+      )
+    }
+}
+
 class Home extends React.Component {
     render() {
 
         return (
 
             <LayoutContainer user_id={this.props.user_id}>
+
+                  <ParallaxContainer/>
 
                   <div class="container my-home-instruction">
                     <div class="section">

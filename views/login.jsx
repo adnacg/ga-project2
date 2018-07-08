@@ -24,7 +24,7 @@ class Login extends React.Component {
                   </div>
 
                   <input class="waves-effect waves-light btn s12" type="submit" value="Login" />
-                  <p id="my-yellow-text">New to Jamaway? Create an account <a id="my-yellow-text" href="">here</a>.</p>
+                  <p id="my-yellow-text">New to Jamaway? Create an account <a id="my-yellow-text" href="/user/register">here</a>.</p>
                 </form>
               </div>
 

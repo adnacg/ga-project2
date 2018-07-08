@@ -40,7 +40,12 @@ let createControllers = db => {
                 request.flash('success', 'Successfully created post.');
                 response.redirect('/post');
             }
-            Post.create(postInfo, currentUserId, errorCallback, successCallback);
+            if (request.cookies.user_id) {
+                Post.create(postInfo, currentUserId, errorCallback, successCallback);
+            } else {
+                request.flash('info', 'Please login to continue.');
+                response.redirect('/user/login');
+            }
         },
 
         postReadMore: (request, response) => {
@@ -70,7 +75,12 @@ let createControllers = db => {
                 request.flash('success', 'Successfully requested to join.');
                 response.redirect('/post');
             }
-            Post.request(postReqInfo, errorCallback, successCallback);
+            if (request.cookies.user_id) {
+                Post.request(postReqInfo, errorCallback, successCallback);
+            } else {
+                request.flash('info', 'Please login to continue.');
+                response.redirect('/user/login');
+            }
         },
 
         postUpdateQ: (request, response) => {

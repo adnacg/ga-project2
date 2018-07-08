@@ -39,6 +39,7 @@ class Register extends React.Component {
                   <input class="waves-effect waves-light btn s12" type="submit" value="Submit" />
                 </form>
               </div>
+              <br/><br/><br/><br/><br/>
 
             </LayoutContainer>
 
