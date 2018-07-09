@@ -17,7 +17,7 @@ class Home extends React.Component {
                           <h6 class="header col s12 light">Singapore’s number one platform to connect with fellow musicians</h6>
                         </div>
                         <div class="row center">
-                          <a href="/post" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">JOIN A JAM</a> &nbsp;
+                          <a href="/post" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">JOIN A JAM</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <a href="/post/new" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">POST A JAM</a>
                         </div>
                       </div>
@@ -25,7 +25,7 @@ class Home extends React.Component {
                     <div class="parallax"><img src="/assets/images/home1.jpg" alt="img1" /></div>
                   </ParallaxContainer>
 
-                  <div class="container my-home-instruction">
+                  <div id="my-yellow-text" class="container">
                     <div class="section">
                       <div class="row">
                         <div class="col s12 m3">
@@ -40,7 +40,7 @@ class Home extends React.Component {
                         <div class="col s12 m3">
                           <div class="icon-block">
                             <h2 class="center"><i class="material-icons">event_note</i></h2>
-                            <h5 class="center">Post Jam Yourself</h5>
+                            <h5 class="center">Post Yourself</h5>
 
                             <p class="light">If you don’t see your preferred listing, then post a jam yourself! Take the first step to connect with like-minded individuals and grow your community!</p>
                           </div>
@@ -70,9 +70,14 @@ class Home extends React.Component {
                   <div class="parallax-container valign-wrapper">
                     <div class="section no-pad-bot">
                       <div class="container">
-                        <div class="my-home-info row left">
-                          <h5 class="my-home-info header s12 light m6"><strong>Why Jam Away?</strong></h5>
-                          <p class="col s12 light m6">Finding someone to jam with, based on the instruments, genres, and skill levels is not an easy task. We want to build this jamming community, one where everyone has the opportunity to connect with fellow aspiring musicians, find suitable jamming partners, and jam away! Plus, its EASY to use and 100% FREE! Just browse through our posting list for a matching jam to join. If you don’t see one, list it yourself and get connected! Let’s build this jamming community together through JAMAWAY!</p>
+                        <div id="my-homepage-info" class="row left">
+                          <h5 id="my-green-text" class="header s12 light m6"><strong>Why Jam Away?</strong></h5>
+                          <p id="my-green-text" class="col s12 light m6">
+                            Finding someone to jam with, is not an easy task. Jam Away is a jamming community where you connect with fellow aspiring musicians.
+                            <br/>
+                            Plus, its <strong>EASY</strong> to use and <strong>100% FREE</strong>!
+                            <br/>Let’s build this jamming community together through JAMAWAY!
+                          </p>
                         </div>
                       </div>
                     </div>
@@ -89,7 +94,7 @@ class Home extends React.Component {
                         <div class="col s12 center">
                           <h3><i class="mdi-content-send"></i></h3>
                           <a id="my-action-btn" class="btn-large waves-effect waves-light lighten-1" href="/post">Browse The List Now</a>
-                          <p class="my-home-instruction center-align light">Find the right partner and jam your hearts away!</p>
+                          <p id="my-yellow-text" class="center-align light">Find the right partner and jam your hearts away!</p>
                         </div>
                       </div>
 

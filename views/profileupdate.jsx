@@ -19,13 +19,13 @@ class ProfileUpdate extends React.Component {
 
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="name" type="text" name="name" class="validate" value={this.props.user.name} />
+                      <input id="name" type="text" name="name" value={this.props.user.name} />
                       <label for="name">Your Name</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="email" type="email" name="email" class="validate" value={this.props.user.email}/>
+                      <input id="email" type="email" name="email" value={this.props.user.email}/>
                       <label for="email">Email</label>
                     </div>
                   </div>

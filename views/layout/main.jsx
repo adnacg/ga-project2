@@ -21,7 +21,7 @@ class NavigationBar extends React.Component {
                       <li><a href="/post">Browse Jams</a></li>
                       <li><a href="/post/new">Post Jams</a></li>
                       <li><a href={"/user/" + currentUserId}>Profile</a></li>
-                      <li><a href="/post/new">Logout</a></li>
+                      <li><a href="/user/logout">Logout</a></li>
                       <li><a href="#">Search</a></li>
                     </ul>
                     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
@@ -38,18 +38,18 @@ class NavigationBar extends React.Component {
                   <div class="nav-wrapper container">
                     <a id="logo-container" href="http://localhost:3000/" class="brand-logo"><img class="logo-img" src="/assets/images/logo.svg"/></a>
                     <ul class="right hide-on-med-and-down">
-                      <li><a href="http://localhost:3000/post">Browse Jams</a></li>
-                      <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
-                      <li><a href="http://localhost:3000/user/register">Register</a></li>
-                      <li><a href="http://localhost:3000/user/login">Login</a></li>
+                      <li><a href="/post">Browse Jams</a></li>
+                      <li><a href="/post/new">Post Jams</a></li>
+                      <li><a href="/user/register">Register</a></li>
+                      <li><a href="/user/login">Login</a></li>
                       <li><a href="#"><i class="material-icons">search</i></a></li>
                     </ul>
 
                     <ul id="nav-mobile" class="sidenav">
-                      <li><a href="http://localhost:3000/post">Browse Jams</a></li>
-                      <li><a href="http://localhost:3000/post/new">Post Jams</a></li>
-                      <li><a href="http://localhost:3000/user/register">Register</a></li>
-                      <li><a href="http://localhost:3000/user/login">Login</a></li>
+                      <li><a href="/post">Browse Jams</a></li>
+                      <li><a href="/post/new">Post Jams</a></li>
+                      <li><a href="/user/register">Register</a></li>
+                      <li><a href="/user/login">Login</a></li>
                       <li><a href="#">Search</a></li>
                     </ul>
                     <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>

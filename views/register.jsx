@@ -23,25 +23,26 @@ class Register extends React.Component {
 
                 <div class="container">
                 <form class="col s12" method="POST" action="/user/register">
-                  <br/><br/><br/>
+                  <br/><br/>
+
                   <h5 id="my-yellow-text">GENERAL INFORMATION</h5>
                   <br/><br/>
 
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="name" type="text" name="name" class="validate"/>
+                      <input id="name" type="text" name="name" />
                       <label for="name">Your Name</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="email" type="email" name="email" class="validate"/>
+                      <input id="email" type="email" name="email" />
                       <label for="email">Email</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="password" type="password" name="password" class="validate"/>
+                      <input id="password" type="password" name="password" />
                       <label for="password">Password</label>
                     </div>
                   </div>

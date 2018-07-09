@@ -54,6 +54,25 @@ let createControllers = db => {
             }
             Request.decline(requestId, errorCallback, successCallback);
         },
+
+        deleteRequestQ: (request, response) => {
+            let requestId = request.params.id;
+            let context = {requestId: requestId};
+            response.render('requestdelete', context);
+        },
+
+        deleteRequest: (request, response) => {
+            let requestId = request.params.id;
+            let currentUserId = request.cookies.user_id;
+            let errorCallback = (error) => {
+                console.log("Error deleting request:", error);
+                response.status(401);
+            }
+            let successCallback = () => {
+                response.redirect('/user/' + currentUserId);
+            }
+            Request.delete(requestId, errorCallback, successCallback);
+        },
     }
 }
 

@@ -31,6 +31,11 @@ h6 {
   font-size: 0.8rem;
 }
 
+.underlined:hover {
+  text-decoration: underline;
+  font-size: 110%;
+}
+
 .update-profile-btn {
   margin-top: 20px;
 }
@@ -90,7 +95,6 @@ h6 {
   color: #EDCB64;
 }
 
-
 #my-badge {
   background-color: #456355;
   color: #EDCB64;
@@ -142,14 +146,6 @@ p {
 }
 
 .header {
-  color: #EDCB64;
-}
-
-.my-home-info {
-  color: #456355;
-}
-
-.my-home-instruction {
   color: #EDCB64;
 }
 

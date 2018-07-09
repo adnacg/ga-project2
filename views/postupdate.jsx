@@ -20,25 +20,25 @@ class PostUpdate extends React.Component {
 
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="location" type="text" name="location" class="validate" value={this.props.post.location} />
+                      <input id="location" type="text" name="location" value={this.props.post.location} />
                       <label for="location">Location</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="pax" type="text" name="pax" class="validate" value={this.props.post.pax} />
+                      <input id="pax" type="text" name="pax" value={this.props.post.pax} />
                       <label for="pax">Pax</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="availability" type="text" name="availability" class="validate" value={this.props.post.availability} />
+                      <input id="availability" type="text" name="availability" value={this.props.post.availability} />
                       <label for="availability">Availability</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="skill" type="text" name="skill" class="validate" value={this.props.post.skill} />
+                      <input id="skill" type="text" name="skill" value={this.props.post.skill} />
                       <label for="skill">Skill</label>
 
                     </div>
@@ -46,7 +46,7 @@ class PostUpdate extends React.Component {
 
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="instrument" type="text" name="instrument" class="validate"/>
+                      <input id="instrument" type="text" name="instrument" />
                       <label for="instrument">Instrument</label>
                       <p>
                         <label>
@@ -134,7 +134,7 @@ class PostUpdate extends React.Component {
 
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="genre" type="text" name="genre" class="validate"/>
+                      <input id="genre" type="text" name="genre" />
                       <label for="genre">Genre</label>
                     </div>
                   </div>

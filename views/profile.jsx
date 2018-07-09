@@ -30,7 +30,7 @@ class Profile extends React.Component {
                 <br/><br/>
                 <a id="my-music-card" class="btn-small">{currentRequest.name}</a>&nbsp;&nbsp;&nbsp;
                 {currentRequest.status === "accepted" ? (<a class="waves-effect waves-light btn-small s12">CONTACT</a>) : (<div></div>)}
-                {currentRequest.status === "declined" ? (<p>Delete the request &nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light btn-small s12">DELETE</a></p>) : (<div></div>)}
+                {currentRequest.status === "declined" ? (<p>Delete the request &nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light btn-small s12" href={"/request/" + currentRequest.id + "/delete"}>DELETE</a></p>) : (<div></div>)}
               </div>
             );
         });

@@ -27,25 +27,25 @@ class Postform extends React.Component {
                 <form class="col s12" method="POST" action="/post/new">
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="location" type="text" name="location" class="validate"/>
+                      <input id="location" type="text" name="location" />
                       <label for="location">Location</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="pax" type="text" name="pax" class="validate"/>
+                      <input id="pax" type="text" name="pax" />
                       <label for="pax">Pax</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="availability" type="text" name="availability" class="validate"/>
+                      <input id="availability" type="text" name="availability" />
                       <label for="availability">Availability</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="skill" type="text" name="skill" class="validate"/>
+                      <input id="skill" type="text" name="skill" />
                       <label for="skill">Skill</label>
 
                     </div>
@@ -53,7 +53,7 @@ class Postform extends React.Component {
 
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="instrument" type="text" name="instrument" class="validate"/>
+                      <input id="instrument" type="text" name="instrument" />
                       <label for="instrument">Instrument</label>
                       <p>
                         <label>
@@ -141,7 +141,7 @@ class Postform extends React.Component {
 
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="genre" type="text" name="genre" class="validate"/>
+                      <input id="genre" type="text" name="genre" />
                       <label for="genre">Genre</label>
                     </div>
                   </div>

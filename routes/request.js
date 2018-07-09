@@ -11,6 +11,9 @@ const createRequestRouter = db => {
     router.get('/:id/decline', rc.declineRequestQ);
     router.post('/:id/decline', rc.declineRequest);
 
+    router.get('/:id/delete', rc.deleteRequestQ);
+    router.post('/:id/delete', rc.deleteRequest);
+
     return router;
 }
 

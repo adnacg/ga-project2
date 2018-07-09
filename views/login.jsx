@@ -22,25 +22,28 @@ class Login extends React.Component {
                     <div class="parallax"><img src="/assets/images/login.jpg" alt="img1" /></div>
                   </ParallaxContainer>
 
+                  <br/><br/>
+
                 <div class="container">
                 <form class="col s12" method="post" action="/user/login">
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="email" type="email" name="email" class="validate"/>
+                      <input id="email" type="email" name="email"/>
                       <label for="email">Email</label>
                     </div>
                   </div>
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
-                      <input id="password" type="password" name="password" class="validate"/>
+                      <input id="password" type="password" name="password"/>
                       <label for="password">Password</label>
                     </div>
                   </div>
 
-                  <input class="waves-effect waves-light btn s12" type="submit" value="Login" />
-                  <p id="my-yellow-text">New to Jamaway? Create an account <a id="my-yellow-text" href="/user/register">here</a>.</p>
+                  <input class="right waves-effect waves-light btn s12" type="submit" value="Login" /><br/><br/>
+                  <p id="my-yellow-text" class="right">New to Jamaway? Create an account <a id="my-yellow-text" class="underlined" href="/user/register">here</a>.</p>
                 </form>
               </div>
+              <br/><br/><br/><br/><br/>
 
             </LayoutContainer>
 

@@ -43,6 +43,19 @@ let createRequestModel = db => {
                 }
             })
         }
+
+        static delete(requestId, errorCallback, successCallback) {
+            let queryText = 'UPDATE request SET status = $1 WHERE id = $2';
+            let values = ['declined_deleted', requestId];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback();
+                }
+            })
+        }
+
     }
 
     return Request;

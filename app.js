@@ -73,7 +73,7 @@ app.get('/', (request, response) => {
 // show requester profile in request
 // flash
 // 1 user 1 post 1 request, NO request for own post
-
+// error pages like login error etc
 
 
 
