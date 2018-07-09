@@ -1,27 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
-
-class ParallaxContainer extends React.Component {
-    render() {
-      return (
-        <div id="index-banner" class="parallax-container">
-          <div class="section no-pad-bot">
-            <div class="container">
-              <h3 class="header center text-lighten-2">SEARCH, JOIN, JAM</h3>
-              <div class="row center">
-                <h6 class="header col s12 light">Singapore’s number one platform to connect with fellow musicians</h6>
-              </div>
-              <div class="row center">
-                <a href="http://localhost:3000/post" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">JOIN A JAM</a> &nbsp;
-                <a href="http://localhost:3000/post/new" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">POST A JAM</a>
-              </div>
-            </div>
-          </div>
-          <div class="parallax"><img src="/assets/images/home1.jpg" alt="img1" /></div>
-        </div>
-      )
-    }
-}
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class Home extends React.Component {
     render() {
@@ -30,7 +9,21 @@ class Home extends React.Component {
 
             <LayoutContainer user_id={this.props.user_id}>
 
-                  <ParallaxContainer/>
+                  <ParallaxContainer>
+                    <div class="section no-pad-bot">
+                      <div class="container">
+                        <h3 class="header center text-lighten-2"><strong>SEARCH, JOIN, JAM</strong></h3>
+                        <div class="row center">
+                          <h6 class="header col s12 light">Singapore’s number one platform to connect with fellow musicians</h6>
+                        </div>
+                        <div class="row center">
+                          <a href="/post" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">JOIN A JAM</a> &nbsp;
+                          <a href="/post/new" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">POST A JAM</a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="parallax"><img src="/assets/images/home1.jpg" alt="img1" /></div>
+                  </ParallaxContainer>
 
                   <div class="container my-home-instruction">
                     <div class="section">
@@ -79,11 +72,11 @@ class Home extends React.Component {
                       <div class="container">
                         <div class="my-home-info row left">
                           <h5 class="my-home-info header s12 light m6"><strong>Why Jam Away?</strong></h5>
-                          <p class="s12 light m6">Finding someone to jam with, based on the instruments, genres, and skill levels is not an easy task. We want to build this jamming community, one where everyone has the opportunity to connect with fellow aspiring musicians, find suitable jamming partners, and jam away! Plus, its EASY to use and 100% FREE! Just browse through our posting list for a matching jam to join. If you don’t see one, list it yourself and get connected! Let’s build this jamming community together through JAMAWAY!</p>
+                          <p class="col s12 light m6">Finding someone to jam with, based on the instruments, genres, and skill levels is not an easy task. We want to build this jamming community, one where everyone has the opportunity to connect with fellow aspiring musicians, find suitable jamming partners, and jam away! Plus, its EASY to use and 100% FREE! Just browse through our posting list for a matching jam to join. If you don’t see one, list it yourself and get connected! Let’s build this jamming community together through JAMAWAY!</p>
                         </div>
                       </div>
                     </div>
-                    <div class="parallax"><img src="/assets/images/home32.jpg" alt="img2" /></div>
+                    <div class="parallax"><img src="/assets/images/home33.jpg" alt="img2" /></div>
                   </div>
 
 

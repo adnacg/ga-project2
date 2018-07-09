@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class RequestAccept extends React.Component {
 
@@ -8,6 +9,8 @@ class RequestAccept extends React.Component {
         return (
 
             <LayoutContainer user_id={this.props.user_id}>
+
+              <br/><br/><br/>
 
               <div class="container">
                 <form method="post" action={"/request/" + this.props.requestId + "/accept"}>
@@ -20,7 +23,7 @@ class RequestAccept extends React.Component {
                         <div class="card-action">
                           <input type="submit" value="Yes" class="waves-effect waves-light btn-small"/>
                           &nbsp;&nbsp;&nbsp;
-                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/user/" + this.props.user_id}>No</a>
+                          <input type="submit" value="No" formmethod="get" formaction={"/user/" + this.props.user_id} class="waves-effect waves-light btn-small"/>
                         </div>
                       </div>
                     </div>

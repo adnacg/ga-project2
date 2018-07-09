@@ -67,7 +67,7 @@ let createPostModel = db => {
         }
 
         static read(errorCallback, successCallback) {
-            let queryText = 'SELECT post.id, post.location, users.name FROM post INNER JOIN user_post ON user_post.post_id = post.id INNER JOIN users ON user_post.user_id = users.id ORDER BY post.post_time DESC';
+            let queryText = "SELECT post.id, post.location, users.name FROM post INNER JOIN user_post ON user_post.post_id = post.id INNER JOIN users ON user_post.user_id = users.id WHERE post.is_deleted = 'false' ORDER BY post.post_time DESC";
             db.query(queryText, (error, result) => {
                 if (error) {
                     errorCallback(error);

@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class Logout extends React.Component {
 
@@ -9,6 +10,7 @@ class Logout extends React.Component {
 
             <LayoutContainer user_id={this.props.user_id}>
 
+              <br/><br/>
               <div class="container">
                 <form method="post" action="/user/logout">
                 <div class="col s12 m6 center">
@@ -20,7 +22,7 @@ class Logout extends React.Component {
                         <div class="card-action">
                           <input type="submit" value="Yes" class="waves-effect waves-light btn-small"/>
                           &nbsp;&nbsp;&nbsp;
-                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href="/post">No</a>
+                          <input type="submit" value="No" formmethod="get" formaction="/post" class="waves-effect waves-light btn-small"/>
                         </div>
                       </div>
                     </div>

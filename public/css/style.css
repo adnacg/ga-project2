@@ -127,6 +127,10 @@ p {
   background-color: #456355;
 }
 
+.waves-button-input, .waves-effect input[type="submit"] {
+  color: #456355;
+}
+
 .my-footer-text {
   color: #EDCB64;
   font-size: 10px;

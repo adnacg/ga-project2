@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class Register extends React.Component {
     render() {
@@ -8,9 +9,24 @@ class Register extends React.Component {
 
             <LayoutContainer user_id={this.props.user_id}>
 
+                  <ParallaxContainer>
+                    <div class="section no-pad-bot">
+                      <div class="container">
+                        <h3 class="header center text-lighten-2">REGISTER</h3>
+                        <div class="row center">
+                          <h6 class="header col s12 light">Join the amazing community for musicians today</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="parallax"><img src="/assets/images/register.jpg" alt="img1" /></div>
+                  </ParallaxContainer>
+
                 <div class="container">
                 <form class="col s12" method="POST" action="/user/register">
-                  <h6 id="my-yellow-text">General Information</h6>
+                  <br/><br/><br/>
+                  <h5 id="my-yellow-text">GENERAL INFORMATION</h5>
+                  <br/><br/>
+
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
                       <input id="name" type="text" name="name" class="validate"/>
@@ -36,7 +52,7 @@ class Register extends React.Component {
                       <span class="helper-text" data-error="wrong" data-success="right">Describe yourself so your fellow musicians get to know you! eg. What other musical talent you posses that are not listed here?</span>
                     </div>
                   </div>
-                  <input class="waves-effect waves-light btn s12" type="submit" value="Submit" />
+                  <input class="waves-effect waves-light btn s12 right" type="submit" value="Register" />
                 </form>
               </div>
               <br/><br/><br/><br/><br/>

@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class Profile extends React.Component {
 
@@ -9,13 +10,13 @@ class Profile extends React.Component {
             return (
               <div key={currentPost.id} id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{currentPost.location}&nbsp;
               <span id="my-badge" class="new badge" data-badge-caption={currentPost.status}></span><br/><br/>
-                <form class="waves-effect waves-light btn-small s12" method="post" action={"/request/" + currentPost.id}>
+                <form class="waves-effect waves-light btn-small s12" method="post" action={"/request/" + currentPost.post_id}>
                   <input type="submit" value="See Requests"/>
                 </form>&nbsp;&nbsp;&nbsp;
-                <form class="waves-effect waves-light btn-small s12" method="post" action={"/post/" + currentPost.id + "/update"}>
+                <form class="waves-effect waves-light btn-small s12" method="post" action={"/post/" + currentPost.post_id + "/update"}>
                   <input type="submit" value="Update" />
                 </form>&nbsp;&nbsp;&nbsp;
-                <form class="waves-effect waves-light btn-small s12" method="get" action={"/post/" + currentPost.id + "/delete"}>
+                <form class="waves-effect waves-light btn-small s12" method="get" action={"/post/" + currentPost.post_id + "/delete"}>
                   <input type="submit" value="Delete" />
                 </form>
               </div>
@@ -25,9 +26,11 @@ class Profile extends React.Component {
         const arrayOfMyRequest = this.props.requests.map( function(currentRequest) {
             return (
               <div key={currentRequest.id} id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{currentRequest.location}&nbsp;
-              <span id="my-badge" class="new badge" data-badge-caption={currentRequest.status}></span><br/><br/>
+              <span id="my-badge" class="new badge" data-badge-caption={currentRequest.status}></span>
+                <br/><br/>
                 <a id="my-music-card" class="btn-small">{currentRequest.name}</a>&nbsp;&nbsp;&nbsp;
-                {currentRequest.status === "Accepted" ? (<a class="waves-effect waves-light btn-small s12">CONTACT</a>) : (<div></div>)}
+                {currentRequest.status === "accepted" ? (<a class="waves-effect waves-light btn-small s12">CONTACT</a>) : (<div></div>)}
+                {currentRequest.status === "declined" ? (<p>Delete the request &nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light btn-small s12">DELETE</a></p>) : (<div></div>)}
               </div>
             );
         });
@@ -35,6 +38,24 @@ class Profile extends React.Component {
         return (
 
             <LayoutContainer user_id={this.props.user_id}>
+
+                  <ParallaxContainer>
+                    <div class="section no-pad-bot">
+                      <div class="container">
+                        <h3 class="header center text-lighten-2">{this.props.user[0].name}'s Profile</h3>
+                        <div class="row center">
+                          <div class="container update-profile-btn">
+                            <form method="post" action={"/user/" + this.props.user_id}>
+                              <input class="waves-effect waves-light btn s12 center" type="submit" value="Update Profile" />
+                            </form>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="parallax"><img src="/assets/images/profile.jpg" alt="img1" /></div>
+                  </ParallaxContainer>
+
+                  <br/>
 
                 <table id="my-yellow-text" class="container">
                     <thead>
@@ -76,11 +97,6 @@ class Profile extends React.Component {
                       </tr>
                     </tbody>
               </table>
-              <div class="container update-profile-btn">
-                <form method="post" action={"/user/" + this.props.user_id}>
-                  <input class="waves-effect waves-light btn s12 right" type="submit" value="Update Profile" />
-                </form>
-              </div>
               <br/><br/><br/><br/><br/>
 
 

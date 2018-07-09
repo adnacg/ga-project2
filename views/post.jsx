@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class List extends React.Component {
 
@@ -19,6 +20,20 @@ class List extends React.Component {
         return (
 
             <LayoutContainer user_id={this.props.user_id}>
+
+                  <ParallaxContainer>
+                    <div class="section no-pad-bot">
+                      <div class="container">
+                        <h3 class="header center text-lighten-2">JAMMING MADE EASY</h3>
+                        <div class="row center">
+                          <h6 class="header col s12 light">Join your fellow musicians today</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="parallax"><img src="/assets/images/post.jpg" alt="img1" /></div>
+                  </ParallaxContainer>
+
+                  <br/><br/>
 
                 <table id="my-yellow-text" class="container s12 highlight centered">
                     <thead>

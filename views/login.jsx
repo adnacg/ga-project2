@@ -1,5 +1,7 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
+
 
 class Login extends React.Component {
     render() {
@@ -7,6 +9,18 @@ class Login extends React.Component {
         return (
 
             <LayoutContainer>
+
+                  <ParallaxContainer>
+                    <div class="section no-pad-bot">
+                      <div class="container">
+                        <h3 class="header center text-lighten-2">LOGIN</h3>
+                        <div class="row center">
+                          <h6 class="header col s12 light">Enter your email and password to login</h6>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="parallax"><img src="/assets/images/login.jpg" alt="img1" /></div>
+                  </ParallaxContainer>
 
                 <div class="container">
                 <form class="col s12" method="post" action="/user/login">

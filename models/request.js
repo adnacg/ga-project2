@@ -22,7 +22,7 @@ let createRequestModel = db => {
 
         static accept(requestId, errorCallback, successCallback) {
             let queryText = 'UPDATE request SET status = $1 WHERE id = $2';
-            let values = ['Accepted', requestId];
+            let values = ['accepted', requestId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
@@ -34,7 +34,7 @@ let createRequestModel = db => {
 
         static decline(requestId, errorCallback, successCallback) {
             let queryText = 'UPDATE request SET status = $1 WHERE id = $2';
-            let values = ['Declined', requestId];
+            let values = ['declined', requestId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);

@@ -1,6 +1,7 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
 const Timestamp = require('react-timestamp');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class Readmore extends React.Component {
 
@@ -9,8 +10,14 @@ class Readmore extends React.Component {
         return (
 
             <LayoutContainer user_id={this.props.user_id}>
+
+              <br/><br/><br/>
+
                 <div class="container">
                   <form class="col s12" method="POST" action={"/post/" + this.props.post.id}>
+
+                  <h5 id="my-yellow-text" class="center">About {this.props.post.name}'s Jam</h5>
+                  <br/><br/>
 
                     <table id="my-yellow-text" class="highlight centered">
                       <tbody>

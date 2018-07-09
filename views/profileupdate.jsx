@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class ProfileUpdate extends React.Component {
     render() {
@@ -7,12 +8,15 @@ class ProfileUpdate extends React.Component {
         return (
 
             <LayoutContainer user_id={this.props.user_id}>
+            <br/><br/><br/>
 
               <div class="container">
 
                 <form class="col s12" method="post" action={"/user/" + this.props.user_id}>
                 <input type="hidden" name="_method" defaultValue="put" />
-                  <h6 id="my-yellow-text">Update Your Profile</h6>
+                  <h5 id="my-yellow-text">Update Your Profile</h5>
+                  <br/><br/>
+
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12">
                       <input id="name" type="text" name="name" class="validate" value={this.props.user.name} />

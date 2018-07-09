@@ -67,10 +67,12 @@ app.get('/', (request, response) => {
 });
 
 
-
-
-
-
+// delete button for request affect showing of myrequests
+// show post in profile if isdeleted false
+// show request logic contact
+// show requester profile in request
+// flash
+// 1 user 1 post 1 request, NO request for own post
 
 
 

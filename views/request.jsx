@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class Request extends React.Component {
 
@@ -30,21 +31,13 @@ class Request extends React.Component {
 
             <LayoutContainer user_id={this.props.user_id}>
 
+              <br/><br/><br/>
+
               <div class="container">
-
                 <div class="col s12 m6 center">
-
-
-
                     {arrayOfRequests.length > 0 ? (<div>{arrayOfRequests}</div>) : (<div id="my-yellow-text"><h4>Sorry, no requests came in yet :(</h4><br/>Why not try to find a jamming partner from our extensive list?<br/><br/><a class="waves-effect waves-light btn-small" href="/post">Let's do it!</a><br/><br/><br/><br/><br/></div>)}
-
-
                 </div>
-
               </div>
-
-
-
 
             </LayoutContainer>
 

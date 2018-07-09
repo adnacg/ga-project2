@@ -42,15 +42,13 @@ let createUserModel = db => {
                     errorCallback(error);
                 } else {
                     if (result.rows.length > 0) {
-                        let queryText2 = 'SELECT * FROM post INNER JOIN user_post ON post.id = user_post.post_id WHERE user_id = $1';
-                        let values2 = [currentUserId];
-                        db.query(queryText2, values2, (error2, result2) => {
+                        let queryText2 = "SELECT * FROM post INNER JOIN user_post ON post.id = user_post.post_id WHERE user_id = $1 AND is_deleted = 'false'";
+                        db.query(queryText2, values, (error2, result2) => {
                             if (error2) {
                                 errorCallback(error2);
                             } else {
-                                let queryText3 = 'SELECT post.location, users.name, request.status FROM request INNER JOIN post ON request.post_id = post.id INNER JOIN users ON request.poster_id = users.id WHERE request.requester_id = $1';
-                                let values3 = [currentUserId];
-                                db.query(queryText3, values3, (error3, result3) => {
+                                let queryText3 = 'SELECT users.name, post.location, request.status FROM users INNER JOIN user_post ON users.id = user_post.user_id INNER JOIN request ON request.post_id = user_post.post_id INNER JOIN post ON post.id = user_post.post_id WHERE request.requester_id = $1';
+                                db.query(queryText3, values, (error3, result3) => {
                                     if (error3) {
                                         errorCallback(error3);
                                     } else {

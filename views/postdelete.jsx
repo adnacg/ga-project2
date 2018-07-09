@@ -1,5 +1,6 @@
 var React = require('react');
 var LayoutContainer = require('./layout/main.jsx');
+var ParallaxContainer = require('./layout/parallax.jsx');
 
 class PostDelete extends React.Component {
 
@@ -9,6 +10,7 @@ class PostDelete extends React.Component {
 
             <LayoutContainer user_id={this.props.user_id}>
 
+              <br/><br/><br/>
               <div class="container">
                 <form method="post" action={"/post/" + this.props.postId + "/delete"}>
                 <input type="hidden" name="_method" defaultValue="delete" />
@@ -21,7 +23,7 @@ class PostDelete extends React.Component {
                         <div class="card-action">
                           <input type="submit" value="Yes" class="waves-effect waves-light btn-small"/>
                           &nbsp;&nbsp;&nbsp;
-                          <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/user/" + this.props.user_id}>No</a>
+                          <input type="submit" value="No" formmethod="get" formaction={"/user/" + this.props.user_id} class="waves-effect waves-light btn-small"/>
                         </div>
                       </div>
                     </div>
