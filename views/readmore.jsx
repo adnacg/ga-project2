@@ -24,7 +24,7 @@ class Readmore extends React.Component {
                   </div>
 
                   <div class="row">
-                    <div class="col s12 m6 offset-m3">
+                    <div class="col s12 m8 offset-m2">
                       <table id="my-yellow-text" class="highlight centered">
                         <tbody>
                           <tr>

@@ -67,13 +67,13 @@ app.get('/', (request, response) => {
 });
 
 // heroku, ASK
-
 // if time, passport
 // if time, add return to previous page buttons
 // if time, set instruments and genre logic
 // if time, set repost expired posts logic
 // if time, display myrequest desc, add delete btn for accepted requests
 // if time, NO request for own post
+// if time, complete setup footer
 
 
 

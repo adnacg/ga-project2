@@ -139,7 +139,7 @@ class LayoutContainer extends React.Component {
             <html>
                 <head>
                     <title>Jam Away</title>
-                    <link rel='icon' href='/assets/images/tw.png' type='image/png'/>
+                    <link rel='icon' href='/assets/images/favicon.png' type='image/png'/>
                     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
                     <link type="text/css" rel="stylesheet" href="/css/materialize.min.css"  media="screen,projection"/>

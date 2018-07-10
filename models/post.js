@@ -90,17 +90,25 @@ let createPostModel = db => {
         }
 
         static request(postReqInfo, errorCallback, successCallback) {
-            let queryText = 'INSERT INTO request (post_id, requester_id, status) VALUES ($1, $2, $3) RETURNING *';
-            let values = [postReqInfo.postId, postReqInfo.requester_id, postReqInfo.status];
-            db.query(queryText, values, (error, result) => {
-                if (error) {
-                    errorCallback(error);
+            let queryText0 = 'SELECT user_post.user_id FROM user_post WHERE user_post.post_id = $1';
+            let values0 = [postReqInfo.postId];
+            db.query(queryText0, values0, (error0, result0) => {
+                if (result0.rows[0].user_id = postReqInfo.requester_id) {
+                    errorCallback(error0);
                 } else {
-                    if (result.rows.length > 0) {
-                        successCallback();
-                    } else {
-                        errorCallback(error);
-                    }
+                    let queryText = 'INSERT INTO request (post_id, requester_id, status) VALUES ($1, $2, $3) RETURNING *';
+                    let values = [postReqInfo.postId, postReqInfo.requester_id, postReqInfo.status];
+                    db.query(queryText, values, (error, result) => {
+                        if (error) {
+                            errorCallback(error);
+                        } else {
+                            if (result.rows.length > 0) {
+                                successCallback();
+                            } else {
+                                errorCallback(error);
+                            }
+                        }
+                    });
                 }
             });
         }

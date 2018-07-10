@@ -9,7 +9,7 @@ let createRequestModel = db => {
         }
 
         static show(post_id, errorCallback, successCallback) {
-            let queryText = 'SELECT users.name, post.location, request.id, request.post_id, request.requester_id FROM request INNER JOIN post ON request.post_id = post.id INNER JOIN users ON request.requester_id = users.id WHERE request.post_id = $1';
+            let queryText = "SELECT users.name, post.location, request.id, request.post_id, request.requester_id FROM request INNER JOIN post ON request.post_id = post.id INNER JOIN users ON request.requester_id = users.id WHERE request.post_id = $1 AND request.status != 'declined'";
             let values = [post_id];
             db.query(queryText, values, (error, result) => {
                 if (error) {
