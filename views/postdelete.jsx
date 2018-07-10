@@ -14,7 +14,8 @@ class PostDelete extends React.Component {
               <div class="container">
                 <form method="post" action={"/post/" + this.props.postId + "/delete"}>
                 <input type="hidden" name="_method" defaultValue="delete" />
-                <div class="col s12 m6 center">
+                <div class="row">
+                <div class="col s12 m6 center offset-m3">
                     <div>
                       <div id="my-card" class="card">
                         <div class="card-content">
@@ -27,6 +28,7 @@ class PostDelete extends React.Component {
                         </div>
                       </div>
                     </div>
+                  </div>
                   </div>
                   </form>
                 </div>

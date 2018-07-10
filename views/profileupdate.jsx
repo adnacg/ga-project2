@@ -11,6 +11,8 @@ class ProfileUpdate extends React.Component {
             <br/><br/><br/>
 
               <div class="container">
+              <div class="row">
+              <div class="col s12 m6 center offset-m3">
 
                 <form class="col s12" method="post" action={"/user/" + this.props.user_id}>
                 <input type="hidden" name="_method" defaultValue="put" />
@@ -48,6 +50,8 @@ class ProfileUpdate extends React.Component {
                   <br/><br/><br/><br/><br/>
                 </form>
 
+              </div>
+              </div>
               </div>
 
             </LayoutContainer>

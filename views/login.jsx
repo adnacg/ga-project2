@@ -26,21 +26,27 @@ class Login extends React.Component {
 
                 <div class="container">
                 <form class="col s12" method="post" action="/user/login">
+
                   <div class="row">
-                    <div id="my-input-box" class="input-field col s12">
-                      <input id="email" type="email" name="email"/>
+                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                      <input id="email" type="email" name="email" required/>
                       <label for="email">Email</label>
                     </div>
                   </div>
                   <div class="row">
-                    <div id="my-input-box" class="input-field col s12">
-                      <input id="password" type="password" name="password"/>
+                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                      <input id="password" type="password" name="password" required/>
                       <label for="password">Password</label>
                     </div>
                   </div>
 
-                  <input class="right waves-effect waves-light btn s12" type="submit" value="Login" /><br/><br/>
-                  <p id="my-yellow-text" class="right">New to Jamaway? Create an account <a id="my-yellow-text" class="underlined" href="/user/register">here</a>.</p>
+                  <div class="row">
+                    <div class="col s12 m6 offset-m3">
+                      <input class="right waves-effect waves-light btn s12" type="submit" value="Login" /><br/><br/>
+                      <p id="my-yellow-text" class="right">New to Jam Away? Create an account <a id="my-yellow-text" class="underlined" href="/user/register">here</a>.</p>
+                    </div>
+                  </div>
+
                 </form>
               </div>
               <br/><br/><br/><br/><br/>

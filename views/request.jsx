@@ -24,7 +24,6 @@ class Request extends React.Component {
                     <a class="waves-effect waves-light btn-small" href={"/request/" + currentRequest.id + "/decline"}>Decline</a>
                 </div>
               </div>
-
             );
         });
 
@@ -35,9 +34,11 @@ class Request extends React.Component {
               <br/><br/><br/>
 
               <div class="container">
-                <div class="col s12 m6 center">
+              <div class="row">
+                <div class="col s12 m8 center offset-m2">
                     {arrayOfRequests.length > 0 ? (<div>{arrayOfRequests}</div>) : (<div id="my-yellow-text"><h4>Sorry, no requests came in yet :(</h4><br/>Why not try to find a jamming partner from our extensive list?<br/><br/><a class="waves-effect waves-light btn-small" href="/post">Let's do it!</a><br/><br/><br/><br/><br/></div>)}
                 </div>
+              </div>
               </div>
               <br/><br/><br/>
 

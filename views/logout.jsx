@@ -13,7 +13,8 @@ class Logout extends React.Component {
               <br/><br/>
               <div class="container">
                 <form method="post" action="/user/logout">
-                <div class="col s12 m6 center">
+                <div class="row">
+                <div class="col s12 m6 center offset-m3">
                     <div>
                       <div id="my-card" class="card">
                         <div class="card-content">
@@ -26,6 +27,7 @@ class Logout extends React.Component {
                         </div>
                       </div>
                     </div>
+                  </div>
                   </div>
                   </form>
                 </div>

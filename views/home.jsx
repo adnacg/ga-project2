@@ -26,10 +26,21 @@ class Home extends React.Component {
                   </ParallaxContainer>
 
                   <div id="my-yellow-text" class="container">
+
+                  <div class="center">
+                    <br/><br/>
+                    <a class="btn-floating btn-large pulse">HOW</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn-floating btn-large pulse">JAM</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn-floating btn-large pulse">AWAY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn-floating btn-large pulse">WORK</a>
+                  </div>
+                  <br/>
+
                     <div class="section">
                       <div class="row">
                         <div class="col s12 m3">
                           <div class="icon-block">
+
                             <h2 class="center"><i class="material-icons">search</i></h2>
                             <h5 class="center">Browse The List</h5>
 
@@ -65,13 +76,11 @@ class Home extends React.Component {
                     </div>
                   </div>
 
-
-
                   <div class="parallax-container valign-wrapper">
                     <div class="section no-pad-bot">
                       <div class="container">
                         <div id="my-homepage-info" class="row left">
-                          <h5 id="my-green-text" class="header s12 light m6"><strong>Why Jam Away?</strong></h5>
+                          <h5 id="my-green-text" class="header s12 light m6"><strong>WHY JAM AWAY?</strong></h5>
                           <p id="my-green-text" class="col s12 light m6">
                             Finding someone to jam with, is not an easy task. Jam Away is a jamming community where you connect with fellow aspiring musicians.
                             <br/>
@@ -93,7 +102,7 @@ class Home extends React.Component {
                       <div class="row">
                         <div class="col s12 center">
                           <h3><i class="mdi-content-send"></i></h3>
-                          <a id="my-action-btn" class="btn-large waves-effect waves-light lighten-1" href="/post">Browse The List Now</a>
+                          <a id="my-action-btn" class="pulse btn-large waves-effect waves-light lighten-1" href="/post">Browse The List Now</a>
                           <p id="my-yellow-text" class="center-align light">Find the right partner and jam your hearts away!</p>
                         </div>
                       </div>

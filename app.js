@@ -70,6 +70,7 @@ app.get('/', (request, response) => {
 // flash
 // 1 user 1 post 1 request, NO request for own post
 // edit all fonts
+// make form fields compulsory
 
 //  add database
 //passport
@@ -79,6 +80,7 @@ app.get('/', (request, response) => {
 // if time, set instruments and genre logic
 // if time, set repost expired posts logic
 // if time, check user registration if exist
+// if time, display myrequest desc, add delete btn for accepted requests
 
 
 

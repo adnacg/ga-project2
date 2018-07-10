@@ -38,65 +38,74 @@ class Profile extends React.Component {
         return (
             <LayoutContainer user_id={this.props.user_id}>
 
-                  <ParallaxContainer>
-                    <div class="section no-pad-bot">
-                      <div class="container">
-                        <h3 class="header center text-lighten-2">{this.props.user[0].name}'s Profile</h3>
-                        <div class="row center">
-                          <div class="container update-profile-btn">
-                            <form method="post" action={"/user/" + this.props.user_id}>
-                              <input class="waves-effect waves-light btn s12 center" type="submit" value="Update Profile" />
-                            </form>
-                          </div>
-                        </div>
+              <ParallaxContainer>
+                <div class="section no-pad-bot">
+                  <div class="container">
+                    <h3 class="header center text-lighten-2">{this.props.user[0].name}'s Profile</h3>
+                    <div class="row center">
+                      <div class="container update-profile-btn">
+                        <form method="post" action={"/user/" + this.props.user_id}>
+                          <input class="waves-effect waves-light btn s12 center" type="submit" value="Update Profile" />
+                        </form>
                       </div>
                     </div>
-                    <div class="parallax"><img src="/assets/images/profile.jpg" alt="img1" /></div>
-                  </ParallaxContainer>
+                  </div>
+                </div>
+                <div class="parallax"><img src="/assets/images/profile.jpg" alt="img1" /></div>
+              </ParallaxContainer>
 
                   <br/>
 
-                <table id="my-yellow-text" class="container">
-                    <thead>
-                      <tr>
-                          <th></th>
-                          <th></th>
-                      </tr>
-                    </thead>
 
-                    <tbody>
+            <div class="container">
+            <div class="row">
+            <div class="col s12 m10 offset-m1 center">
 
-                      <tr>
-                        <td>Bio</td>
-                        <td><div id="my-card" class="card-panel center">{this.props.user[0].bio}</div></td>
-                      </tr>
-                      <tr>
-                        <td>Instrument</td>
-                        <td><div id="my-card-borderless" class="card-panel"><a id="my-music-card" class="btn-small">Guitar</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Other</a></div></td>
-                      </tr>
-                      <tr>
-                        <td>Genre</td>
-                        <td><div id="my-card-borderless" class="card-panel"><a id="my-music-card" class="btn-small">Jazz</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Blues</a></div></td>
-                      </tr>
-                      <tr>
-                        <td id="my-top-text">My Posts</td>
-                        <td>
+              <table id="my-yellow-text">
+                  <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                  </thead>
 
-                          {arrayOfMyPost}
+                  <tbody>
 
-                        </td>
-                      </tr>
-                      <tr>
-                        <td id="my-top-text">My Requests</td>
-                        <td>
+                    <tr>
+                      <td>Bio</td>
+                      <td><div id="my-card" class="card-panel center">{this.props.user[0].bio}</div></td>
+                    </tr>
+                    <tr>
+                      <td>Instrument</td>
+                      <td><div id="my-card-borderless" class="card-panel"><a id="my-music-card" class="btn-small">Guitar</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Other</a></div></td>
+                    </tr>
+                    <tr>
+                      <td>Genre</td>
+                      <td><div id="my-card-borderless" class="card-panel"><a id="my-music-card" class="btn-small">Jazz</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Blues</a></div></td>
+                    </tr>
+                    <tr>
+                      <td id="my-top-text">My Posts</td>
+                      <td>
 
-                          {arrayOfMyRequest}
+                        {arrayOfMyPost}
 
-                        </td>
-                      </tr>
-                    </tbody>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td id="my-top-text">My Requests</td>
+                      <td>
+
+                        {arrayOfMyRequest}
+
+                      </td>
+                    </tr>
+                  </tbody>
               </table>
-              <br/><br/><br/><br/><br/>
+
+            </div>
+            </div>
+            </div>
+            <br/><br/><br/><br/><br/>
 
 
 

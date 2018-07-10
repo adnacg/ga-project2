@@ -25,35 +25,42 @@ class Register extends React.Component {
                 <form class="col s12" method="POST" action="/user/register">
                   <br/><br/>
 
-                  <h5 id="my-yellow-text">GENERAL INFORMATION</h5>
-                  <br/><br/>
+                  <div class="row">
+                    <div class="col s12 m6 offset-m3">
 
-                  <div class="row">
-                    <div id="my-input-box" class="input-field col s12">
-                      <input id="name" type="text" name="name" />
-                      <label for="name">Your Name</label>
+                      <h5 id="my-yellow-text">GENERAL INFORMATION</h5>
+                      <br/><br/>
+
+                      <div class="row">
+                        <div id="my-input-box" class="input-field col s12">
+                          <input id="name" type="text" name="name" required/>
+                          <label for="name">Your Name</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div id="my-input-box" class="input-field col s12">
+                          <input id="email" type="email" name="email" required/>
+                          <label for="email">Email</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div id="my-input-box" class="input-field col s12">
+                          <input id="password" type="password" name="password" required/>
+                          <label for="password">Password</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div id="my-input-box" class="input-field col s12">
+                          <textarea id="textarea1" class="materialize-textarea" name="bio" required></textarea>
+                          <label for="textarea1">Describe Yourself</label>
+                          <span class="helper-text" data-error="wrong" data-success="right">Describe yourself so your fellow musicians get to know you! eg. What other musical talent you posses that are not listed here?</span>
+                        </div>
+                      </div>
+                      <input class="waves-effect waves-light btn s12 right" type="submit" value="Register" />
+
                     </div>
                   </div>
-                  <div class="row">
-                    <div id="my-input-box" class="input-field col s12">
-                      <input id="email" type="email" name="email" />
-                      <label for="email">Email</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div id="my-input-box" class="input-field col s12">
-                      <input id="password" type="password" name="password" />
-                      <label for="password">Password</label>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div id="my-input-box" class="input-field col s12">
-                      <textarea id="textarea1" class="materialize-textarea" name="bio"></textarea>
-                      <label for="textarea1">Describe Yourself</label>
-                      <span class="helper-text" data-error="wrong" data-success="right">Describe yourself so your fellow musicians get to know you! eg. What other musical talent you posses that are not listed here?</span>
-                    </div>
-                  </div>
-                  <input class="waves-effect waves-light btn s12 right" type="submit" value="Register" />
+
                 </form>
               </div>
               <br/><br/><br/><br/><br/>

@@ -13,8 +13,8 @@ class RequestContact extends React.Component {
               <br/><br/><br/>
 
               <div class="container">
-
-                  <div class="col s12 m6 center">
+                <div class="row">
+                  <div class="col s12 m8 offset-m2 center">
                     <div>
                       <div id="my-card" class="card">
                         <div class="card-content">
@@ -27,7 +27,7 @@ class RequestContact extends React.Component {
                       </div>
                     </div>
                   </div>
-
+                  </div>
                 </div>
 
 
