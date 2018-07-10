@@ -26,7 +26,7 @@ class List extends React.Component {
                       <div class="container">
                         <h3 class="header center text-lighten-2">JAMMING MADE EASY</h3>
                         <div class="row center">
-                          <h6 class="header col s12 light">Join your fellow musicians today</h6>
+                          <h6 class="header col s12 light"><strong>Join your fellow musicians today</strong></h6>
                         </div>
                       </div>
                     </div>

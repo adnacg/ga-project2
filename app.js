@@ -68,16 +68,14 @@ app.get('/', (request, response) => {
 
 
 // flash - doesnt work, ASK
-// passport kiv, ASK
 // heroku, ASK
 
 // add database
-// edit all fonts
 
+// if time, passport
 // if time, add return to previous page buttons
 // if time, set instruments and genre logic
 // if time, set repost expired posts logic
-// if time, check user registration if exist
 // if time, display myrequest desc, add delete btn for accepted requests
 // if time, NO request for own post
 

@@ -21,6 +21,7 @@ main {
 
 nav .brand-logo {
   font-size: 2rem;
+  font-family: lucida grande;
 }
 
 h3 {
@@ -33,10 +34,16 @@ h6 {
 
 table, tr, td, th {
   border: 0;
+  font-family: lucida grande;
 }
 
 th {
   text-transform: uppercase;
+}
+
+.input-field .helper-text {
+  font-size: 8px;
+  text-align: left;
 }
 
 .underlined:hover {
@@ -100,6 +107,10 @@ th {
   box-shadow: none;
   background-color: #456355;
   color: #EDCB64;
+}
+
+.card .card-action {
+  border-top: none;
 }
 
 #my-input-box {
@@ -200,6 +211,11 @@ p {
 .icon-block .material-icons {
   font-size: inherit;
   color: #EDCB64;
+}
+
+.pagination li a {
+  color: #EDCB64;
+  font-size: 0.8rem;
 }
 
 footer.page-footer {

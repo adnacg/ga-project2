@@ -1,7 +1,7 @@
 CREATE TABLE IF NOT EXISTS users (
   id SERIAL PRIMARY KEY,
   name varchar(255),
-  email varchar(255),
+  email varchar(255) UNIQUE,
   password_hash varchar(255),
   bio varchar(255),
   is_deleted varchar(255)
@@ -36,7 +36,6 @@ CREATE TABLE IF NOT EXISTS post (
   availability varchar(255),
   skill varchar(255),
   message varchar(255),
--- post_date date DEFAULT NOW(),
   post_time timestamp DEFAULT CURRENT_TIMESTAMP,
   status varchar(255), -- active, full or deleted
   is_deleted varchar(255)
@@ -67,35 +66,3 @@ CREATE TABLE IF NOT EXISTS request (
   status varchar(255), -- pending, accepted, declined
   constraint request_unique UNIQUE (requester_id, post_id)
 );
-
-
-
-
-
-
-
-
-
-
--- foreign key - enforce unqieuness to a particular request (pair uniqueness)
--- dont need this
--- is this required? is 1 to 1, and a request is unique, does it make sense to have this?
--- CREATE TABLE IF NOT EXISTS user_request (
---   id SERIAL PRIMARY KEY,
---   user_id INTEGER,
---   request_id INTEGER
--- );
-
-
-
-
-
-
-
-
-
-
-
-
-
-

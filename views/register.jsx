@@ -14,7 +14,7 @@ class Register extends React.Component {
                       <div class="container">
                         <h3 class="header center text-lighten-2">REGISTER</h3>
                         <div class="row center">
-                          <h6 class="header col s12 light">Join the amazing community for musicians today</h6>
+                          <h6 class="header col s12 light"><strong>Join the amazing community for musicians today</strong></h6>
                         </div>
                       </div>
                     </div>

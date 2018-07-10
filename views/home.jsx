@@ -14,7 +14,7 @@ class Home extends React.Component {
                       <div class="container">
                         <h3 class="header center text-lighten-2"><strong>SEARCH, JOIN, JAM</strong></h3>
                         <div class="row center">
-                          <h6 class="header col s12 light">Singapore’s number one platform to connect with fellow musicians</h6>
+                          <h6 class="header col s12 light"><strong>Singapore’s number one platform to connect with fellow musicians</strong></h6>
                         </div>
                         <div class="row center">
                           <a href="/post" id="my-action-btn" class="btn-large waves-effect waves-light lighten-1">JOIN A JAM</a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

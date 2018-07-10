@@ -1,11 +1,19 @@
-INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Agatha', 'agatha@gmail.com', '59bf98e1eb764b8f378ca0caf2e234e76d36e3865a1f7045f2a39e6b1f92c7d3', ' A violinist who''s living the rock and roll. Coffee addict, day-dreamer, and nature lover.', 'false') RETURNING *;
-INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Henckels', 'henckels@gmail.com', '3b1dc9894e28ebc965bcc86e0c27b092f02b2edb8e698b53812caf7c3948ac15', 'A detective by day, guitarist by night.','false') RETURNING *;
-INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Clotilde', 'clotilde@gmail.com', '6518c44f86e93d1e2ed24f8e4271d1a6b443e8f2413975fd8063075e2082bcc1', 'Jazz music lover and a cello beginner.','false') RETURNING *;
-INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Dmitri', 'dmitri@gmail.com', 'aee2ee18efdac537e181c5d3622849cce2f568a449c3f5656c92f11053bed5f0', 'Soul searcher in the far away land.','false') RETURNING *;
-INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Gustave', 'gustave@gmail.com', 'a19c6a2318f6015f52a271392eeb4217c2c163df02a5b634de56f350b8013f3c', 'Don''t believe in coincidences. We meet for a reason, let''s jam together.','false') RETURNING *;
-INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Kovacs', 'kovacs@gmail.com', 'aa2ec24feb395119a80d9d2fecce33e50def720319a706ad0c7c184aebc62b72', 'I love reggaeton, gotta move it together people...','false') RETURNING *;
-INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Adna', 'adna@gmail.com', 'd676ce9a2d99429bade52ce891b8f974fdd8915a3c0271c54bf46a423c7b21d9', 'I just love to meet people with different instrument types, so that we can find a way to jam together. Life''s too short to fixate on a single type!','false') RETURNING *;
-INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Cyrill', 'cyrill@gmail.com', 'bb15d2a17cb90733c9017779341ad2acc0cbcdde11419821eb54b29eda30789c', 'Saxophonist and a guitarist. Would like to form a band and jam preferably on weekday nights. Prefer jazz music.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Agatha', 'agatha@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','A violinist who''s living the rock and roll. Coffee addict, day-dreamer, and nature lover.', 'false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Henckels', 'henckels@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','A detective by day, guitarist by night.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Clotilde', 'clotilde@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Jazz music lover and a cello beginner.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Dmitri', 'dmitri@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Soul searcher in the far away land.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Gustave', 'gustave@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Don''t believe in coincidences. We meet for a reason, let''s jam together.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Kovacs', 'kovacs@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','I love reggaeton, gotta move it together people...','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Adna', 'adna@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','I just love to meet people with different instrument types, so that we can find a way to jam together. Life''s too short to fixate on a single type!','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Cyrill', 'cyrill@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Saxophonist and a guitarist. Would like to form a band and jam preferably on weekday nights. Prefer jazz music.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Suzy', 'suzy@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','A daydreamer by day, classical cellist by night. In need to find a cellist partner to jam together.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Lionel', 'lionel@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','I am an amazing person, with an amazing voice. Looking to jam some country songs together.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Jed', 'jed@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','R&B fanatic and a die-hard keyboard player, searching for the right band to join!','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Becky', 'becky@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Soul singer, and quite an excellent piano player, having a hard time to look for a jam with the like-minded...','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Rudy', 'rudy@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Reggae for life! A seasonal percussionist, all ready to jam with my fellow reggae lovers!','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Edgar', 'edgar@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Didgeridoo artist, looking for opportunities in a funky band.','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Dakota', 'dakota@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Indie singer, I think I have a unique voice, or so Ive been told..','false') RETURNING *;
+INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES('Noah', 'noah@gmail.com', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8','Country song lover and a banjoist, hook me up for some jams people!','false') RETURNING *;
 
 INSERT INTO instrument (name) VALUES('Guitar') RETURNING *;
 INSERT INTO instrument (name) VALUES('Bass') RETURNING *;
@@ -45,6 +53,8 @@ INSERT INTO post (location, pax, availability, skill, message, status, is_delete
 INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Hougang', '4', 'Usually weekdays after 9pm.', 'Advance', 'Let''s not be shy and join my jam!', 'active', 'false');
 INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('East Coast', '2', 'Usually weekdays after 10pm.', 'Beginner', 'For the serious jammers only.', 'active', 'false');
 INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Changi', '1', 'Usually weekdays after 12midnight.', 'Advance', 'Would like to have some casual sessions with the listed instruments only.', 'active', 'false');
+INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Joo Chiat', '3', 'Weekends anytime from 12pm onwards', 'Intermediate or Advance', 'Really looking forward to jam with people who likes the same stuff!', 'active', 'false');
+INSERT INTO post (location, pax, availability, skill, message, status, is_deleted) VALUES('Clementi', '2', 'Sundays from 2-6pm, Saturdays are flexible if necessary.', 'Beginner to Intermediate', 'Flexible with anyone who shares liking of the same music', 'active', 'false');
 
 INSERT INTO user_post (user_id, post_id) VALUES('1', '1');
 INSERT INTO user_post (user_id, post_id) VALUES('2', '2');
@@ -52,7 +62,29 @@ INSERT INTO user_post (user_id, post_id) VALUES('3', '3');
 INSERT INTO user_post (user_id, post_id) VALUES('4', '4');
 INSERT INTO user_post (user_id, post_id) VALUES('5', '5');
 INSERT INTO user_post (user_id, post_id) VALUES('6', '6');
+INSERT INTO user_post (user_id, post_id) VALUES('7', '7');
+INSERT INTO user_post (user_id, post_id) VALUES('8', '8');
 
+INSERT INTO request (requester_id, post_id, status) VALUES('7', '1', 'accepted');
+INSERT INTO request (requester_id, post_id, status) VALUES('7', '2', 'declined');
+INSERT INTO request (requester_id, post_id, status) VALUES('7', '3', 'pending');
+
+INSERT INTO request (requester_id, post_id, status) VALUES('9', '3', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('9', '6', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('10', '2', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('10', '4', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('11', '1', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('11', '2', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('12', '5', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('12', '7', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('13', '6', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('13', '8', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('14', '2', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('14', '5', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('15', '4', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('15', '5', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('16', '2', 'pending');
+INSERT INTO request (requester_id, post_id, status) VALUES('16', '5', 'pending');
 
 
 

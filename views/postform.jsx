@@ -14,7 +14,7 @@ class Postform extends React.Component {
                       <div class="container">
                         <h3 class="header center text-lighten-2">POST A JAM</h3>
                         <div class="row center">
-                          <h6 class="header col s12 light">Connect with your fellow musicians today</h6>
+                          <h6 class="header col s12 light"><strong>Connect with your fellow musicians today</strong></h6>
                         </div>
                       </div>
                     </div>
