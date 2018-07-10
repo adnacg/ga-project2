@@ -67,21 +67,19 @@ app.get('/', (request, response) => {
 });
 
 
-// flash
-// 1 user 1 post 1 request, NO request for own post
-// edit all fonts
-// make form fields compulsory
+// flash - doesnt work, ASK
+// passport kiv, ASK
+// heroku, ASK
 
-//  add database
-//passport
-// heroku
+// add database
+// edit all fonts
 
 // if time, add return to previous page buttons
 // if time, set instruments and genre logic
 // if time, set repost expired posts logic
 // if time, check user registration if exist
 // if time, display myrequest desc, add delete btn for accepted requests
-
+// if time, NO request for own post
 
 
 

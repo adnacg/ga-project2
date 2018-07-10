@@ -152,11 +152,6 @@ let createPostModel = db => {
                 }
             });
         }
-
-
-
-
-
     }
 
     return Post;

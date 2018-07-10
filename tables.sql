@@ -60,13 +60,12 @@ CREATE TABLE IF NOT EXISTS post_genre (
   genre_id INTEGER
 );
 
--- in model- enforce uniqueness of request, 1 user 1 request to 1 jam
 CREATE TABLE IF NOT EXISTS request (
   id SERIAL PRIMARY KEY,
   requester_id INTEGER, -- request FROM which user
-  poster_id INTEGER, -- request TO which user -- maybe dont need
   post_id INTEGER, -- for which post
-  status varchar(255) -- pending, accepted or declined
+  status varchar(255), -- pending, accepted, declined
+  constraint request_unique UNIQUE (requester_id, post_id)
 );
 
 
