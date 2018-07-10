@@ -17,6 +17,8 @@ const createUserRouter = db => {
     router.put('/:id', uc.profileUpdate);
     router.delete('/:id', uc.profileDelete);
 
+    router.get('/:id/other', uc.profileReadOther);
+
     return router;
 }
 

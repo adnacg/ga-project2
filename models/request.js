@@ -21,37 +21,49 @@ let createRequestModel = db => {
         }
 
         static accept(requestId, errorCallback, successCallback) {
-            let queryText = 'UPDATE request SET status = $1 WHERE id = $2';
+            let queryText = 'UPDATE request SET status = $1 WHERE id = $2 RETURNING *';
             let values = ['accepted', requestId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback();
+                    if (result.rows.length > 0) {
+                        successCallback();
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             })
         }
 
         static decline(requestId, errorCallback, successCallback) {
-            let queryText = 'UPDATE request SET status = $1 WHERE id = $2';
+            let queryText = 'UPDATE request SET status = $1 WHERE id = $2 RETURNING *';
             let values = ['declined', requestId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback();
+                    if (result.rows.length > 0) {
+                        successCallback();
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             })
         }
 
         static delete(requestId, errorCallback, successCallback) {
-            let queryText = 'UPDATE request SET status = $1 WHERE id = $2';
+            let queryText = 'UPDATE request SET status = $1 WHERE id = $2 RETURNING *';
             let values = ['declined_deleted', requestId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback();
+                    if (result.rows.length > 0) {
+                        successCallback();
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             })
         }
@@ -63,7 +75,11 @@ let createRequestModel = db => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback(result);
+                    if (result.rows.length > 0) {
+                        successCallback(result);
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             })
         }

@@ -13,14 +13,15 @@ class Request extends React.Component {
                 <div class="card-content">
                   <span class="card-title">{currentRequest.name}</span>
                   <p>has requested to join your jam at</p>
+                  <br/>
                   <p><i class="material-icons"> location_on </i>{currentRequest.location}</p>
                 </div>
                 <div class="card-action">
-                    <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/user/" + currentRequest.requester_id}>Profile</a>
+                    <form method="get" action={"/user/" + currentRequest.requester_id + "/other"}><input type="submit" class="waves-effect waves-light btn-small" value="See Profile" /></form>
+                    <br/>
+                    <a class="waves-effect waves-light btn-small" href={"/request/" + currentRequest.id + "/accept"}>Accept</a>
                     &nbsp;&nbsp;&nbsp;
-                    <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/request/" + currentRequest.id + "/accept"}>Accept</a>
-                    &nbsp;&nbsp;&nbsp;
-                    <a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/request/" + currentRequest.id + "/decline"}>Decline</a>
+                    <a class="waves-effect waves-light btn-small" href={"/request/" + currentRequest.id + "/decline"}>Decline</a>
                 </div>
               </div>
 
@@ -38,6 +39,7 @@ class Request extends React.Component {
                     {arrayOfRequests.length > 0 ? (<div>{arrayOfRequests}</div>) : (<div id="my-yellow-text"><h4>Sorry, no requests came in yet :(</h4><br/>Why not try to find a jamming partner from our extensive list?<br/><br/><a class="waves-effect waves-light btn-small" href="/post">Let's do it!</a><br/><br/><br/><br/><br/></div>)}
                 </div>
               </div>
+              <br/><br/><br/>
 
             </LayoutContainer>
 

@@ -96,7 +96,11 @@ let createPostModel = db => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback();
+                    if (result.rows.length > 0) {
+                        successCallback();
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             });
         }
@@ -108,31 +112,43 @@ let createPostModel = db => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback(result.rows[0]);
+                    if (result.rows.length > 0) {
+                        successCallback(result.rows[0]);
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             });
         }
 
         static update(postId, newDetails, errorCallback, successCallback) {
-            let queryText = 'UPDATE post SET location = $1, pax = $2, availability = $3, skill = $4, message = $5 WHERE id = $6';
+            let queryText = 'UPDATE post SET location = $1, pax = $2, availability = $3, skill = $4, message = $5 WHERE id = $6 RETURNING *';
             let values = [newDetails.location, newDetails.pax, newDetails.availability, newDetails.skill, newDetails.message, postId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback();
+                    if (result.rows.length > 0) {
+                        successCallback();
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             });
         }
 
         static delete(postId, errorCallback, successCallback) {
-            let queryText = 'UPDATE post SET is_deleted = $1 WHERE id = $2';
+            let queryText = 'UPDATE post SET is_deleted = $1 WHERE id = $2 RETURNING *';
             let values = ['true', postId];
             db.query(queryText, values, (error, result) => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback();
+                    if (result.rows.length > 0) {
+                        successCallback();
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             });
         }

@@ -18,7 +18,7 @@ class RequestContact extends React.Component {
                     <div>
                       <div id="my-card" class="card">
                         <div class="card-content">
-                          <span class="card-title">Here are the contact details for</span>
+                          <span class="card-title">Here is the contact information for</span>
                           <h4>{this.props.contactInfo[0].name}</h4>
                           <p id="my-badge">{this.props.contactInfo[0].bio}</p>
                           <br/>

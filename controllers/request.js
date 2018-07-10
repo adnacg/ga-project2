@@ -27,8 +27,10 @@ let createControllers = db => {
             let requestId = request.params.id;
             let currentUserId = request.cookies.user_id;
             let errorCallback = (error) => {
-                console.log("Error showing profile:", error);
+                console.log("Error accepting request:", error);
                 response.status(401);
+                request.flash('error', 'Error accepting request.');
+                response.redirect('/user/' + currentUserId);
             }
             let successCallback = () => {
                 response.redirect('/user/' + currentUserId);
@@ -46,8 +48,10 @@ let createControllers = db => {
             let requestId = request.params.id;
             let currentUserId = request.cookies.user_id;
             let errorCallback = (error) => {
-                console.log("Error showing profile:", error);
+                console.log("Error declining request:", error);
                 response.status(401);
+                request.flash('error', 'Error declining request.');
+                response.redirect('/user/' + currentUserId);
             }
             let successCallback = () => {
                 response.redirect('/user/' + currentUserId);
@@ -67,6 +71,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error deleting request:", error);
                 response.status(401);
+                request.flash('error', 'Error deleting request.');
+                response.redirect('/user/' + currentUserId);
             }
             let successCallback = () => {
                 response.redirect('/user/' + currentUserId);
@@ -76,9 +82,12 @@ let createControllers = db => {
 
         contactRequest: (request, response) => {
             let posterId = request.params.id;
+            let currentUserId = request.cookies.user_id;
             let errorCallback = (error) => {
                 console.log("Error showing profile:", error);
                 response.status(401);
+                request.flash('error', 'Error showing profile.');
+                response.redirect('/user/' + currentUserId);
             }
             let successCallback = (result) => {
                 let contactInfo = result.rows;
@@ -87,8 +96,6 @@ let createControllers = db => {
             }
             Request.contact(posterId, errorCallback, successCallback);
         },
-
-
 
     }
 }

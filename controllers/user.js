@@ -17,11 +17,13 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error logging in:", error);
                 response.status(401);
+                request.flash('error', 'Error logging in.');
+                response.redirect('/user/login');
             }
             let successCallback = (userId) => {
                 response.cookie('logged_in', 'true');
                 response.cookie('user_id', userId);
-                request.flash('success', 'Successfully created account.');
+                request.flash('success', 'Successfully logged in.');
                 response.redirect('/post');
             }
             User.login(enteredEmail, enteredPasswordHash, errorCallback, successCallback);
@@ -49,6 +51,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error creating user:", error);
                 response.status(401);
+                request.flash('error', 'Error creating user.');
+                response.redirect('/user/register');
             }
             let successCallback = (createdUserId) => {
                 response.cookie('logged_in', 'true');
@@ -105,6 +109,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
+                request.flash('error', 'Error updating user information.');
+                response.redirect('/user/' + userId);
             }
             let successCallback = () => {
                 request.flash('success', 'Successfully updated.');
@@ -118,6 +124,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
+                request.flash('error', 'Error deleting user.');
+                response.redirect('/user/' + userId);
             }
             let successCallback = () => {
                 response.clearCookie('logged_in');
@@ -127,6 +135,29 @@ let createControllers = db => {
             }
             User.delete(userId, errorCallback, successCallback);
         },
+
+        profileReadOther: (request, response) => {
+            let userId = request.params.id;
+            let errorCallback = (error) => {
+                console.log("Error showing profile:", error);
+                response.status(401);
+            }
+            let successCallback = (result, result2, result3) => {
+                let userInfo = result.rows.map( user => {
+                    return {
+                        "id": user.id,
+                        "name": user.name,
+                        "bio": user.bio,
+                        "instrument": user.instrument,
+                        "genre": user.genre,
+                    }
+                });
+                let context = {user: userInfo};
+                response.render('profileother', context);
+            }
+            User.read(userId, errorCallback, successCallback);
+        },
+
     }
 }
 

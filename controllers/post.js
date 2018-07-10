@@ -35,6 +35,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
+                request.flash('error', 'Error creating new post.');
+                response.redirect('/post/new');
             }
             let successCallback = () => {
                 request.flash('success', 'Successfully created post.');
@@ -70,6 +72,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
+                request.flash('error', 'Error requesting jam.');
+                response.redirect('/post/' + request.params.id);
             }
             let successCallback = () => {
                 request.flash('success', 'Successfully requested to join.');
@@ -88,6 +92,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
+                request.flash('error', 'Error retrieving jam info.');
+                response.redirect('/');
             }
             let successCallback = (currentPost) => {
                 let context = {post: currentPost};
@@ -108,6 +114,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
+                request.flash('error', 'Error updating jam info.');
+                response.redirect('/');
             }
             let successCallback = (currentPost) => {
                 request.flash('success', 'Successfully updated.');
@@ -127,6 +135,8 @@ let createControllers = db => {
             let errorCallback = (error) => {
                 console.log("Error:", error);
                 response.status(401);
+                request.flash('error', 'Error deleting jam.');
+                response.redirect('/');
             }
             let successCallback = () => {
                 request.flash('success', 'Successfully deleted post.');

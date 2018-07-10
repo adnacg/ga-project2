@@ -17,7 +17,16 @@ let createUserModel = db => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback(result.rows[0].id);
+                    if (result.rows.length > 0 ) {
+                        let currentUser = result.rows[0];
+                        if (currentUser.is_deleted == 'false') {
+                            successCallback(currentUser.id);
+                        } else {
+                            errorCallback(error);
+                        }
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             })
         }
@@ -29,7 +38,11 @@ let createUserModel = db => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback(result.rows[0].id);
+                    if (result.rows.length > 0) {
+                        successCallback(result.rows[0].id);
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             })
         }
@@ -86,7 +99,11 @@ let createUserModel = db => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback();
+                    if (result.rows.length > 0) {
+                        successCallback();
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             })
         }
@@ -98,7 +115,11 @@ let createUserModel = db => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback();
+                    if (result.rows.length > 0) {
+                        successCallback();
+                    } else {
+                        errorCallback(error);
+                    }
                 }
             });
         }

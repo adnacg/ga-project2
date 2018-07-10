@@ -22,7 +22,7 @@ class Home extends React.Component {
                         </div>
                       </div>
                     </div>
-                    <div class="parallax"><img src="/assets/images/home1.jpg" alt="img1" /></div>
+                    <div class="parallax"><img src="/assets/images/home1.jpg" alt="home1" /></div>
                   </ParallaxContainer>
 
                   <div id="my-yellow-text" class="container">
@@ -76,12 +76,12 @@ class Home extends React.Component {
                             Finding someone to jam with, is not an easy task. Jam Away is a jamming community where you connect with fellow aspiring musicians.
                             <br/>
                             Plus, its <strong>EASY</strong> to use and <strong>100% FREE</strong>!
-                            <br/>Let’s build this jamming community together through JAMAWAY!
+                            <br/>Let’s build this jamming community together through <strong>JAM AWAY</strong>!
                           </p>
                         </div>
                       </div>
                     </div>
-                    <div class="parallax"><img src="/assets/images/home33.jpg" alt="img2" /></div>
+                    <div class="parallax"><img src="/assets/images/home2.jpg" alt="home2" /></div>
                   </div>
 
 
