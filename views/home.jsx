@@ -7,7 +7,7 @@ class Home extends React.Component {
 
         return (
 
-            <LayoutContainer user_id={this.props.user_id}>
+            <LayoutContainer user_id={this.props.user_id} messages={this.props.messages}>
 
                   <ParallaxContainer>
                     <div class="section no-pad-bot">
@@ -27,13 +27,6 @@ class Home extends React.Component {
 
                   <div id="my-yellow-text" class="container">
 
-                  <div class="center">
-                    <br/><br/>
-                    <a class="btn-floating btn-large pulse">HOW</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="btn-floating btn-large pulse">JAM</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="btn-floating btn-large pulse">AWAY</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <a class="btn-floating btn-large pulse">WORK</a>
-                  </div>
                   <br/>
 
                     <div class="section">

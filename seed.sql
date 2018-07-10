@@ -68,7 +68,6 @@ INSERT INTO user_post (user_id, post_id) VALUES('8', '8');
 INSERT INTO request (requester_id, post_id, status) VALUES('7', '1', 'accepted');
 INSERT INTO request (requester_id, post_id, status) VALUES('7', '2', 'declined');
 INSERT INTO request (requester_id, post_id, status) VALUES('7', '3', 'pending');
-
 INSERT INTO request (requester_id, post_id, status) VALUES('9', '3', 'pending');
 INSERT INTO request (requester_id, post_id, status) VALUES('9', '6', 'pending');
 INSERT INTO request (requester_id, post_id, status) VALUES('10', '2', 'pending');

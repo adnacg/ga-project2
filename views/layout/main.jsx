@@ -67,12 +67,20 @@ class FlashError extends React.Component {
             let errorMsgs = this.props.messages.error;
 
             if (errorMsgs) {
-                return <div className="errorFlashMessage">{errorMsgs[0]}</div>
+                return (
+                <div class="row" id="alert_box">
+                  <div class="card">
+                    <div class="my-messages col s12 m12">
+                      <strong>{errorMsgs[0]}</strong><i class="fa fa-times icon_style" id="alert_close" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              )
             } else {
-                return <div className="errorFlashMessage"></div>
+                return <div></div>
             }
         } else {
-            return <div className="errorFlashMessage"></div>
+            return <div></div>
         }
     }
 }
@@ -83,12 +91,20 @@ class FlashInfo extends React.Component {
             let infoMsgs = this.props.messages.info;
 
             if (infoMsgs) {
-                return <div className="infoFlashMessage">{infoMsgs[0]}</div>
+                return (
+                  <div class="row" id="alert_box">
+                    <div class="card">
+                      <div class="my-messages col s12 m12">
+                        <strong>{infoMsgs[0]}</strong><i class="fa fa-times icon_style" id="alert_close" aria-hidden="true"></i>
+                      </div>
+                    </div>
+                  </div>
+                )
             } else {
-                return <div className="infoFlashMessage"></div>
+                return <div></div>
             }
         } else {
-            return <div className="infoFlashMessage"></div>
+            return <div></div>
         }
     }
 }
@@ -99,9 +115,17 @@ class FlashSuccess extends React.Component {
             let successMsgs = this.props.messages.success;
 
             if (successMsgs) {
-                return <div className="successFlashMessage">{successMsgs[0]}</div>
+              return (
+                <div class="row" id="alert_box">
+                  <div class="card">
+                    <div class="my-messages col s12 m12">
+                      <strong>{successMsgs[0]}</strong><i class="fa fa-times icon_style" id="alert_close" aria-hidden="true"></i>
+                    </div>
+                  </div>
+                </div>
+              )
             } else {
-                return <div className="successFlashMessage"></div>
+                return <div></div>
             }
         } else {
             return <div className="successFlashMessage"></div>
@@ -125,13 +149,11 @@ class LayoutContainer extends React.Component {
                 <body>
                   <NavigationBar user_id={this.props.user_id}/>
 
-                  <div>
-                    <FlashError messages={this.props.messages}/>
-                    <FlashInfo messages={this.props.messages}/>
-                    <FlashSuccess messages={this.props.messages}/>
-                  </div>
-
                   <main>
+
+                  <FlashError messages={this.props.messages}/>
+                  <FlashInfo messages={this.props.messages}/>
+                  <FlashSuccess messages={this.props.messages}/>
 
                   {this.props.children}
 

@@ -63,14 +63,10 @@ app.use('/request', request);
 
 // ROOT HANDLER
 app.get('/', (request, response) => {
-    response.render('home');
+  response.render('home');
 });
 
-
-// flash - doesnt work, ASK
 // heroku, ASK
-
-// add database
 
 // if time, passport
 // if time, add return to previous page buttons

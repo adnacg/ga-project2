@@ -8,7 +8,7 @@ class RequestDecline extends React.Component {
 
         return (
 
-            <LayoutContainer user_id={this.props.user_id}>
+            <LayoutContainer user_id={this.props.user_id} messages={this.props.messages}>
 
               <br/><br/><br/>
 

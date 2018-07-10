@@ -24,6 +24,26 @@ nav .brand-logo {
   font-family: lucida grande;
 }
 
+#alert_box {
+  background-color: #EDCB64;
+}
+.my-messages {
+  background-color: #EDCB64;
+  color: #456355;
+  display: flex;
+  justify-content: center;
+  height: 25px;
+  align-items: center;
+}
+.icon_style{
+  position: absolute;
+  right: 20px;
+  top: 1.5px;
+  font-size: 20px;
+  color: #456355;
+  cursor:pointer;
+}
+
 h3 {
   font-size: 2.2rem;
 }

@@ -8,7 +8,7 @@ class Login extends React.Component {
 
         return (
 
-            <LayoutContainer>
+            <LayoutContainer messages={this.props.messages}>
 
                   <ParallaxContainer>
                     <div class="section no-pad-bot">

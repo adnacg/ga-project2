@@ -7,7 +7,7 @@ class Register extends React.Component {
 
         return (
 
-            <LayoutContainer user_id={this.props.user_id}>
+            <LayoutContainer user_id={this.props.user_id} messages={this.props.messages}>
 
                   <ParallaxContainer>
                     <div class="section no-pad-bot">
