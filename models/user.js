@@ -47,7 +47,7 @@ let createUserModel = db => {
                             if (error2) {
                                 errorCallback(error2);
                             } else {
-                                let queryText3 = "SELECT users.name, post.location, request.status, request.id FROM users INNER JOIN user_post ON users.id = user_post.user_id INNER JOIN request ON request.post_id = user_post.post_id INNER JOIN post ON post.id = user_post.post_id WHERE request.requester_id = $1 AND request.status != 'declined_deleted'";
+                                let queryText3 = "SELECT user_post.user_id, users.name, post.location, request.status, request.id FROM users INNER JOIN user_post ON users.id = user_post.user_id INNER JOIN request ON request.post_id = user_post.post_id INNER JOIN post ON post.id = user_post.post_id WHERE request.requester_id = $1 AND request.status != 'declined_deleted'";
                                 db.query(queryText3, values, (error3, result3) => {
                                     if (error3) {
                                         errorCallback(error3);

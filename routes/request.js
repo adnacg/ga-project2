@@ -14,6 +14,8 @@ const createRequestRouter = db => {
     router.get('/:id/delete', rc.deleteRequestQ);
     router.post('/:id/delete', rc.deleteRequest);
 
+    router.get('/:id/contact', rc.contactRequest); // id refers to the poster's id
+
     return router;
 }
 

@@ -59,6 +59,12 @@ h6 {
   color: #456355;
 }
 
+#my-enclosure {
+  display: inline-block;
+  padding: 10px 30px;
+  border: 1px solid #EDCB64;
+}
+
 #my-green-background {
   background-color: #456355;
 }

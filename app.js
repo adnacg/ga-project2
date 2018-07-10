@@ -67,13 +67,16 @@ app.get('/', (request, response) => {
 });
 
 
-// delete button for request affect showing of myrequests
-// show post in profile if isdeleted false
-// show request logic contact
 // show requester profile in request
 // flash
 // 1 user 1 post 1 request, NO request for own post
-// error pages like login error etc
+// edit all fonts
+// error pages like login, register, post, finding stuff's error etc
+
+
+// if time, add return to previous page buttons
+// if time, set repost expired posts logic
+
 
 
 

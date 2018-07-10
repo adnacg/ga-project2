@@ -28,15 +28,14 @@ class Profile extends React.Component {
               <div key={currentRequest.id} id="my-card" class="card-panel center"><i class="material-icons"> location_on </i>{currentRequest.location}&nbsp;
               <span id="my-badge" class="new badge" data-badge-caption={currentRequest.status}></span>
                 <br/><br/>
-                <a id="my-music-card" class="btn-small">{currentRequest.name}</a>&nbsp;&nbsp;&nbsp;
-                {currentRequest.status === "accepted" ? (<a class="waves-effect waves-light btn-small s12">CONTACT</a>) : (<div></div>)}
-                {currentRequest.status === "declined" ? (<p>Delete the request &nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light btn-small s12" href={"/request/" + currentRequest.id + "/delete"}>DELETE</a></p>) : (<div></div>)}
+                {currentRequest.status === "pending" ? (<a id="my-music-card" class="btn-small">{currentRequest.name}</a>) : (<div></div>)}
+                {currentRequest.status === "accepted" ? (<form><a class="waves-effect waves-light btn-small s12" href={"/request/" + currentRequest.user_id + "/contact"}>CONTACT {currentRequest.name}</a></form>) : (<div></div>)}
+                {currentRequest.status === "declined" ? (<p>Delete your request &nbsp;&nbsp;&nbsp;<a class="waves-effect waves-light btn-small s12" href={"/request/" + currentRequest.id + "/delete"}>DELETE</a></p>) : (<div></div>)}
               </div>
             );
         });
 
         return (
-
             <LayoutContainer user_id={this.props.user_id}>
 
                   <ParallaxContainer>
@@ -102,7 +101,6 @@ class Profile extends React.Component {
 
 
             </LayoutContainer>
-
         );
     }
 }

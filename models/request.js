@@ -56,6 +56,18 @@ let createRequestModel = db => {
             })
         }
 
+        static contact(posterId, errorCallback, successCallback) {
+            let queryText = 'SELECT name, email, bio FROM users WHERE id = $1';
+            let values = [posterId];
+            db.query(queryText, values, (error, result) => {
+                if (error) {
+                    errorCallback(error);
+                } else {
+                    successCallback(result);
+                }
+            })
+        }
+
     }
 
     return Request;

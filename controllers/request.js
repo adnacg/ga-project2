@@ -73,6 +73,23 @@ let createControllers = db => {
             }
             Request.delete(requestId, errorCallback, successCallback);
         },
+
+        contactRequest: (request, response) => {
+            let posterId = request.params.id;
+            let errorCallback = (error) => {
+                console.log("Error showing profile:", error);
+                response.status(401);
+            }
+            let successCallback = (result) => {
+                let contactInfo = result.rows;
+                let context = {contactInfo: contactInfo};
+                response.render('requestcontact', context);
+            }
+            Request.contact(posterId, errorCallback, successCallback);
+        },
+
+
+
     }
 }
 
