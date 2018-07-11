@@ -1,12 +1,30 @@
 const pg = require('pg');
+const url = require('url');
 
 // Initialise postgres client
-const config = {
-  user: 'elvera',
-  host: '127.0.0.1',
-  database: 'jamaway',
-  port: 5432,
-};
+const dbUrl = process.env.DATABASE_URL;
+
+if( process.env.DATABASE_URL ){
+    const params = url.parse(dbUrl);
+    const auth = params.auth.split(':');
+
+    var configs = {
+        user: auth[0],
+        password: auth[1],
+        host: params.hostname,
+        port: params.port,
+        database: params.pathname.split('/')[1],
+        ssl: true
+    };
+
+} else {
+    const config = {
+      user: 'elvera',
+      host: '127.0.0.1',
+      database: 'jamaway',
+      port: 5432,
+    };
+}
 
 const pool = new pg.Pool(config);
 
