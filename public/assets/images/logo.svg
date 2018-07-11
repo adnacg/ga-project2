@@ -55,13 +55,13 @@
       }
 
       .cls-4 {
-        font-size: 333.333px;
+        font-size: 270.833px;
       }
     </style>
   </defs>
-  <circle class="cls-1" cx="391" cy="300" r="250"/>
-  <circle class="cls-2" cx="391" cy="300" r="240"/>
-  <circle class="cls-2" cx="391" cy="300" r="260"/>
-  <text id="JAM_AWAY" data-name="JAM AWAY" class="cls-3" x="1292.368" y="348.846"><tspan x="1292.368">JAM AWAY</tspan></text>
-  <text id="J" class="cls-4" x="399.012" y="377.462"><tspan x="399.012">J</tspan></text>
+  <circle class="cls-1" cx="331" cy="300" r="225"/>
+  <circle class="cls-2" cx="331" cy="300" r="235"/>
+  <circle class="cls-2" cx="331" cy="300" r="220"/>
+  <text id="JAM_AWAY" data-name="JAM AWAY" class="cls-3" x="1338.368" y="348.846"><tspan x="1338.368">JAM AWAY</tspan></text>
+  <text id="J" class="cls-4" x="339.012" y="363.461"><tspan x="339.012">J</tspan></text>
 </svg>

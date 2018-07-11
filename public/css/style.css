@@ -62,7 +62,7 @@ th {
 }
 
 .input-field .helper-text {
-  font-size: 8px;
+  font-size: 10px;
   text-align: left;
 }
 
@@ -220,14 +220,14 @@ p {
 }
 
 [type="checkbox"]+span:not(.lever) {
-  font-size: 0.7rem;
+  font-size: 0.9rem;
 }
 
 [type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
   border: 1px solid #EDCB64;
   width: 12px;
   height: 12px;
-  top: 3px;
+  top: 4px;
 }
 [type="checkbox"]+span:not(.lever) {
   padding-left: 18px;
@@ -240,7 +240,8 @@ p {
   height: 20px;
 }
 .individual-label {
-  width: 80px;
+  width: 100px;
+  text-align: left;
 }
 .selector-box {
   line-height: 4rem;

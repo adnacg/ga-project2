@@ -26,7 +26,7 @@ class Register extends React.Component {
                   <br/><br/>
 
                   <div class="row">
-                    <div class="col s12 m6 offset-m3">
+                    <div class="col s12 m8 offset-m2">
 
                       <h5 id="my-yellow-text">GENERAL INFORMATION</h5>
                       <br/><br/>

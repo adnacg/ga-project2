@@ -52,7 +52,6 @@ app.engine('jsx', reactEngine);
 app.set('views', __dirname + '/views');
 app.set('view engine', 'jsx');
 
-
 // ROUTES
 // use the user router
 app.use('/user', user);
@@ -66,12 +65,21 @@ app.get('/', (request, response) => {
   response.render('home');
 });
 
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log('~~~ Time To Jam Away ~~~'));
+
+
+
+
+
+
+
+
+
+
 // if time, passport
 // if time, add return to previous page buttons
 // if time, set repost expired posts logic
 // if time, display myrequest desc, add delete btn for accepted requests - need to add time
 // if time, complete setup footer
-
-const PORT = process.env.PORT || 3000;
-
-app.listen(PORT, () => console.log('~~~ Time To Jam Away ~~~'));

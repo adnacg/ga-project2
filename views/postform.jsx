@@ -26,25 +26,25 @@ class Postform extends React.Component {
                 <div class="container">
                 <form class="col s12" method="POST" action="/post/new">
                   <div class="row">
-                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                    <div id="my-input-box" class="input-field col s12 m8 offset-m2">
                       <input id="location" type="text" name="location" required/>
                       <label for="location">Location</label>
                     </div>
                   </div>
                   <div class="row">
-                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                    <div id="my-input-box" class="input-field col s12 m8 offset-m2">
                       <input id="pax" type="text" name="pax" required/>
                       <label for="pax">Pax (numeric only)</label>
                     </div>
                   </div>
                   <div class="row">
-                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                    <div id="my-input-box" class="input-field col s12 m8 offset-m2">
                       <input id="availability" type="text" name="availability" required/>
                       <label for="availability">Availability</label>
                     </div>
                   </div>
                   <div class="row">
-                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                    <div id="my-input-box" class="input-field col s12 m8 offset-m2">
                       <input id="skill" type="text" name="skill" required/>
                       <label for="skill">Skill</label>
 
@@ -52,7 +52,7 @@ class Postform extends React.Component {
                   </div>
 
                   <div class="row center">
-                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                    <div id="my-input-box" class="input-field col s12 m8 offset-m2">
                       <p>Select the instrument/s you're looking for :</p>
                       <p class="selector-box">
                         <label>
@@ -135,7 +135,7 @@ class Postform extends React.Component {
                   </div>
 
                   <div class="row center">
-                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                    <div id="my-input-box" class="input-field col s12 m8 offset-m2">
                       <p>Select the genre/s you're looking for :</p>
                       <p class="selector-box">
                         <label>
@@ -217,7 +217,7 @@ class Postform extends React.Component {
                   </div>
 
                   <div class="row">
-                    <div id="my-input-box" class="input-field col s12 m6 offset-m3">
+                    <div id="my-input-box" class="input-field col s12 m8 offset-m2">
                       <textarea id="message" class="materialize-textarea" name="message" required></textarea>
                       <label for="message">Describe Your Jam</label>
                       <span class="helper-text" data-error="wrong" data-success="right">Describe what you are looking for here.</span>
