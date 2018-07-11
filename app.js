@@ -66,37 +66,10 @@ app.get('/', (request, response) => {
   response.render('home');
 });
 
-// ASK error messages updating profile
-// ASK error requesting jam, not same userid but captured as same userid
-
-// ask below: how to group everything into one id by id
-// SELECT post.id, post.location, users.name, genre.name AS genre, instrument.name AS instrument
-// FROM post
-
-// INNER JOIN user_post ON user_post.post_id = post.id
-// INNER JOIN users ON user_post.user_id = users.id
-
-// INNER JOIN post_genre ON post_genre.post_id = post.id
-// INNER JOIN genre ON genre.id = post_genre.genre_id
-
-// INNER JOIN post_instrument ON post_instrument.post_id = post.id
-// INNER JOIN instrument ON instrument.id = post_instrument.instrument_id
-
-// WHERE post.is_deleted = 'false'
-// ORDER BY post.post_time DESC
-
-
-
-
-// heroku, ASK
 // if time, passport
 // if time, add return to previous page buttons
-// if time, set instruments and genre logic
 // if time, set repost expired posts logic
-// if time, display myrequest desc, add delete btn for accepted requests
-// if time, NO request for own post
+// if time, display myrequest desc, add delete btn for accepted requests - need to add time
 // if time, complete setup footer
-
-
 
 app.listen(3000, () => console.log('~~~ Time To Jam Away ~~~'));

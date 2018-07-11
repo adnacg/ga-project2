@@ -125,7 +125,7 @@ let createUserModel = db => {
         }
 
         static update(userId, newDetails, errorCallback, successCallback) {
-            let queryText = 'UPDATE users SET name = $1, email = $2, bio = $3 WHERE id = $4';
+            let queryText = 'UPDATE users SET name = $1, email = $2, bio = $3 WHERE id = $4 RETURNING *';
             let values = [newDetails.name, newDetails.email, newDetails.bio, userId];
             db.query(queryText, values, (error, result) => {
                 if (error) {

@@ -144,7 +144,6 @@ let createControllers = db => {
             }
             let errorCallback = (error) => {
                 console.log("Error:", error);
-                console.log('reached here');
                 request.flash('error', 'Error updating user information.');
                 response.status(401).redirect('/user/' + userId);
             }
@@ -193,8 +192,6 @@ let createControllers = db => {
                     genres: result4.rows,
                     instruments: result5.rows
                 };
-                console.log(result4.rows);
-                console.log(result5.rows);
                 response.render('profileother', context);
             }
             User.read(userId, errorCallback, successCallback);
