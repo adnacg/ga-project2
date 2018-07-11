@@ -1,6 +1,6 @@
 // const pg = require('pg');
 const pg = require('pg');
-const Pool = require('pg-pool')
+// const Pool = require('pg-pool');
 const url = require('url');
 
 // Initialise postgres client
@@ -21,7 +21,7 @@ if( process.env.DATABASE_URL ){
         ssl: true
     };
 
-    const pool2 = new Pool(config);
+    // const pool2 = new Pool(config);
 } else {
     config = {
       user: 'elvera',
@@ -30,9 +30,9 @@ if( process.env.DATABASE_URL ){
       port: 5432,
     };
 
-    const pool = new pg.Pool(config);
 }
 
+const pool = new pg.Pool(config);
 
 pool.on('error', function (err) {
   console.log('idle client error', err.message, err.stack);
