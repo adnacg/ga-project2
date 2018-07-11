@@ -72,4 +72,6 @@ app.get('/', (request, response) => {
 // if time, display myrequest desc, add delete btn for accepted requests - need to add time
 // if time, complete setup footer
 
-app.listen(3000, () => console.log('~~~ Time To Jam Away ~~~'));
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => console.log('~~~ Time To Jam Away ~~~'));
