@@ -7,6 +7,18 @@ class Readmore extends React.Component {
 
     render() {
 
+        const arrayOfGenres = this.props.genres.map( function(currentGenre) {
+            return (
+                <a id="my-small-text-card" class="btn-small">{currentGenre.name}</a>
+            )
+        });
+
+        const arrayOfInstruments = this.props.instruments.map( function(currentInstruments) {
+            return (
+                <a id="my-small-text-card" class="btn-small">{currentInstruments.name}</a>
+            )
+        });
+
         return (
 
             <LayoutContainer user_id={this.props.user_id} messages={this.props.messages}>
@@ -20,40 +32,43 @@ class Readmore extends React.Component {
                   <div class="row">
                     <div class="col s12 m6 offset-m3">
                       <h5 id="my-yellow-text" class="center">About {this.props.post.name}'s Jam</h5>
+                      <div class="my-timestamp center">
+                        Posted on: <Timestamp time={this.props.post.post_time} format='full' />
+                      </div>
                     </div>
                   </div>
 
                   <div class="row">
                     <div class="col s12 m8 offset-m2">
-                      <table id="my-yellow-text" class="highlight centered">
+                      <table id="my-yellow-text" class="centered">
                         <tbody>
                           <tr>
-                            <td class="right">Bio</td>
-                            <td>{this.props.post.bio}</td>
+                            <td>Bio</td>
+                            <td><div id="my-card" class="card-panel center">{this.props.post.bio}</div></td>
                           </tr>
                           <tr>
-                            <td class="right">Location</td>
-                            <td>{this.props.post.location}</td>
+                            <td>Location</td>
+                            <td><div id="my-card" class="card-panel center">{this.props.post.location}</div></td>
                           </tr>
                           <tr>
-                            <td class="right">Pax</td>
-                            <td>{this.props.post.pax}</td>
+                            <td>Pax</td>
+                            <td><div id="my-card" class="card-panel center">{this.props.post.pax}</div></td>
                           </tr>
                           <tr>
-                            <td class="right">Skill</td>
-                            <td>{this.props.post.skill}</td>
+                            <td>Skill</td>
+                            <td><div id="my-card" class="card-panel center">{this.props.post.skill}</div></td>
                           </tr>
                           <tr>
-                            <td class="right">Instrument</td>
-                            <td>Piano</td>
+                            <td>Instrument</td>
+                            <td><div id="my-card" class="card-panel center">{arrayOfInstruments}</div></td>
                           </tr>
                           <tr>
-                            <td class="right">Genre</td>
-                            <td>Rock</td>
+                            <td>Genre</td>
+                            <td><div id="my-card" class="card-panel center">{arrayOfGenres}</div></td>
                           </tr>
                           <tr>
-                            <td class="right">Message</td>
-                            <td>{this.props.post.message}</td>
+                            <td>Message</td>
+                            <td><div id="my-card" class="card-panel center">{this.props.post.message}</div></td>
                           </tr>
                           {this.props.time}
                         </tbody>
@@ -63,11 +78,9 @@ class Readmore extends React.Component {
 
 
                   <div class="row">
-                    <div class="col s12 m6 offset-m3">
-                      <div class="my-timestamp center right-align">
-                        Posted on: <Timestamp time={this.props.post.post_time} format='full' /><br/><br/>
-                        <input class="waves-effect waves-light btn s12" type="submit" value="Request To Join" />
-                      </div>
+                    <div class="col s12 m6 offset-m3 center">
+                      <br/>
+                      <input class="waves-effect waves-light btn s12" type="submit" value="Request To Join" />
                     </div>
                   </div>
 

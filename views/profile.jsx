@@ -35,6 +35,18 @@ class Profile extends React.Component {
             );
         });
 
+        const arrayOfMyGenres = this.props.genres.map( function(currentGenre) {
+            return (
+              <a id="my-small-text-card" class="btn-small">{currentGenre.name}</a>
+            );
+        });
+
+        const arrayOfMyInstruments = this.props.instruments.map( function(currentInstrument) {
+            return (
+              <a id="my-small-text-card" class="btn-small">{currentInstrument.name}</a>
+            );
+        });
+
         return (
             <LayoutContainer user_id={this.props.user_id} messages={this.props.messages}>
 
@@ -77,11 +89,11 @@ class Profile extends React.Component {
                     </tr>
                     <tr>
                       <td>Instrument</td>
-                      <td><div id="my-card-borderless" class="card-panel"><a id="my-music-card" class="btn-small">Guitar</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Other</a></div></td>
+                      <td><div id="my-card" class="card-panel center">{arrayOfMyInstruments}</div></td>
                     </tr>
                     <tr>
                       <td>Genre</td>
-                      <td><div id="my-card-borderless" class="card-panel"><a id="my-music-card" class="btn-small">Jazz</a>&nbsp;&nbsp;&nbsp;<a id="my-music-card" class="btn-small">Blues</a></div></td>
+                      <td><div id="my-card" class="card-panel center">{arrayOfMyGenres}</div></td>
                     </tr>
                     <tr>
                       <td id="my-top-text">My Posts</td>

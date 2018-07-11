@@ -67,6 +67,27 @@ app.get('/', (request, response) => {
 });
 
 // ASK error messages updating profile
+// ASK error requesting jam, not same userid but captured as same userid
+
+// ask below: how to group everything into one id by id
+// SELECT post.id, post.location, users.name, genre.name AS genre, instrument.name AS instrument
+// FROM post
+
+// INNER JOIN user_post ON user_post.post_id = post.id
+// INNER JOIN users ON user_post.user_id = users.id
+
+// INNER JOIN post_genre ON post_genre.post_id = post.id
+// INNER JOIN genre ON genre.id = post_genre.genre_id
+
+// INNER JOIN post_instrument ON post_instrument.post_id = post.id
+// INNER JOIN instrument ON instrument.id = post_instrument.instrument_id
+
+// WHERE post.is_deleted = 'false'
+// ORDER BY post.post_time DESC
+
+
+
+
 // heroku, ASK
 // if time, passport
 // if time, add return to previous page buttons

@@ -48,6 +48,40 @@ let createControllers = db => {
                 bio: request.body.bio,
                 is_deleted: "false"
             };
+            let instrumentInfo = {
+                1: request.body.guitar,
+                2: request.body.bass,
+                3: request.body.ukulele,
+                4: request.body.drums,
+                5: request.body.piano,
+                6: request.body.keyboard,
+                7: request.body.xylophone,
+                8: request.body.percussion,
+                9: request.body.banjo,
+                10: request.body.violin,
+                11: request.body.cello,
+                12: request.body.trumpet,
+                13: request.body.saxophone,
+                14: request.body.vocal,
+                15: request.body.other
+            };
+            let genreInfo = {
+                1: request.body.jazz,
+                2: request.body.blues,
+                3: request.body.soul,
+                4: request.body.reggae,
+                5: request.body.indie,
+                6: request.body.classical,
+                7: request.body.country,
+                8: request.body.hiphop,
+                9: request.body.rb,
+                10: request.body.latin,
+                11: request.body.rock,
+                12: request.body.metal,
+                13: request.body.altrock,
+                14: request.body.pop,
+                15: request.body.other
+            };
             let errorCallback = (error) => {
                 console.log("Error creating user:", error);
                 response.status(401);
@@ -60,7 +94,7 @@ let createControllers = db => {
                 request.flash('success', 'Successfully created account.');
                 response.redirect('/post');
             }
-            User.create(userInfo, errorCallback, successCallback);
+            User.create(userInfo, instrumentInfo, genreInfo, errorCallback, successCallback);
         },
 
         profileRead: (request, response) => {
@@ -69,7 +103,7 @@ let createControllers = db => {
                 console.log("Error showing profile:", error);
                 response.status(401);
             }
-            let successCallback = (result, result2, result3) => {
+            let successCallback = (result, result2, result3, result4, result5) => {
                 let userInfo = result.rows.map( user => {
                     return {
                         "id": user.id,
@@ -80,7 +114,9 @@ let createControllers = db => {
                 });
                 let postInfo = result2.rows; // array of potentially my many posts
                 let requestInfo = result3.rows; // array of potentially my many requests
-                let context = {user: userInfo, posts: postInfo, requests: requestInfo};
+                let genreInfo = result4.rows; // array of potentially my many requests
+                let instrumentInfo = result5.rows; // array of potentially my many requests
+                let context = {user: userInfo, posts: postInfo, requests: requestInfo, genres: genreInfo, instruments: instrumentInfo};
                 response.render('profile', context);
             }
             User.read(currentUserId, errorCallback, successCallback);
@@ -142,7 +178,7 @@ let createControllers = db => {
                 console.log("Error showing profile:", error);
                 response.status(401);
             }
-            let successCallback = (result, result2, result3) => {
+            let successCallback = (result, result2, result3, result4, result5) => {
                 let userInfo = result.rows.map( user => {
                     return {
                         "id": user.id,
@@ -152,7 +188,13 @@ let createControllers = db => {
                         "genre": user.genre,
                     }
                 });
-                let context = {user: userInfo};
+                let context = {
+                    user: userInfo,
+                    genres: result4.rows,
+                    instruments: result5.rows
+                };
+                console.log(result4.rows);
+                console.log(result5.rows);
                 response.render('profileother', context);
             }
             User.read(userId, errorCallback, successCallback);

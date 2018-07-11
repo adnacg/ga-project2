@@ -168,7 +168,7 @@ class LayoutContainer extends React.Component {
                       <a class="my-footer-text" href="#">Contact</a>
 
                       <a class="my-footer-text text-lighten-4 right social-media fa fa-pinterest" href="#"></a>
-                      <a class="my-footer-text text-lighten-4 right social-media fa fa-twitter" href="#"></a>
+                      <a class="my-footer-text text-lighten-4 right social-media fa fa-twitter" href="https://twitter.com/jamaway3"></a>
                       <a class="my-footer-text text-lighten-4 right social-media fa fa-instagram" href="#"></a>
                       <a class="my-footer-text text-lighten-4 right social-media fa fa-facebook" href="#"></a>
 

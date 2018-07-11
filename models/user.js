@@ -31,7 +31,7 @@ let createUserModel = db => {
             })
         }
 
-        static create(userInfo, errorCallback, successCallback) {
+        static create(userInfo, instrumentInfo, genreInfo, errorCallback, successCallback) {
             let queryText = 'INSERT INTO users (name, email, password_hash, bio, is_deleted) VALUES ($1, $2, $3, $4, $5) RETURNING *';
             let values = [userInfo.name, userInfo.email, userInfo.passwordHash, userInfo.bio, userInfo.is_deleted];
             db.query(queryText, values, (error, result) => {
@@ -39,7 +39,25 @@ let createUserModel = db => {
                     errorCallback(error);
                 } else {
                     if (result.rows.length > 0) {
-                        successCallback(result.rows[0].id);
+                        let currentUserId = result.rows[0].id;
+                        let toRun = (_callback) => {
+                            for (var key in instrumentInfo) {
+                                if (instrumentInfo[key]) {
+                                    let queryText2 = 'INSERT INTO user_instrument (user_id, instrument_id) VALUES ($1, $2) RETURNING *';
+                                    let values2 = [currentUserId, key];
+                                    db.query(queryText2, values2, (error2, result2) => {if (error2) {errorCallback(error2);}});
+                                }
+                            };
+                            for (var keyGenre in genreInfo) {
+                                if (genreInfo[keyGenre]) {
+                                    let queryText3 = 'INSERT INTO user_genre (user_id, genre_id) VALUES ($1, $2) RETURNING *';
+                                    let values3 = [currentUserId, keyGenre];
+                                    db.query(queryText3, values3, (error3, result3) => {if (error3) {errorCallback(error3);}});
+                                }
+                            };
+                            _callback();
+                        }
+                        toRun(() => successCallback(result.rows[0].id));
                     } else {
                         errorCallback(error);
                     }
@@ -65,7 +83,21 @@ let createUserModel = db => {
                                     if (error3) {
                                         errorCallback(error3);
                                     } else {
-                                        successCallback(result, result2, result3);
+                                        let queryText4 = "SELECT genre.name FROM genre INNER JOIN user_genre ON user_genre.genre_id = genre.id INNER JOIN users ON user_genre.user_id = users.id WHERE users.id = $1";
+                                        db.query(queryText4, values, (error4, result4) => {
+                                            if (error4) {
+                                                errorCallback(error4);
+                                            } else {
+                                                let queryText5 = "SELECT instrument.name FROM instrument INNER JOIN user_instrument ON user_instrument.instrument_id = instrument.id INNER JOIN users ON user_instrument.user_id = users.id WHERE users.id = $1";
+                                                db.query(queryText5, values, (error5, result5) => {
+                                                    if (error5) {
+                                                        errorCallback(error5);
+                                                    } else {
+                                                        successCallback(result, result2, result3, result4, result5);
+                                                    }
+                                                });
+                                            }
+                                        });
                                     }
                                 });
                             }

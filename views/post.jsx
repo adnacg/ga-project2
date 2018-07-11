@@ -12,9 +12,8 @@ class List extends React.Component {
                 <td >{currentPost.name}</td>
                 <td id="td-to-left"><i class="material-icons"> location_on </i>{currentPost.location}</td>
                 <td>
-                  Instrument
-                  <br/>
-                  Genre
+                  <a id="my-small-text-card" class="btn-small">Instrument</a>
+                  <a id="my-small-text-card" class="btn-small">Genre</a>
                 </td>
                 <td><a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/post/" + currentPost.id}>Read More</a></td>
               </tr>

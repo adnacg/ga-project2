@@ -92,8 +92,12 @@ let createControllers = db => {
                 console.log("Error:", error);
                 response.status(401);
             }
-            let successCallback = (result) => {
-                let context = {post: result.rows[0]};
+            let successCallback = (result, result2, result3) => {
+                let context = {
+                    post: result.rows[0],
+                    genres: result2.rows, // array of genre obj
+                    instruments: result3.rows // array of instru obj
+                };
                 response.render('readmore', context);
             }
             Post.readmore(postId, errorCallback, successCallback);
