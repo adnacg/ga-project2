@@ -63,7 +63,21 @@ let createPostModel = db => {
                 if (error) {
                     errorCallback(error);
                 } else {
-                    successCallback(result);
+                    let queryText2 = "SELECT post_genre.post_id, genre.name FROM genre INNER JOIN post_genre ON post_genre.genre_id = genre.id";
+                    db.query(queryText2, (error2, result2) => {
+                        if (error) {
+                            errorCallback(error2);
+                        } else {
+                            let queryText3 = "SELECT post_instrument.post_id, instrument.name FROM instrument INNER JOIN post_instrument ON post_instrument.instrument_id = instrument.id"
+                            db.query(queryText3, (error3, result3) => {
+                                if (error) {
+                                    errorCallback(error3);
+                                } else {
+                                    successCallback(result, result2, result3);
+                                }
+                            });
+                        }
+                    });
                 }
             });
         }

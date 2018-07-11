@@ -1,18 +1,16 @@
-// const pg = require('pg');
 const pg = require('pg');
-// const Pool = require('pg-pool');
 const url = require('url');
 
 // Initialise postgres client
 const dbUrl = process.env.DATABASE_URL;
 
-let configs;
+let config;
 
 if( process.env.DATABASE_URL ){
     const params = url.parse(dbUrl);
     const auth = params.auth.split(':');
 
-    configs = {
+    config = {
         user: auth[0],
         password: auth[1],
         host: params.hostname,
@@ -20,8 +18,6 @@ if( process.env.DATABASE_URL ){
         database: params.pathname.split('/')[1],
         ssl: true
     };
-
-    // const pool2 = new Pool(config);
 } else {
     config = {
       user: 'elvera',

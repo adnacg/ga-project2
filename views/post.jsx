@@ -12,11 +12,14 @@ class List extends React.Component {
                 <td >{currentPost.name}</td>
                 <td id="td-to-left"><i class="material-icons"> location_on </i>{currentPost.location}</td>
                 <td>
-                  <a id="my-small-text-card" class="btn-small">Instrument</a>
+                  <a id="my-small-text-card" class="btn-small modal-trigger" href="#modal1">Instrument</a>
                   <a id="my-small-text-card" class="btn-small">Genre</a>
                 </td>
                 <td><a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/post/" + currentPost.id}>Read More</a></td>
+
+
               </tr>
+
             );
         });
 
@@ -38,6 +41,15 @@ class List extends React.Component {
 
                   <br/><br/>
 
+                  <div id="modal1" class="modal">
+                <div class="modal-content">
+                  <h4>Modal Header</h4>
+                  <p>A bunch of text</p>
+                </div>
+                <div class="modal-footer">
+                  <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+                </div>
+              </div>
                 <table id="my-yellow-text" class="container s12 highlight centered">
                     <thead>
                       <tr>

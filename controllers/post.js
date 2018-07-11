@@ -8,8 +8,12 @@ let createControllers = db => {
                 console.log("Error:", error);
                 response.status(401);
             }
-            let successCallback = (result) => {
-                let context = {posts: result.rows};
+            let successCallback = (result, result2, result3) => {
+                let context = {
+                    posts: result.rows,
+                    // genres:
+                    // instruments:
+                };
                 response.render('post', context);
             }
             Post.read(errorCallback, successCallback);
