@@ -8,7 +8,7 @@ class NavigationBar extends React.Component {
               <div class="navbar-fixed">
               <nav class="mynavbar" role="navigation">
                   <div class="nav-wrapper container">
-                    <a id="logo-container" href="http://localhost:3000/" class="brand-logo"><img class="logo-img" src="/assets/images/logo.svg"/></a>
+                    <a id="logo-container" href="/" class="brand-logo"><img class="logo-img" src="/assets/images/logo.svg"/></a>
                     <ul class="right hide-on-med-and-down">
                       <li><a href="/post">Browse Jams</a></li>
                       <li><a href="/post/new">Post Jams</a></li>
@@ -36,7 +36,7 @@ class NavigationBar extends React.Component {
               <div class="navbar-fixed">
               <nav class="mynavbar" role="navigation">
                   <div class="nav-wrapper container">
-                    <a id="logo-container" href="http://localhost:3000/" class="brand-logo"><img class="logo-img" src="/assets/images/logo.svg"/></a>
+                    <a id="logo-container" href="/" class="brand-logo"><img class="logo-img" src="/assets/images/logo.svg"/></a>
                     <ul class="right hide-on-med-and-down">
                       <li><a href="/post">Browse Jams</a></li>
                       <li><a href="/post/new">Post Jams</a></li>
