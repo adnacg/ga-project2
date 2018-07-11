@@ -16,7 +16,12 @@ let createControllers = db => {
         },
 
         formRead: (request, response) => {
-            response.render('postform');
+            if (request.cookies.user_id) {
+                response.render('postform');
+            } else {
+                request.flash('info', 'Please login to continue.');
+                response.redirect('/user/login');
+            }
         },
 
         postCreate: (request, response) => {
@@ -26,24 +31,55 @@ let createControllers = db => {
                 pax: request.body.pax,
                 availability: request.body.availability,
                 skill: request.body.skill,
-                instrument: request.body.instrument,
-                genre: request.body.genre,
                 message: request.body.message,
                 status: "active",
                 is_deleted: "false"
             };
+            let instrumentInfo = {
+                1: request.body.guitar,
+                2: request.body.bass,
+                3: request.body.ukulele,
+                4: request.body.drums,
+                5: request.body.piano,
+                6: request.body.keyboard,
+                7: request.body.xylophone,
+                8: request.body.percussion,
+                9: request.body.banjo,
+                10: request.body.violin,
+                11: request.body.cello,
+                12: request.body.trumpet,
+                13: request.body.saxophone,
+                14: request.body.vocal,
+                15: request.body.other
+            };
+            let genreInfo = {
+                1: request.body.jazz,
+                2: request.body.blues,
+                3: request.body.soul,
+                4: request.body.reggae,
+                5: request.body.indie,
+                6: request.body.classical,
+                7: request.body.country,
+                8: request.body.hiphop,
+                9: request.body.rb,
+                10: request.body.latin,
+                11: request.body.rock,
+                12: request.body.metal,
+                13: request.body.altrock,
+                14: request.body.pop,
+                15: request.body.other
+            };
             let errorCallback = (error) => {
                 console.log("Error:", error);
-                response.status(401);
                 request.flash('error', 'Error creating new post.');
-                response.redirect('/post/new');
+                response.status(401).redirect('/post/new');
             }
             let successCallback = () => {
                 request.flash('success', 'Successfully created post.');
                 response.redirect('/post');
             }
             if (request.cookies.user_id) {
-                Post.create(postInfo, currentUserId, errorCallback, successCallback);
+                Post.create(postInfo, instrumentInfo, genreInfo, currentUserId, errorCallback, successCallback);
             } else {
                 request.flash('info', 'Please login to continue.');
                 response.redirect('/user/login');

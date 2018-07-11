@@ -66,6 +66,7 @@ app.get('/', (request, response) => {
   response.render('home');
 });
 
+// ASK error messages updating profile
 // heroku, ASK
 // if time, passport
 // if time, add return to previous page buttons

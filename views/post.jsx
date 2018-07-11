@@ -11,7 +11,11 @@ class List extends React.Component {
               <tr key={currentPost.id}>
                 <td >{currentPost.name}</td>
                 <td id="td-to-left"><i class="material-icons"> location_on </i>{currentPost.location}</td>
-                <td>Instrument<br/>Genre</td>
+                <td>
+                  Instrument
+                  <br/>
+                  Genre
+                </td>
                 <td><a id="my-action-btn" class="waves-effect waves-light btn-small" href={"/post/" + currentPost.id}>Read More</a></td>
               </tr>
             );

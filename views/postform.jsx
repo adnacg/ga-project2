@@ -34,7 +34,7 @@ class Postform extends React.Component {
                   <div class="row">
                     <div id="my-input-box" class="input-field col s12 m6 offset-m3">
                       <input id="pax" type="text" name="pax" required/>
-                      <label for="pax">Pax</label>
+                      <label for="pax">Pax (numeric only)</label>
                     </div>
                   </div>
                   <div class="row">
@@ -51,98 +51,168 @@ class Postform extends React.Component {
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row center">
                     <div id="my-input-box" class="input-field col s12 m6 offset-m3">
-                      <input id="instrument" type="text" name="instrument" required/>
-                      <label for="instrument">Instrument</label>
-                      <p>
+                      <p>Select the instrument/s you're looking for :</p>
+                      <p class="selector-box">
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="guitar"/>
+                          <span class="individual-label">Guitar</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="bass"/>
+                          <span class="individual-label">Bass</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="ukulele"/>
+                          <span class="individual-label">Ukulele</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="drums"/>
+                          <span class="individual-label">Drums</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
-                        </label>
-                      </p>
-
-                      <p>
-                        <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="piano"/>
+                          <span class="individual-label">Piano</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="keyboard" />
+                          <span class="individual-label">Keyboard</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="xylophone"/>
+                          <span class="individual-label">Xylophone</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="percussion"/>
+                          <span class="individual-label">Percussion</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
-                        </label>
-                      </p>
-
-                      <p>
-                        <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="banjo"/>
+                          <span class="individual-label">Banjo</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="violin"/>
+                          <span class="individual-label">Violin</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="cello" />
+                          <span class="individual-label">Cello</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="trumpet"/>
+                          <span class="individual-label">Trumpet</span>
                         </label>
 
                         <label>
-                          <input type="checkbox" />
-                          <span>Guitar</span>
+                          <input type="checkbox" id="instrument" name="saxophone"/>
+                          <span class="individual-label">Saxophone</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="instrument" name="vocal"/>
+                          <span class="individual-label">Vocal</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="instrument" name="other"/>
+                          <span class="individual-label">Other</span>
                         </label>
                       </p>
 
                     </div>
                   </div>
 
-                  <div class="row">
+                  <div class="row center">
                     <div id="my-input-box" class="input-field col s12 m6 offset-m3">
-                      <input id="genre" type="text" name="genre" required/>
-                      <label for="genre">Genre</label>
+                      <p>Select the genre/s you're looking for :</p>
+                      <p class="selector-box">
+                        <label>
+                          <input type="checkbox" id="genre" name="jazz"/>
+                          <span class="individual-label">Jazz</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="blues"/>
+                          <span class="individual-label">Blues</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="soul"/>
+                          <span class="individual-label">Soul</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="reggae"/>
+                          <span class="individual-label">Reggae</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="indie"/>
+                          <span class="individual-label">Indie</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="classical"/>
+                          <span class="individual-label">Classical</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="country"/>
+                          <span class="individual-label">Country</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="hiphop"/>
+                          <span class="individual-label">Hip Hop</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="rb"/>
+                          <span class="individual-label">R&B</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="latin"/>
+                          <span class="individual-label">Latin</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="rock"/>
+                          <span class="individual-label">Rock</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="metal"/>
+                          <span class="individual-label">Metal</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="altrock"/>
+                          <span class="individual-label">Alt Rock</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="pop"/>
+                          <span class="individual-label">Pop</span>
+                        </label>
+
+                        <label>
+                          <input type="checkbox" id="genre" name="other"/>
+                          <span class="individual-label">Other</span>
+                        </label>
+                      </p>
                     </div>
                   </div>
 

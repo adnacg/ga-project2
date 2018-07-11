@@ -209,6 +209,33 @@ p {
   clear: both;
 }
 
+[type="checkbox"]+span:not(.lever) {
+  font-size: 0.7rem;
+}
+
+[type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
+  border: 1px solid #EDCB64;
+  width: 12px;
+  height: 12px;
+  top: 3px;
+}
+[type="checkbox"]+span:not(.lever) {
+  padding-left: 18px;
+  padding-right: 10px;
+}
+[type="checkbox"]:checked+span:not(.lever):before {
+  border-right: 2px solid #EDCB64;
+  border-bottom: 2px solid #EDCB64;
+  width: 10px;
+  height: 20px;
+}
+.individual-label {
+  width: 80px;
+}
+.selector-box {
+  line-height: 4rem;
+}
+
 @media only screen and (max-width : 992px) {
   .parallax-container .section {
     position: absolute;

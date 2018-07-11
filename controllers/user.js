@@ -108,9 +108,9 @@ let createControllers = db => {
             }
             let errorCallback = (error) => {
                 console.log("Error:", error);
-                response.status(401);
+                console.log('reached here');
                 request.flash('error', 'Error updating user information.');
-                response.redirect('/user/' + userId);
+                response.status(401).redirect('/user/' + userId);
             }
             let successCallback = () => {
                 request.flash('success', 'Successfully updated.');
