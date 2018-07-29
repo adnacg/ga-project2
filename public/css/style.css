@@ -25,23 +25,23 @@ nav .brand-logo {
 }
 
 #alert_box {
-  background-color: #EDCB64;
+  background-color: #edcb64;
 }
 .my-messages {
-  background-color: #EDCB64;
+  background-color: #edcb64;
   color: #456355;
   display: flex;
   justify-content: center;
   height: 25px;
   align-items: center;
 }
-.icon_style{
+.icon_style {
   position: absolute;
   right: 20px;
   top: 1.5px;
   font-size: 20px;
   color: #456355;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 h3 {
@@ -52,7 +52,10 @@ h6 {
   font-size: 0.8rem;
 }
 
-table, tr, td, th {
+table,
+tr,
+td,
+th {
   border: 0;
   font-family: lucida grande;
 }
@@ -76,18 +79,18 @@ th {
 }
 
 .my-timestamp {
-  color: #EDCB64;
+  color: #edcb64;
   font-size: 0.6rem;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 #my-yellow-text {
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 #my-yellow-background {
-  background-color: #EDCB64;
+  background-color: #edcb64;
 }
 
 #my-green-text {
@@ -97,7 +100,7 @@ th {
 #my-enclosure {
   display: inline-block;
   padding: 10px 30px;
-  border: 1px solid #EDCB64;
+  border: 1px solid #edcb64;
 }
 
 #my-green-background {
@@ -106,20 +109,20 @@ th {
 
 #my-action-btn {
   color: #456355;
-  background-color: #EDCB64;
+  background-color: #edcb64;
 }
 
 #my-music-card {
-  border: 1px solid #EDCB64;
-  color: #EDCB64;
+  border: 1px solid #edcb64;
+  color: #edcb64;
   background-color: #456355;
   width: 100px;
   height: 33px;
 }
 
 #my-small-text-card {
-  border: 1px solid #EDCB64;
-  color: #EDCB64;
+  border: 1px solid #edcb64;
+  color: #edcb64;
   background-color: #456355;
   font-size: 8px;
   width: 70px;
@@ -128,15 +131,15 @@ th {
 }
 
 #my-card {
-  border: 1px solid #EDCB64;
+  border: 1px solid #edcb64;
   background-color: #456355;
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 #my-card-borderless {
   box-shadow: none;
   background-color: #456355;
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 .card .card-action {
@@ -144,15 +147,15 @@ th {
 }
 
 #my-input-box {
-  border: 1px solid #EDCB64;
+  border: 1px solid #edcb64;
   border-radius: 10px;
   background-color: #456355;
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 #my-badge {
   background-color: #456355;
-  color: #EDCB64;
+  color: #edcb64;
   border: none;
   font-size: 8px;
 }
@@ -171,7 +174,7 @@ th {
 
 nav ul a,
 nav .brand-logo {
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 p {
@@ -179,19 +182,20 @@ p {
 }
 
 .sidenav-trigger {
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 #nav-mobile {
   background-color: #456355;
 }
 
-.waves-button-input, .waves-effect input[type="submit"] {
+.waves-button-input,
+.waves-effect input[type="submit"] {
   color: #456355;
 }
 
 .my-footer-text {
-  color: #EDCB64;
+  color: #edcb64;
   font-size: 10px;
 }
 
@@ -201,14 +205,14 @@ p {
 }
 
 .header {
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 .parallax-container {
   min-height: 300px;
   line-height: 0;
   height: auto;
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 .parallax-container .section {
@@ -219,23 +223,24 @@ p {
   clear: both;
 }
 
-[type="checkbox"]+span:not(.lever) {
+[type="checkbox"] + span:not(.lever) {
   font-size: 0.9rem;
 }
 
-[type="checkbox"]+span:not(.lever):before, [type="checkbox"]:not(.filled-in)+span:not(.lever):after {
-  border: 1px solid #EDCB64;
+[type="checkbox"] + span:not(.lever):before,
+[type="checkbox"]:not(.filled-in) + span:not(.lever):after {
+  border: 1px solid #edcb64;
   width: 12px;
   height: 12px;
   top: 4px;
 }
-[type="checkbox"]+span:not(.lever) {
+[type="checkbox"] + span:not(.lever) {
   padding-left: 18px;
   padding-right: 10px;
 }
-[type="checkbox"]:checked+span:not(.lever):before {
-  border-right: 2px solid #EDCB64;
-  border-bottom: 2px solid #EDCB64;
+[type="checkbox"]:checked + span:not(.lever):before {
+  border-right: 2px solid #edcb64;
+  border-bottom: 2px solid #edcb64;
   width: 10px;
   height: 20px;
 }
@@ -247,7 +252,7 @@ p {
   line-height: 4rem;
 }
 
-@media only screen and (max-width : 992px) {
+@media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
     top: 0.5%;
@@ -257,7 +262,7 @@ p {
   }
 }
 
-@media only screen and (max-width : 600px) {
+@media only screen and (max-width: 600px) {
   #index-banner .section {
     top: 0;
   }
@@ -268,15 +273,17 @@ p {
 }
 .icon-block .material-icons {
   font-size: inherit;
-  color: #EDCB64;
+  color: #edcb64;
 }
 
 .pagination li a {
-  color: #EDCB64;
+  color: #edcb64;
   font-size: 0.8rem;
 }
 
 footer.page-footer {
+  margin-top: 40px;
   background-color: #456355;
-  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2)
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 3px 1px -2px rgba(0, 0, 0, 0.12), 0 1px 5px 0 rgba(0, 0, 0, 0.2);
 }
